@@ -25,11 +25,11 @@ export class ProductsList1616536817170 implements MigrationInterface {
           },
           {
             name: 'received',
-            type: 'boolean',
+            type: 'tinyint',
           },
           {
             name: 'purchased',
-            type: 'boolean',
+            type: 'tinyint',
           },
         ],
       }),
