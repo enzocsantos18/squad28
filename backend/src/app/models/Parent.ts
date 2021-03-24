@@ -6,6 +6,7 @@ import {
   BeforeUpdate,
   OneToMany,
 } from 'typeorm';
+import bcrypt from 'bcrypt';
 import Student from './Student';
 
 @Entity('Parent')
@@ -22,11 +23,11 @@ class Parent {
   @Column()
   password: string;
 
-  // @BeforeInsert()
-  // @BeforeUpdate()
-  // hashPassword(): void {
-  //   this.password = bcrypt.hashSync(this.password, 8);
-  // }
+  @BeforeInsert()
+  @BeforeUpdate()
+  hashPassword(): void {
+    this.password = bcrypt.hashSync(this.password, 8);
+  }
 
   @OneToMany(type => Student, student => student.parent)
   students: Student[];
