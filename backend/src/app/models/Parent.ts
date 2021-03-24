@@ -4,7 +4,9 @@ import {
   Column,
   BeforeInsert,
   BeforeUpdate,
+  OneToMany,
 } from 'typeorm';
+import Student from './Student';
 
 @Entity('Parent')
 class Parent {
@@ -25,6 +27,9 @@ class Parent {
   // hashPassword(): void {
   //   this.password = bcrypt.hashSync(this.password, 8);
   // }
+
+  @OneToMany(type => Student, student => student.parent)
+  students: Student[];
 }
 
 export default Parent;
