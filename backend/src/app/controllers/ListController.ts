@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import List from '../models/List';
+import ProductsList from '../models/ProductsList';
 import Student from '../models/Student';
 
 class ListCotroller {
@@ -37,6 +38,40 @@ class ListCotroller {
       return res
         .status(400)
         .json({ error: 'List could not be created, try again later' });
+    }
+  }
+
+  async index(req: Request, res: Response) {
+    const ListRepository = getRepository(List);
+
+    try {
+      const list = await ListRepository.find({
+        relations: ['student', 'student.parent', 'student.school'],
+      });
+      return res.json(list);
+    } catch (e) {
+      return res.json({});
+    }
+  }
+
+  async find(req: Request, res: Response) {
+    const { id } = req.params;
+    const ListRepository = getRepository(List);
+
+    try {
+      const list = await ListRepository.findOne(id, {
+        relations: [
+          'student',
+          'student.parent',
+          'productsList',
+          'student.school',
+          'productsList.product',
+          'productsList.product.paperStore',
+        ],
+      });
+      return res.json(list);
+    } catch (e) {
+      return res.json({});
     }
   }
 }

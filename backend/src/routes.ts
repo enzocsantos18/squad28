@@ -13,6 +13,9 @@ routes.get('/', (req: Request, res: Response) => {
 routes.post('/parent', ParentController.store);
 routes.post('/student', StudentController.store);
 routes.post('/list', ListController.store);
+routes.get('/list', ListController.index);
+routes.get('/list/:id', ListController.find);
+
 routes.post('/productsList', ProductsListController.store);
 
 export default routes;
