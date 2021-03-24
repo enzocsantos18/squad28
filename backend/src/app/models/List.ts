@@ -4,7 +4,9 @@ import {
   Column,
   OneToOne,
   JoinColumn,
+  OneToMany,
 } from 'typeorm';
+import ProductsList from './ProductsList';
 import Student from './Student';
 
 @Entity('List')
@@ -18,6 +20,9 @@ class List {
   @OneToOne(type => Student)
   @JoinColumn()
   student: Student;
+
+  @OneToMany(type => ProductsList, productsList => productsList.list)
+  productsList: ProductsList[];
 }
 
 export default List;

@@ -1,5 +1,12 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  OneToMany,
+} from 'typeorm';
 import PaperStore from './PaperStore';
+import ProductsList from './ProductsList';
 
 @Entity('Product')
 class Product {
@@ -20,6 +27,9 @@ class Product {
 
   @ManyToOne(type => PaperStore, paperStore => paperStore.products)
   paperStore: PaperStore;
+
+  @OneToMany(type => ProductsList, productsList => productsList.product)
+  productsList: ProductsList[];
 }
 
 export default Product;
