@@ -1,17 +1,21 @@
-import { Entity, Column, ManyToOne } from 'typeorm';
+import { Entity, Column, ManyToOne, PrimaryColumn, JoinColumn } from 'typeorm';
 import List from './List';
 import Product from './Product';
 
 @Entity('ProductsList')
 class ProductsList {
-  @ManyToOne(type => List, list => list.productsList, {
-    primary: true,
-  })
+  @PrimaryColumn()
+  listId: number;
+
+  @JoinColumn({ name: 'listId' })
+  @ManyToOne(type => List, list => list.productsList)
   list: List;
 
-  @ManyToOne(type => Product, product => product.productsList, {
-    primary: true,
-  })
+  @PrimaryColumn()
+  productId: number;
+
+  @JoinColumn({ name: 'productId' })
+  @ManyToOne(type => Product, product => product.productsList)
   product: Product;
 
   @Column('tinyint')
