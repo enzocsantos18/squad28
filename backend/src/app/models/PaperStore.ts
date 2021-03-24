@@ -4,7 +4,9 @@ import {
   Column,
   BeforeInsert,
   BeforeUpdate,
+  OneToMany,
 } from 'typeorm';
+import Product from './Product';
 
 @Entity('PaperStore')
 class PaperStore {
@@ -38,6 +40,8 @@ class PaperStore {
   @Column()
   state: string;
 
+  @OneToMany(type => Product, product => product.paperStore)
+  products: Product[];
   // @BeforeInsert()
   // @BeforeUpdate()
   // hashPassword(): void {
