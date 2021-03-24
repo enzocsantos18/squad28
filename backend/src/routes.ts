@@ -1,4 +1,5 @@
 import { Router, Request, Response } from 'express';
+import DonationController from './app/controllers/DonationController';
 import ListController from './app/controllers/ListController';
 import ParentController from './app/controllers/ParentController';
 import ProductsListController from './app/controllers/ProductsListController';
@@ -17,5 +18,6 @@ routes.get('/list', ListController.index);
 routes.get('/list/:id', ListController.find);
 
 routes.post('/productsList', ProductsListController.store);
+routes.post('/donate', DonationController.donation);
 
 export default routes;
