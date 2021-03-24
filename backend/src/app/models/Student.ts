@@ -7,6 +7,7 @@ import {
   ManyToOne,
 } from 'typeorm';
 import Parent from './Parent';
+import School from './School';
 
 @Entity('Student')
 class Student {
@@ -24,6 +25,9 @@ class Student {
 
   @ManyToOne(type => Parent, parent => parent.students)
   parent: Parent;
+
+  @ManyToOne(type => School, school => school.students)
+  school: School;
 }
 
 export default Student;

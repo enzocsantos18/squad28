@@ -4,7 +4,9 @@ import {
   Column,
   BeforeInsert,
   BeforeUpdate,
+  OneToMany,
 } from 'typeorm';
+import Student from './Student';
 
 @Entity('School')
 class School {
@@ -28,6 +30,9 @@ class School {
 
   @Column()
   state: string;
+
+  @OneToMany(type => Student, student => student.school)
+  students: Student[];
 }
 
 export default School;
