@@ -3,9 +3,11 @@ import DonationController from './app/controllers/DonationController';
 import ListController from './app/controllers/ListController';
 import PaperStoreController from './app/controllers/PaperStoreController';
 import ParentController from './app/controllers/ParentController';
+import ProductController from './app/controllers/ProductController';
 import ProductsListController from './app/controllers/ProductsListController';
 import SchoolController from './app/controllers/SchoolController';
 import StudentController from './app/controllers/StudentController';
+import ProductsList from './app/models/ProductsList';
 
 const routes = Router();
 
@@ -22,7 +24,7 @@ routes.post('/student', StudentController.store);
 routes.post('/list', ListController.store);
 routes.get('/list', ListController.index);
 routes.get('/list/:id', ListController.find);
-
+routes.get('/products/paperStore/:id', ProductController.findByPaperStore);
 routes.post('/productsList', ProductsListController.store);
 routes.post('/donate', DonationController.donation);
 routes.post('/donationConfirmation', DonationController.confirmTransaction);

@@ -1,7 +1,6 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import List from '../models/List';
-import ProductsList from '../models/ProductsList';
 import Student from '../models/Student';
 
 class ListCotroller {
