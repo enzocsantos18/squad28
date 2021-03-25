@@ -19,5 +19,6 @@ routes.get('/list/:id', ListController.find);
 
 routes.post('/productsList', ProductsListController.store);
 routes.post('/donate', DonationController.donation);
+routes.post('/donationConfirmation', DonationController.confirmTransaction);
 
 export default routes;
