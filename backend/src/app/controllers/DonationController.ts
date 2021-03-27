@@ -12,6 +12,7 @@ class DonationController {
 
     const ProductsRepository = getRepository(ProductsList);
 
+    // eslint-disable-next-line consistent-return
     productsIds.forEach(async (productId: number) => {
       try {
         await ProductsRepository.update(
