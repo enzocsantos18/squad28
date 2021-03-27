@@ -1,18 +1,37 @@
 import { Request, Response } from 'express';
 import { getRepository, SelectQueryBuilder } from 'typeorm';
+import * as Yup from 'yup';
 import List from '../models/List';
 import Student from '../models/Student';
 
 class ListCotroller {
   async store(req: Request, res: Response) {
-    const { description, studentId } = req.body;
+    const { description, studentId, parentId } = req.body;
+
+    const schema = Yup.object().shape({
+      description: Yup.string()
+        .required('description is required')
+        .min(2)
+        .max(300),
+      studentId: Yup.number().integer().required('StudentId Id is required'),
+      parentId: Yup.number().integer().required('Parent Id is required'),
+    });
+
+    try {
+      await schema.validate(req.body);
+    } catch (e) {
+      return res.json(e);
+    }
 
     const StudentRepository = getRepository(Student);
     const ListRepository = getRepository(List);
 
-    const student = await StudentRepository.findOne({ id: studentId });
+    const student = await StudentRepository.findOne({
+      relations: ['parent'],
+      where: { id: studentId },
+    });
 
-    if (!student) {
+    if (!student || student.parent.id !== parentId) {
       return res.status(400).json({ error: 'Student does not exist' });
     }
 
