@@ -4,6 +4,7 @@ import PaperStore from '../models/PaperStore';
 
 class PaperStoreController {
   async index(req: Request, res: Response) {
+    const { neighborhood } = req.query;
     const PaperStoreRepository = getRepository(PaperStore);
 
     try {
@@ -17,6 +18,9 @@ class PaperStoreController {
           'state',
           'city',
         ],
+        where: {
+          neighborhood,
+        },
       });
       return res.json(stores);
     } catch (e) {
