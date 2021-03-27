@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
+import { getRepository, SelectQueryBuilder } from 'typeorm';
 import List from '../models/List';
 import Student from '../models/Student';
 
@@ -41,15 +41,22 @@ class ListCotroller {
   }
 
   async index(req: Request, res: Response) {
+    const { neighborhood } = req.query;
     const ListRepository = getRepository(List);
 
     try {
       const list = await ListRepository.find({
         relations: ['student', 'student.parent', 'student.school'],
+        where: (qb: SelectQueryBuilder<List>) => {
+          qb.where(
+            `List__student__school.neighborhood like '%${neighborhood}%'
+            `,
+          );
+        },
       });
       return res.json(list);
     } catch (e) {
-      return res.json({});
+      return res.status(404).json(e);
     }
   }
 
@@ -71,6 +78,36 @@ class ListCotroller {
       return res.json(list);
     } catch (e) {
       return res.json({});
+    }
+  }
+
+  async findByStudent(req: Request, res: Response) {
+    const { id } = req.params;
+    const ListRepository = getRepository(List);
+    const StudentRepository = getRepository(Student);
+
+    const student = await StudentRepository.findOne(id);
+
+    if (!student) {
+      return res.status(400).json({ error: 'Student not Found' });
+    }
+
+    try {
+      const list = await ListRepository.find({
+        where: {
+          student,
+        },
+        relations: [
+          'student',
+          'productsList',
+          'productsList.product',
+          'productsList.product.paperStore',
+        ],
+      });
+
+      return res.json(list);
+    } catch (e) {
+      return res.status(400).json({ error: 'List not Found' });
     }
   }
 }
