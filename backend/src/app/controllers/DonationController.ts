@@ -29,7 +29,9 @@ class DonationController {
   }
 
   async confirmTransaction(req: Request, res: Response) {
-    const { listId, productId, studentId, parentId } = req.body;
+    const { listId, productId, studentId } = req.body;
+    const { parentId } = req;
+
     const ProductsListRepository = getRepository(ProductsList);
     const ProductRepository = getRepository(Product);
     const PaperStoreRepository = getRepository(PaperStore);

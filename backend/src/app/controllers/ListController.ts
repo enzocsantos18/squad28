@@ -6,7 +6,8 @@ import Student from '../models/Student';
 
 class ListCotroller {
   async store(req: Request, res: Response) {
-    const { description, studentId, parentId } = req.body;
+    const { description, studentId } = req.body;
+    const { parentId } = req;
 
     const schema = Yup.object().shape({
       description: Yup.string()
@@ -14,7 +15,6 @@ class ListCotroller {
         .min(2)
         .max(300),
       studentId: Yup.number().integer().required('StudentId Id is required'),
-      parentId: Yup.number().integer().required('Parent Id is required'),
     });
 
     try {

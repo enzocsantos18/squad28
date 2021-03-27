@@ -7,13 +7,13 @@ import Student from '../models/Student';
 
 class StudentController {
   async store(req: Request, res: Response) {
-    const { name, birthDate, studentRA, parentId, schoolId } = req.body;
+    const { name, birthDate, studentRA, schoolId } = req.body;
+    const { parentId } = req;
 
     const schema = Yup.object().shape({
       name: Yup.string().required('Name is required').min(2).max(100),
       birthDate: Yup.date().required('Birthdate is required'),
       studentRA: Yup.string().required('studentRA is required').min(5).max(150),
-      parentId: Yup.number().integer().required('Parent Id is required'),
       schoolId: Yup.number().integer().required('School Id is required'),
     });
 
