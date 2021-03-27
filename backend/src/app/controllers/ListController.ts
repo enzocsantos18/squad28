@@ -60,7 +60,7 @@ class ListCotroller {
   }
 
   async index(req: Request, res: Response) {
-    const { neighborhood } = req.query;
+    const { neighborhood = '' } = req.query;
     const ListRepository = getRepository(List);
 
     try {
@@ -83,21 +83,24 @@ class ListCotroller {
     const { id } = req.params;
     const ListRepository = getRepository(List);
 
-    try {
-      const list = await ListRepository.findOne(id, {
-        relations: [
-          'student',
-          'student.parent',
-          'productsList',
-          'student.school',
-          'productsList.product',
-          'productsList.product.paperStore',
-        ],
+    const list = await ListRepository.findOne(id, {
+      relations: [
+        'student',
+        'student.parent',
+        'productsList',
+        'student.school',
+        'productsList.product',
+        'productsList.product.paperStore',
+      ],
+    });
+
+    if (!list) {
+      return res.status(404).json({
+        error: 'List not found',
       });
-      return res.json(list);
-    } catch (e) {
-      return res.json({});
     }
+
+    return res.json(list);
   }
 
   async findByStudent(req: Request, res: Response) {
