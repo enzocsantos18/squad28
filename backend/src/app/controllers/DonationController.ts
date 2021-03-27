@@ -1,8 +1,10 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
+import { getRepository, SelectQueryBuilder } from 'typeorm';
+import List from '../models/List';
 import PaperStore from '../models/PaperStore';
 import Product from '../models/Product';
 import ProductsList from '../models/ProductsList';
+import Student from '../models/Student';
 
 class DonationController {
   async donation(req: Request, res: Response) {
@@ -30,6 +32,7 @@ class DonationController {
     const ProductsListRepository = getRepository(ProductsList);
     const ProductRepository = getRepository(Product);
     const PaperStoreRepository = getRepository(PaperStore);
+    const StudentRepository = getRepository(Student);
 
     try {
       const product = await ProductRepository.findOne(productId, {
@@ -37,9 +40,40 @@ class DonationController {
       });
 
       if (!product) {
+        return res.status(400).json({ error: 'Product does not exists' });
+      }
+      const list = await ProductsListRepository.findOne({
+        where: { listId, productId },
+        relations: ['list', 'list.student'],
+      });
+
+      if (!list || list.list.student.id !== studentId) {
+        return res.status(400).json({ error: 'List does not exists' });
+      }
+
+      const student = await StudentRepository.findOne({
+        relations: ['parent'],
+        where: (qb: SelectQueryBuilder<List>) => {
+          qb.where(
+            `student.id = :studentId and Student__parent.id = :parentId`,
+            {
+              studentId,
+              parentId,
+            },
+          );
+        },
+      });
+
+      if (!student) {
         return res
           .status(400)
-          .json({ error: 'could not be paid, try again later' });
+          .json({ error: 'Parent is not related with student' });
+      }
+
+      if (list.purchased !== 1) {
+        return res
+          .status(400)
+          .json({ error: 'You cannot recieve the product yet' });
       }
 
       await ProductsListRepository.update(
