@@ -23,11 +23,11 @@ class PaperStore {
   @Column()
   email: string;
 
-  @Column({ select: false })
+  @Column()
   password: string;
 
-  @Column('decimal', { precision: 8, scale: 2 })
-  balance: number;
+  @Column('decimal', { precision: 8, scale: 2, default: 0 })
+  balance = 0;
 
   @Column()
   street: string;
