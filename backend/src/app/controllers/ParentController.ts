@@ -1,10 +1,23 @@
 import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
+import * as Yup from 'yup';
 import Parent from '../models/Parent';
 
 class ParentController {
   async store(req: Request, res: Response) {
     const { name, email, password } = req.body;
+
+    const schema = Yup.object().shape({
+      name: Yup.string().required('Name is required').min(2).max(100),
+      email: Yup.string().required('Email is required').email(),
+      password: Yup.string().required('Password is required').min(8).max(16),
+    });
+
+    try {
+      await schema.validate(req.body);
+    } catch (e) {
+      return res.json(e);
+    }
 
     const ParentRepository = getRepository(Parent);
 
@@ -18,6 +31,7 @@ class ParentController {
       email,
       password,
     });
+
     try {
       await ParentRepository.save(parent);
 
@@ -26,7 +40,6 @@ class ParentController {
         email: parent.email,
       });
     } catch (e) {
-      console.log(e);
       return res
         .status(400)
         .json({ error: 'Parent could not be created, try again later' });
