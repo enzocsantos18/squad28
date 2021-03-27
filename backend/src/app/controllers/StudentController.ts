@@ -54,6 +54,29 @@ class StudentController {
         .json({ error: 'Student could not be created, try again later' });
     }
   }
+
+  async findByParent(req: Request, res: Response) {
+    const { id } = req.params;
+
+    const ParentRepository = getRepository(Parent);
+    const StudentRepository = getRepository(Student);
+
+    const parent = await ParentRepository.findOne(id);
+
+    if (!parent) {
+      return res.status(400).json({ error: 'Parent not found' });
+    }
+
+    const students = await StudentRepository.find({
+      where: {
+        parent,
+      },
+    });
+
+    return res.json({
+      students,
+    });
+  }
 }
 
 export default new StudentController();

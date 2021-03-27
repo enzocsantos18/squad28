@@ -11,7 +11,6 @@ class ProductController {
 
     const paperStore = await PaperStoreRepository.findOne(id);
 
-    console.log(paperStore);
     if (!paperStore) {
       return res
         .status(400)

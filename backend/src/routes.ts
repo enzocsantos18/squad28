@@ -1,4 +1,4 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
 import DonationController from './app/controllers/DonationController';
 import ListController from './app/controllers/ListController';
 import PaperStoreController from './app/controllers/PaperStoreController';
@@ -7,26 +7,22 @@ import ProductController from './app/controllers/ProductController';
 import ProductsListController from './app/controllers/ProductsListController';
 import SchoolController from './app/controllers/SchoolController';
 import StudentController from './app/controllers/StudentController';
-import ProductsList from './app/models/ProductsList';
 
 const routes = Router();
 
-routes.get('/', (req: Request, res: Response) => {
-  res.send('Ok');
-});
+routes.post('/parent', ParentController.store); // Criar pai
+routes.post('/student', StudentController.store); // Criar filho
+routes.get('/student/parent/:id', StudentController.findByParent); // Achar filho por pai
 
-routes.get('/school', SchoolController.index);
-routes.get('/paperStore', PaperStoreController.index);
-
-routes.post('/parent', ParentController.store);
-
-routes.post('/student', StudentController.store);
-routes.post('/list', ListController.store);
-routes.get('/list', ListController.index);
-routes.get('/list/:id', ListController.find);
-routes.get('/products/paperStore/:id', ProductController.findByPaperStore);
-routes.post('/productsList', ProductsListController.store);
-routes.post('/donate', DonationController.donation);
-routes.post('/donationConfirmation', DonationController.confirmTransaction);
+routes.post('/list', ListController.store); // Criar lista
+routes.get('/list', ListController.index); // Listar listas
+routes.get('/list/:id', ListController.find); // Listar itens de uma lista especifica
+routes.get('/list/student/:id', ListController.findByStudent); // Lista por estudante
+routes.get('/school', SchoolController.index); // Listagem de escolas
+routes.get('/paperStore', PaperStoreController.index); // Listagem de papelarias
+routes.get('/products/paperStore/:id', ProductController.findByPaperStore); // Listagem de produtos de determinada papelaria
+routes.post('/productsList', ProductsListController.store); // Adicionar produto na lista
+routes.post('/donate', DonationController.donation); // Realizar doação
+routes.post('/donationConfirmation', DonationController.confirmTransaction); // Confirmar doação
 
 export default routes;
