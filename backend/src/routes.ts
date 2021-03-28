@@ -30,10 +30,9 @@ routes.use(AuthMiddleware);
 routes.post('/student', StudentController.store); // Criar filho
 routes.post('/list', ListController.store); // Criar lista
 routes.post('/donationConfirmation', DonationController.confirmTransaction); // Confirmar doação
-
 routes.post('/productsList', ProductsListController.store); // Adicionar produto na lista
 routes.get('/student/parent/:id', StudentController.findByParent); // Achar filho por pai
-
+routes.post('/products', ProductController.store);
 // Doador
 
 export default routes;

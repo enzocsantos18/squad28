@@ -22,7 +22,7 @@ class Product {
   @Column()
   img_url: string;
 
-  @Column()
+  @Column('decimal', { precision: 8, scale: 2 })
   price: number;
 
   @ManyToOne(type => PaperStore, paperStore => paperStore.products)
