@@ -37,7 +37,7 @@ function DashboardStore() {
           />
           <Produto
             name="Lápis de cor"
-            valor="2.50"
+            valor="4.50"
             img="https://img.kalunga.com.br/fotosdeprodutos/389691d.jpg"
           />
           <Produto

@@ -1,13 +1,45 @@
-import React from 'react';
+import React, {useState, useEffect} from "react";
+import {Card, Container, Button, Row} from 'react-bootstrap'
+import Footer from "../../components/Footer";
+import Header from '../../components/Header'
+import ListaAluno from "../../components/ListaAluno";
 
-import { Container, Button } from 'react-bootstrap';
-
+import api from '../../services/api';
 function Home() {
+
+  const [listaAlunos, setListaAlunos ] = useState([])
+
+  async function buscarListas(){
+    const {data} = await api.get('/list');
+    setListaAlunos(data);
+  }
+
+  useEffect(() => {
+    buscarListas();
+  }, [])
+
   return (
-    <Container>
-      <Button>Teste</Button>
-      <h1>Essa é a home</h1>
-    </Container>
+    <>
+      <Header/> 
+      <Container>
+        <h2 style={{width: "300px", margin: "10px 0px"}}>
+        Aqui você encontra várias crianças e pode escolher uma para ajudar
+        </h2>
+        <Row >
+          {
+            listaAlunos.map(lista => {
+              return(
+                <ListaAluno nome={lista.student.name} idade={lista.student.birthDate} descricao={lista.description}/>
+              )
+            })
+          }
+        
+        </Row>
+      
+      </Container>
+      <Footer />
+
+    </>
   );
 }
 
