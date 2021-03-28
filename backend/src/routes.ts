@@ -33,6 +33,8 @@ routes.post('/donationConfirmation', DonationController.confirmTransaction); // 
 routes.post('/productsList', ProductsListController.store); // Adicionar produto na lista
 routes.get('/student/parent/:id', StudentController.findByParent); // Achar filho por pai
 routes.post('/products', ProductController.store);
+routes.post('/paperStore/money', PaperStoreController.getMoney);
+
 // Doador
 
 export default routes;

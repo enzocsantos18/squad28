@@ -96,6 +96,46 @@ class PaperStoreController {
         .json({ error: 'PaperStore could not be created, try again later' });
     }
   }
+
+  async getMoney(req: Request, res: Response) {
+    const { value } = req.body;
+    const { storeId } = req;
+
+    const schema = Yup.object().shape({
+      value: Yup.number().required('value is required'),
+    });
+
+    try {
+      await schema.validate(req.body);
+    } catch (e) {
+      return res.status(400).json(e);
+    }
+
+    const PaperStoreRepository = getRepository(PaperStore);
+
+    const paperStore = await PaperStoreRepository.findOne(storeId);
+
+    if (!paperStore) {
+      return res.status(400).json({ error: 'PaperStore does not exists' });
+    }
+
+    const balance = paperStore.balance - value;
+
+    if (balance < 0) {
+      return res.status(400).json({ error: 'PaperStore could not get money' });
+    }
+    try {
+      await PaperStoreRepository.update({ id: storeId }, { balance });
+    } catch (e) {
+      return res.status(400).json({ error: 'PaperStore could not get money' });
+    }
+
+    return res.json({
+      id: paperStore.id,
+      name: paperStore.name,
+      email: paperStore.email,
+    });
+  }
 }
 
 export default new PaperStoreController();
