@@ -25,7 +25,7 @@ class PaperStoreController {
       });
       return res.json(stores);
     } catch (e) {
-      return res.status(400).json({ error: 'Schools not found.' });
+      return res.status(400).json({ error: 'Paper Stores not found.' });
     }
   }
 
@@ -135,6 +135,18 @@ class PaperStoreController {
       name: paperStore.name,
       email: paperStore.email,
     });
+  }
+
+  async info(req: Request, res: Response) {
+    const { storeId } = req;
+    const PaperStoreRepository = getRepository(PaperStore);
+
+    try {
+      const store = await PaperStoreRepository.findOne(storeId);
+      return res.json(store);
+    } catch (e) {
+      return res.status(400).json({ error: 'Store not found.' });
+    }
   }
 }
 

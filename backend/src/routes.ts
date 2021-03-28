@@ -34,6 +34,7 @@ routes.post('/productsList', ProductsListController.store); // Adicionar produto
 routes.get('/student/parent/:id', StudentController.findByParent); // Achar filho por pai
 routes.post('/products', ProductController.store);
 routes.post('/paperStore/money', PaperStoreController.getMoney);
+routes.get('/paperStore/info', PaperStoreController.info);
 
 // Doador
 
