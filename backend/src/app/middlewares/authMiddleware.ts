@@ -29,8 +29,10 @@ function AuthMiddleware(
 
     if (type === 'parent') {
       req.parentId = id;
+      req.storeId = 0;
     } else {
       req.storeId = id;
+      req.parentId = 0;
     }
   } catch {
     return res.sendStatus(401);
