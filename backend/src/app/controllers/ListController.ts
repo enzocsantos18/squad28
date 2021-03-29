@@ -65,7 +65,7 @@ class ListCotroller {
 
     try {
       const list = await ListRepository.find({
-        relations: ['student', 'student.parent', 'student.school'],
+        relations: ['student', 'student.parent', 'student.school', 'productsList'],
         where: (qb: SelectQueryBuilder<List>) => {
           qb.where(
             `List__student__school.neighborhood like '%${neighborhood}%'
@@ -73,7 +73,10 @@ class ListCotroller {
           );
         },
       });
-      return res.json(list);
+
+      const newList = list.filter(List => List.productsList.length > 0);
+
+      return res.json(newList);
     } catch (e) {
       return res.status(404).json(e);
     }
