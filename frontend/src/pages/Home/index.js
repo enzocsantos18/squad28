@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from "react";
-import {Card, Container, Button, Row} from 'react-bootstrap'
+import {Container, Row} from 'react-bootstrap'
+import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from '../../components/Header'
 import ListaAluno from "../../components/ListaAluno";
-
+import idade from "../../helpers/tratamentoIdade";
+import './styles.css'
 import api from '../../services/api';
 function Home() {
 
@@ -22,19 +24,23 @@ function Home() {
     <>
       <Header/> 
       <Container>
-        <h2 style={{width: "300px", margin: "10px 0px"}}>
+        <h2>
         Aqui você encontra várias crianças e pode escolher uma para ajudar
         </h2>
-        <Row >
+        <div className="listagem">
+       
+       
           {
             listaAlunos.map(lista => {
               return(
-                <ListaAluno nome={lista.student.name} idade={lista.student.birthDate} descricao={lista.description}/>
+                <Link key={lista.id} to={`/lista/${lista.id}`} >
+                  <ListaAluno nome={lista.student.name} idade={idade(lista.student.birthDate)} descricao={lista.description}/>
+                </Link>
               )
             })
           }
         
-        </Row>
+        </div>
       
       </Container>
       <Footer />
