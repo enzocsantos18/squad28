@@ -1,12 +1,31 @@
 .listaAluno{
-  width: 300px;
+  width: 100%;
+  max-width: 350px;
   display: flex;
   flex-direction: row;
   margin: 10px;
+  height: 150px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+}
+.listaAluno:hover{
+  background-color: rgb(204, 219, 241);
+}
+.listaAluno div{
+  padding: 0px 14px;
 }
 
+.listaAluno p{
+  font-size: 14px;
+  color: #483972, 100%;
+}
+.listaAluno h2{
+  font-size: 18px;
+  color: #483972 !important;
+}
 .listaAluno img{
-  height: 80px;
-  width: 80px;
-  align-self: center;
+  height: 81px;
+  width: 81px;
+  border-radius: 50%;
 }
