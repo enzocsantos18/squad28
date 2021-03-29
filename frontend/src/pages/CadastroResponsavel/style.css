@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+.titulo {
+    color: #483972;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px
+}
+
+.subtitulo {
+    color: #483972;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.linhaForm1 {
+    margin-top: 25px;
+}
+
+#campoNome {    
+    width: 320px;
+    height: 56px;
+    left: 20px;
+    top: 262px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+#campoNome:hover {
+    border: 1px solid #3C3C3C;
+    box-sizing: border-box;
+    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+#campoCPF {    
+    width: 320px;
+    height: 56px;
+    left: 20px;
+    top: 262px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+#campoCPF:hover {
+    border: 1px solid #3C3C3C;
+    box-sizing: border-box;
+    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+#campoTel {    
+    width: 320px;
+    height: 56px;
+    left: 20px;
+    top: 262px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+#campoTel:hover {
+    border: 1px solid #3C3C3C;
+    box-sizing: border-box;
+    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+#campoMail {    
+    width: 320px;
+    height: 56px;
+    left: 20px;
+    top: 262px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+#campoMail:hover {
+    border: 1px solid #3C3C3C;
+    box-sizing: border-box;
+    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+#campoSenha {    
+    width: 320px;
+    height: 56px;
+    left: 20px;
+    top: 262px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+#campoSenha:hover {
+    border: 1px solid #3C3C3C;
+    box-sizing: border-box;
+    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+#campoqtdFilhos {    
+    width: 320px;
+    height: 56px;
+    left: 20px;
+    top: 262px;
+    background: #FFFFFF;
+    border-radius: 10px;
+}
+
+#campoqtdFilhos:hover {
+    border: 1px solid #3C3C3C;
+    box-sizing: border-box;
+    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+#btnEnviar {    
+    background-color: #483972;
+    border-radius: 8px;    
+    width: 130px;
+    height: 35px;
+    align-self: flex-end;
+
+
+    left: 13.08%;
+    right: 12.31%;
+    top: 22.86%;
+    bottom: 22.86%;
+
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #FFFFFF;
+
+    float:right;
+    margin-top: 25px;
+    margin-right: 10px;
+    margin-bottom: 45px;
+}    
