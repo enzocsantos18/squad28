@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { Container, Row, Col, Modal, Button} from "react-bootstrap";
+import { Container, Row, Col, Modal, Button, Form} from "react-bootstrap";
 import api from "../../services/api";
 import idade from '../../helpers/tratamentoIdade';
 import real from '../../helpers/tratamentoDinheiro';
@@ -14,11 +14,8 @@ function DetalheLista() {
   const [itens, setItens] = useState([]);
   const [valor, setValor] = useState(0);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-
   const { id } = useParams();
 
   async function buscarListas() {
@@ -56,8 +53,6 @@ function DetalheLista() {
       setItens([...itens, id]);
       setValor(precoAtual);
     }
-
-
   }
 
   useEffect(() => {
@@ -110,12 +105,8 @@ function DetalheLista() {
               {
                 valor > 0 && <button onClick={handleShow}>Doar</button>
               }
-              
               </Col>
-
             </Row>
-
-           
           </>
         ) : (
           <>
@@ -126,7 +117,46 @@ function DetalheLista() {
         <Modal.Header closeButton>
           <Modal.Title>Tem certerza que quer doar?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Seu subtotal está em {real(Number(valor))}</Modal.Body>
+        <Modal.Body>
+          Seu subtotal está em {real(Number(valor))}
+          <Form>
+          <Form.Row>
+            <Form.Group as={Col} controlId="nome">
+              <Form.Label>Nome:</Form.Label>
+              <Form.Control type="text" placeholder="Escreva seu nome" />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="Cpf">
+              <Form.Label>CPF:</Form.Label>
+              <Form.Control type="number"  onInput = {(e) =>{
+    e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,11)
+  }} placeholder="Digite seu CPF" />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} controlId="numeroCartao">
+              <Form.Label>Número do cartão:</Form.Label>
+              <Form.Control type="number" onInput = {(e) =>{
+    e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,16)
+  }} placeholder="" />
+            </Form.Group>
+          </Form.Row>
+          <Form.Row>
+            <Form.Group as={Col} controlId="nome">
+              <Form.Label>MMAAAA:</Form.Label>
+              <Form.Control type="string" placeholder="Ex: 10/2025" />
+            </Form.Group>
+
+            <Form.Group as={Col} controlId="CVV">
+              <Form.Label>CVV:</Form.Label>
+              <Form.Control onInput = {(e) =>{
+    e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,3)
+  }} type="number" placeholder="CVV" />
+            </Form.Group>
+          </Form.Row>
+          </Form>
+          
+          </Modal.Body>
         <Modal.Footer>
           <Button variant="success" onClick={() => handleDoacao()}>
             Doar
