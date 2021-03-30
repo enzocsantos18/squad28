@@ -17,7 +17,7 @@ class List {
   @Column()
   description: string;
 
-  @OneToOne(type => Student)
+  @OneToOne(type => Student, student => student.list)
   @JoinColumn()
   student: Student;
 

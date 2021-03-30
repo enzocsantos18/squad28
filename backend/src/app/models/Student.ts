@@ -1,4 +1,11 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  OneToOne,
+} from 'typeorm';
+import List from './List';
 import Parent from './Parent';
 import School from './School';
 
@@ -21,6 +28,9 @@ class Student {
 
   @ManyToOne(type => School, school => school.students)
   school: School;
+
+  @OneToOne(type => List, list => list.student)
+  list: List;
 }
 
 export default Student;

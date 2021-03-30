@@ -73,7 +73,7 @@ class ListCotroller {
         ],
         where: (qb: SelectQueryBuilder<List>) => {
           qb.where(
-            `List__student__school.neighborhood like '%${neighborhood}%'
+            `List__student__school.neighborhood like '%${neighborhood}%' and List__productsList.purchased = 0
             `,
           );
         },
