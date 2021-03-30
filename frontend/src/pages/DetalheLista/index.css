@@ -17,10 +17,6 @@
   margin: 0;
 }
 
-.comprado{
-  text-decoration: line-through;
-  background: rgba(196, 196, 196, 100);
-}
 .info-lista{
   margin: auto;
   display: flex;
@@ -48,3 +44,4 @@ button{
   border-radius: 8px !important;
   align-self: right;
 }
+
