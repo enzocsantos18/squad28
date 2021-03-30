@@ -103,7 +103,7 @@ function DetalheLista() {
               <p>Subtotal de sua doação: {real(Number(valor))}</p>
 
               {
-                valor > 0 && <button onClick={handleShow}>Doar</button>
+                valor > 0 && <Button onClick={handleShow}>Doar</Button>
               }
               </Col>
             </Row>
@@ -142,7 +142,7 @@ function DetalheLista() {
             </Form.Group>
           </Form.Row>
           <Form.Row>
-            <Form.Group as={Col} controlId="nome">
+            <Form.Group as={Col} controlId="Data">
               <Form.Label>MMAAAA:</Form.Label>
               <Form.Control type="string" placeholder="Ex: 10/2025" />
             </Form.Group>
