@@ -1,28 +1,36 @@
 import React from 'react';
-import { Container, Form, Col, Modal, Button} from "react-bootstrap";
+import { Container, Form, Col, Modal, Button,Row} from "react-bootstrap";
 import imagemlogin from './fotologin.png'
-// import { Container } from './styles';
+import './login.css';
 
 function Login() {
   return (
     <Container>
-      <h2>Faça o logim e vamos mudar o mundo!</h2>
-      <img src={imagemlogin }/>
+      <div className='grid'>
+        <Row>
+          <div>
+            <h2 className='titulo_login'>Faça o login <br/>e vamos <br/>mudar o<br/> mundo!</h2>
+          </div>
+          <div>
+            <img className='img_login' src={imagemlogin}/>
+          </div>          
+        </Row>
 
-      <Form>
-        <Form.Group controlId="formBasicEmail">
-          <Form.Control type="email" placeholder="Email" />
-        </Form.Group>
-
-        <Form.Group controlId="formBasicPassword">
-          <Form.Control type="password" placeholder="Senha" />
-        </Form.Group>
-
-        <Button variant="primary" type="submit">
-          Login
-        </Button>
-      </Form>
-
+        <Form id='form'>
+          <Form.Group controlId="formEmail">
+            <Form.Control id='input' type="email" placeholder="Email" />
+          </Form.Group>
+   
+          <Form.Group controlId="formPassword">
+            <Form.Control id='inputsenha' type="password" placeholder="Senha" />
+          </Form.Group>
+       
+          <Button id="buttonEntar" type="submit">
+            Login
+          </Button>
+          
+        </Form>
+      </div>
     </Container>
 
 
