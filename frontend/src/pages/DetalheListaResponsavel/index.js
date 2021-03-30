@@ -113,12 +113,12 @@ function DetalheListaResponsavel() {
                   </div>
                 )
                 : (
-                  <div onClick={() => handleShow(item.product, lista, lista.student)} key={item.product.id} className="produto comprado">
+                  <div key={item.product.id} className="produto comprado">
                     <p>{item.product.name}</p>
                     {
                       item.received === 0 ? (
 
-                        <Button>Coletado</Button>
+                        <Button onClick={() => handleShow(item.product, lista, lista.student)}>Coletado</Button>
                       ) :
                       (<span>Item recebido</span>)
                     }
