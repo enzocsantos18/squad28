@@ -10,6 +10,7 @@ function Routes() {
   return (
     <Router>
       <Switch>
+        
         <Route path="/cadastroResponsavel" component={CadastroResponsavel} />
         <Route path="/" exact component={Home} />
         <Route path="/dashboard/store" component={DashboardStore}/>

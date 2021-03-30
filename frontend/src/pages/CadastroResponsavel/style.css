@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
+.main {
+    background-color: white;
+}
+
+
+/* MOBILE FIRST */
+
 .titulo {
     color: #483972;
     font-family: 'Roboto', sans-serif;
@@ -9,16 +16,34 @@
     margin-top: 20px
 }
 
-.subtitulo {
+.subtitulo1 {
     color: #483972;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 18px;
     margin-top: 15px;
+    margin-left: 0%; 
+}
+
+.subtitulo2 {
+    color: #483972;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-left: 0%; 
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .linhaForm1 {
     margin-top: 25px;
+    align-items: center;
 }
 
 #campoNome {    
@@ -27,7 +52,7 @@
     left: 20px;
     top: 262px;
     background: #FFFFFF;
-    border-radius: 10px;
+    border-radius: 10px;    
 }
 
 #campoNome:hover {
@@ -115,28 +140,137 @@
     background-color: #483972;
     border-radius: 8px;    
     width: 130px;
-    height: 35px;
-    align-self: flex-end;
-
-
+    height: 35px;    
     left: 13.08%;
     right: 12.31%;
     top: 22.86%;
     bottom: 22.86%;
-
     font-family: 'Roboto', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-
+    line-height: 19px; 
     text-align: center;
-
     color: #FFFFFF;
-
     float:right;
     margin-top: 25px;
     margin-right: 10px;
     margin-bottom: 45px;
 }    
+
+
+@media only screen and (min-width: 371px) {
+    #btnEnviar {    
+        background-color: #483972;
+        border-radius: 8px;    
+        width: 130px;
+        height: 35px;    
+        left: 13.08%;
+        right: 12.31%;
+        top: 22.86%;
+        bottom: 22.86%;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;     
+        text-align: center;
+        color: #FFFFFF;
+        float:left;
+        margin-top: 25px;        
+        margin-bottom: 45px;
+    }  
+    
+}     
+
+
+/* AJUSTES PARA DESKTOP */
+
+@media only screen and (min-width: 1001px) {
+    .main {
+      background-color: #F1F1F1;      
+    }
+    .formulario {
+        background-color: white;
+        
+    }
+    .formMenor {        
+        margin-left: -30%;            
+    }
+
+    .titulo {
+        color: #483972;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 900;
+        font-size: 24px;
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 0%; 
+    }
+    
+
+    .subtitulo1 {
+        color: #483972;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        margin-top: 15px;
+        margin-left: 0%; 
+    }
+    
+    .subtitulo2 {
+        color: #483972;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        margin-top: 15px;
+        margin-left: 0%; 
+    }
+
+    #campoNome {    
+        width: 410px;
+        height: 56px;
+        left: 20px;
+        top: 262px;
+        background: #FFFFFF;
+        border-radius: 10px;    
+    }
+
+    #campoTel {    
+        width: 241px;
+        height: 56px;
+        left: 20px;
+        top: 262px;
+        background: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    #btnEnviar {    
+        background-color: #483972;
+        border-radius: 8px;    
+        width: 130px;
+        height: 35px;    
+        left: 13.08%;
+        right: 12.31%;
+        top: 22.86%;
+        bottom: 22.86%;
+        font-family: 'Roboto', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;     
+        text-align: center;
+        color: #FFFFFF;
+        float:left;
+        margin-top: 25px;        
+        margin-bottom: 45px;
+    }   
+  }
+
+
+
+
+.campo {
+ 
+    
+}
