@@ -53,6 +53,7 @@
     top: 262px;
     background: #FFFFFF;
     border-radius: 10px;    
+    border: 1px solid #DEDEDE;
 }
 
 #campoNome:hover {
@@ -68,12 +69,17 @@
     top: 262px;
     background: #FFFFFF;
     border-radius: 10px;
+    border: 1px solid #DEDEDE;
 }
 
-#campoCPF:hover {
+#campoCPF:hover {    
     border: 1px solid #3C3C3C;
     box-sizing: border-box;
     box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+#campoCPF::after {
+    border: none;
 }
 
 #campoTel {    
@@ -83,6 +89,7 @@
     top: 262px;
     background: #FFFFFF;
     border-radius: 10px;
+    border: 1px solid #DEDEDE;
 }
 
 #campoTel:hover {
@@ -98,6 +105,7 @@
     top: 262px;
     background: #FFFFFF;
     border-radius: 10px;
+    border: 1px solid #DEDEDE;
 }
 
 #campoMail:hover {
@@ -113,6 +121,7 @@
     top: 262px;
     background: #FFFFFF;
     border-radius: 10px;
+    border: 1px solid #DEDEDE;
 }
 
 #campoSenha:hover {
@@ -128,6 +137,7 @@
     top: 262px;
     background: #FFFFFF;
     border-radius: 10px;
+    border: 1px solid #DEDEDE;
 }
 
 #campoqtdFilhos:hover {
@@ -234,6 +244,7 @@
         top: 262px;
         background: #FFFFFF;
         border-radius: 10px;    
+        border: 1px solid #DEDEDE;
     }
 
     #campoTel {    
@@ -243,6 +254,7 @@
         top: 262px;
         background: #FFFFFF;
         border-radius: 10px;
+        border: 1px solid #DEDEDE;
     }
 
     #btnEnviar {    

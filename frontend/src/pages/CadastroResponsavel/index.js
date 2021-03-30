@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, render} from "react";
 import './style.css'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Form, Col, InputGroup, Container, Row, Button, Accordion, Card } from "react-bootstrap";
 import MaskedInput from "react-maskedinput";
 
-function CadastroResponsavel () {
+function CadastroResponsavel (props) {
     const [validated, setValidated] = useState(false);
 
   const handleSubmit = (event) => {
@@ -33,7 +33,7 @@ function CadastroResponsavel () {
                 </Col>
             </Row>
             <Form.Row className="linhaForm1">
-                <Form.Group className="campo" as={Col} md="4" controlId="validationCustom01">            
+                <Form.Group className="campo" as={Col} md="4" controlId="validationCustom01">    
                     <Form.Control
                         id="campoNome" 
                         required
@@ -43,25 +43,56 @@ function CadastroResponsavel () {
                 </Form.Group>
             </Form.Row>  
             <Form.Row> 
-                <Form.Group as={Col} md="4" controlId="validationCustom02">        
-                    <Form.Control
+                <Form.Group as={Col} md="4" controlId="validationCustom02">     
+                    <MaskedInput
+                        required
+                        type="text"
+                        mask="111.111.111-11"
+                        placeholder="  CPF" 
+                        id="campoCPF"
+                        {...props}
+                        formatCharacters={{
+                        'W': {
+                            validate(char) { return /\w/.test(char ) },
+                            transform(char) { return char.toUpperCase() }
+                        }
+                        }}
+                    />   
+                    
+                    {/*<Form.Control
                         id="campoCPF"
                         required
                         type="text"
-                        placeholder="CPF"                
-                    />    
+                        placeholder="CPF"       
+                                 
+                    />*/}    
                     <Form.Control.Feedback type="invalid">
                         Gentileza informar um CPF válido.
                     </Form.Control.Feedback>        
                 </Form.Group>            
             </Form.Row>
             <Form.Row>
-                <Form.Group as={Col} md="6" controlId="validationCustom03">            
-                    <Form.Control 
+                <Form.Group as={Col} md="6" controlId="validationCustom03">         
+                    <MaskedInput
+                        
+                        type="text"
+                        mask="(11) 11111-1111"
+                        placeholder="  Telefone" 
+                        id="campoTel"
+                        {...props}
+                        formatCharacters={{
+                        'W': {
+                            validate(char) { return /\w/.test(char ) },
+                            transform(char) { return char.toUpperCase() }
+                        }
+                        }}
+                    />   
+
+                    {/*<Form.Control 
                     id="campoTel"
                     type="tel" 
                     placeholder="Telefone"  
-                    />
+                    />*/}
                     <Form.Control.Feedback type="invalid">
                         Gentileza informar um telefone válido.
                     </Form.Control.Feedback>
@@ -86,8 +117,8 @@ function CadastroResponsavel () {
                 </Form.Group>
             </Form.Row>     
             <Form.Row> 
-                <Form.Group as={Col} md="4" controlId="validationCustom02">        
-                    <Form.Control
+                <Form.Group as={Col} md="4" controlId="validationCustom02">      
+                   <Form.Control
                         id="campoSenha"
                         required
                         type="password"
@@ -120,6 +151,8 @@ function CadastroResponsavel () {
     <Footer />
     </div>
   );
+
+  
 }
 
 
