@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Form, Col, InputGroup, Container, Row, Button, Accordion, Card } from "react-bootstrap";
 import MaskedInput from "react-maskedinput";
+import imgResp from "../../assets/responsavel.png"
 
 function CadastroResponsavel (props) {
     const [validated, setValidated] = useState(false);
@@ -22,7 +23,7 @@ function CadastroResponsavel (props) {
     <div className="main">
     <Header />
     <Container>   
-    
+    <img id="imgResponsavel"src={imgResp} alt=""/>
         <Form className="formulario" noValidate validated={validated} onSubmit={handleSubmit}>
             
             <div className="formMenor">
@@ -129,26 +130,14 @@ function CadastroResponsavel (props) {
                     </Form.Control.Feedback>        
                 </Form.Group>            
             </Form.Row>
-            <Form.Row>
-                <Form.Group as={Col} md="4" controlId="validationCustom02">        
-                    <Form.Control
-                        id="campoqtdFilhos"
-                        required
-                        type="number"
-                        placeholder="Quantos filhos possui?"                
-                    />    
-                    <Form.Control.Feedback type="invalid">
-                        Número inválido
-                    </Form.Control.Feedback>        
-                </Form.Group>            
-            </Form.Row>        
+            
             <Button id="btnEnviar" type="submit">Continuar</Button>     
               
             </div>
         </Form>        
-                    
+                  
     </Container>
-    <Footer />
+    <Footer /> 
     </div>
   );
 

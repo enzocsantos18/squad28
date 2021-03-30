@@ -7,6 +7,10 @@
 
 /* MOBILE FIRST */
 
+#imgResponsavel {
+    display: none;
+}
+
 .titulo {
     color: #483972;
     font-family: 'Roboto', sans-serif;
@@ -39,6 +43,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 5%;
 }
 
 .linhaForm1 {
@@ -130,22 +135,6 @@
     box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
 }
 
-#campoqtdFilhos {    
-    width: 320px;
-    height: 56px;
-    left: 20px;
-    top: 262px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #DEDEDE;
-}
-
-#campoqtdFilhos:hover {
-    border: 1px solid #3C3C3C;
-    box-sizing: border-box;
-    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
-}
-
 #btnEnviar {    
     background-color: #483972;
     border-radius: 8px;    
@@ -204,6 +193,17 @@
         background-color: white;
         
     }
+
+    #imgResponsavel {
+       display: block; 
+    
+       position: absolute;     
+       margin-left: 35%;   
+       margin-top: 5%;
+       width: 512px;
+       height: 512px;
+    }
+
     .formMenor {        
         margin-left: -30%;            
     }
