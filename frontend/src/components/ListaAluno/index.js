@@ -12,7 +12,7 @@ function ListaAluno({nome, idade, descricao}) {
         <div>
           <h2>{nome}, {idade} anos</h2>
           <p>
-           {descricao.substring(1,80)}...
+           {descricao.substring(0,80)}...
           </p>
         </div>
       </div>

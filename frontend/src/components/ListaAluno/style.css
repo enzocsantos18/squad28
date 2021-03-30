@@ -1,6 +1,5 @@
 .listaAluno{
-  width: 100%;
-  max-width: 350px;
+  width: 350px;
   display: flex;
   flex-direction: row;
   margin: 10px;
@@ -8,6 +7,7 @@
   padding: 20px;
   background-color: #f4f4f4;
   border-radius: 8px;
+  flex: 1;
 }
 .listaAluno:hover{
   background-color: rgb(204, 219, 241);
@@ -29,3 +29,4 @@
   width: 81px;
   border-radius: 50%;
 }
+
