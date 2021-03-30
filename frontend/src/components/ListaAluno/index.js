@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.css";
 
 function ListaAluno({nome, idade, descricao}) {
   return (
@@ -10,9 +9,9 @@ function ListaAluno({nome, idade, descricao}) {
           alt="Foto ilustrativa da criança"
         />
         <div>
-          <h3>{nome}, {idade} anos</h3>
+          <h2>{nome}, {idade} anos</h2>
           <p>
-           {descricao}
+           {descricao.substring(0,80)}...
           </p>
         </div>
       </div>

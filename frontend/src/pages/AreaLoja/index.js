@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import Produto from "../../components/Produto";
 import { Container, Row, Button, Accordion, Card } from "react-bootstrap";
 
-function DashboardStore() {
+function AreaLoja() {
   return (
     <>
       <Header />
@@ -71,4 +71,4 @@ function DashboardStore() {
   );
 }
 
-export default DashboardStore;
+export default AreaLoja;
