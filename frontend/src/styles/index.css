@@ -9,6 +9,27 @@
   min-height: 100vh;
 }
 
+.comprado{
+  background: rgba(196, 196, 196, 100);
+}
+
+.comprado p{
+    text-decoration: line-through;
+
+}
+
+button{
+  width: auto !important;
+}
 h1,h2,h3,h4,h5,h6, p{
   color: #483972 !important;
+}
+
+.listagem{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.listagem a{
+  text-decoration: none !important;
 }
