@@ -30,12 +30,12 @@ function Home() {
       <Header />
      
       <Container>
-      <Form>
       <h2 style={{ width: "334px" }}>
           Aqui você encontra várias crianças e pode escolher uma para ajudar
         </h2>
         <span>Bairro:</span>
-        <Form.Row>
+      <Form style={{ marginBottom: "30px" }}>
+        <Form.Row >
 
           <Col lg="2">
             <Form.Control onChange={handleFiltro} as="select" defaultValue="Selecione...">
@@ -53,7 +53,7 @@ function Home() {
 
      {
        listaAlunos.length ? (
- <div className="listagem">
+      <div className="listagem">
           {listaAlunos.map((lista) => {
             return (
               <Link key={lista.id} to={`/lista/${lista.id}`}>
@@ -68,7 +68,7 @@ function Home() {
         </div>
        ) :
        (
-         <h2>Não temos nenhuma lista cadastrada para esse bairro</h2>
+         <h5>Não temos nenhuma lista cadastrada para esse bairro, procure em outro 😃</h5>
        )
       }
       
