@@ -85,6 +85,7 @@ class StudentController {
       where: {
         parent,
       },
+      relations: ['list'],
     });
 
     return res.json({
