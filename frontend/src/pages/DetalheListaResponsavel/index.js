@@ -26,7 +26,11 @@ function DetalheListaResponsavel() {
   async function buscarListas() {
     const { data } = await api.get(`/list/${id}`);
     setLista(data);
-    setLoja(data.productsList[0].product.paperStore.name)
+
+    if(Array.isArray(data.productsList) && data.productsList.length){
+
+     setLoja(data.productsList[0].product.paperStore.name)
+    }
   }
 
 
@@ -90,6 +94,13 @@ function DetalheListaResponsavel() {
               <Col>
               <h4>Papelaria: {loja}</h4>
               <p>Itens da lista: </p>
+
+              {
+                !loja && (
+                  <Button>Adicionar Itens na lista</Button>
+                )
+              }
+
               {lista.productsList.map((item) => (
                 item.purchased === 0 ? (
 
@@ -115,6 +126,7 @@ function DetalheListaResponsavel() {
                   </div>
                 )
             ))}
+          
               </Col>
             </Row>
           </>
