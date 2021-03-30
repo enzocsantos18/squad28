@@ -1,0 +1,18 @@
+{
+  "type": "mssql",
+  "host": "DESKTOP-U98CVF7",
+  "port": 1433,
+  "username": "root",
+  "password": "root",
+  "database": "MateriaisDB",
+  "logging": false,
+  "entities": [
+     "src/app/models/*.ts"
+  ],
+  "migrations": [
+     "src/database/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "src/database/migrations"
+  }
+}
