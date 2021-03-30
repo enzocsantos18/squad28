@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from './pages/Home'
 import Login from './pages/Login';
+import CadastroResponsavel from './pages/CadastroResponsavel';
 import DetalheLista from './pages/DetalheLista';
 import AreaResponsavel from './pages/AreaResponsavel';
 import DetalheListaResponsavel from './pages/DetalheListaResponsavel';
@@ -12,6 +13,8 @@ function Routes() {
   return (
     <Router>
       <Switch>
+        
+        <Route path="/cadastroResponsavel" component={CadastroResponsavel} />
         <Route path="/" exact component={Home} />
         <Route path="/lista/:id" component={DetalheLista} />
 
