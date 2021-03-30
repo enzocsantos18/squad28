@@ -5,8 +5,14 @@
   font-family: sans-serif;
 }
 
+body{
+  background-color: #F1F1F1;
+}
+
 .container{
   min-height: 100vh;
+  background-color: white;
+  padding: 48px 50px;
 }
 
 .comprado{
@@ -18,6 +24,83 @@
 
 }
 
+.listaAluno{
+  max-width: 326px;
+  min-width: 326px;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  height: 150px;
+  padding: 20px;
+    background-color: #fff !important;
+  border-radius: 8px;
+  flex: 1;
+  align-items: center;
+  
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.listaAluno:hover{
+  background-color: rgb(204, 219, 241);
+}
+.listaAluno div{
+  padding: 0px 14px;
+}
+
+.listaAluno p{
+  font-size: 14px;
+  color: #483972, 100%;
+}
+.listaAluno h2{
+  font-size: 18px;
+  color: #483972 !important;
+}
+.listaAluno img{
+  height: 81px;
+  width: 81px;
+  border-radius: 50%;
+}
+
+.produto{
+  height: 43px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(196, 196, 196, 0.42);
+  border-radius: 20px;
+  padding: 20px;
+  margin: 10px 0;
+
+}
+.produto input[type="checkbox"]{
+  transform: scale(2);
+  
+}
+.produto p{
+  margin: 0;
+  padding: 0 20px;
+
+  
+}
+
+.info-lista{
+  margin: auto;
+  display: flex;
+  
+  flex-direction: column;
+}
+.info-lista img{
+  height: 81px;
+  width: 81px;
+ 
+  border-radius: 50%;
+  margin: auto;
+}
+.info-produto{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
 button{
   width: auto !important;
 }
@@ -25,10 +108,15 @@ h1,h2,h3,h4,h5,h6, p{
   color: #483972 !important;
 }
 
+h1,h2,h3,h4,h5,h6{ 
+   font-weight: bold;
+}
+
 .listagem{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .listagem a{
   text-decoration: none !important;

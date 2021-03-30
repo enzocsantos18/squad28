@@ -1,40 +1,4 @@
-.produto{
-  height: 43px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(196, 196, 196, 0.42);
-  border-radius: 20px;
-  padding: 20px;
-  margin: 10px 0;
 
-}
-.produto input[type="checkbox"]{
-  transform: scale(2);
-  
-}
-.produto p{
-  margin: 0;
-}
-
-.info-lista{
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-.info-lista img{
-  height: 81px;
-  width: 81px;
- 
-  border-radius: 50%;
-  margin: auto;
-}
-.info-produto{
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 30px;
-}
 button{
   background: #483972;
   width: 130px;

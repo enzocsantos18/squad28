@@ -36,7 +36,7 @@ function AreaResponsavel() {
     <>
     <Header/>
       <Container>
-      <Button>Adicionar Filho</Button>
+      <Button style={{marginBottom: "20px"}}>Adicionar Filho</Button>
 
         <h2>Meus Filhos</h2>
         <div className="listagem">
