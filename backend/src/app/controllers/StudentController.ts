@@ -20,7 +20,7 @@ class StudentController {
     try {
       await schema.validate(req.body);
     } catch (e) {
-      return res.json(e);
+      return res.status(400).json(e);
     }
 
     const StudentRepository = getRepository(Student);
@@ -70,12 +70,12 @@ class StudentController {
   }
 
   async findByParent(req: Request, res: Response) {
-    const { id } = req.params;
+    const { parentId } = req;
 
     const ParentRepository = getRepository(Parent);
     const StudentRepository = getRepository(Student);
 
-    const parent = await ParentRepository.findOne(id);
+    const parent = await ParentRepository.findOne(parentId);
 
     if (!parent) {
       return res.status(400).json({ error: 'Parent not found' });
