@@ -2,11 +2,22 @@ import React from "react";
 import Header from "../../components/Header";
 import Produto from "../../components/Produto";
 import { Container, Row, Button, Accordion, Card } from "react-bootstrap";
+import Auth from '../../services/auth';
+import { useHistory } from "react-router";
+
 
 function AreaLoja() {
+  const history = useHistory();
+  function handleSair(){
+    Auth.destroyToken();
+    history.push('/')
+  }
+
   return (
     <>
-      <Header />
+    <Header linkLogo="/areaLoja">
+      <Button onClick={handleSair}>Sair</Button>
+    </Header>
       <Container>
         <Accordion style={{ width: "18rem", margin: "10px 0px" }}>
           <Card>

@@ -1,28 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import Filho from '../../components/Filho';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import idade from '../../helpers/tratamentoIdade'
 import api from '../../services/api';
-
+import Auth from '../../services/auth'
 // import { Container } from './styles';
 
 function AreaResponsavel() {
-
+  const history = useHistory();
   
   const [listaFilhos, setListaFilhos] = useState([]);
 
-  async function buscarFilhos(bairro = "") {
-    const { data } = await api.get(`/student/parent/7`, {
-      headers: {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidHlwZSI6InBhcmVudCIsImlhdCI6MTYxNjk0OTE2NSwiZXhwIjoxNjE3NTUzOTY1fQ.Q7F5sGVo4hQqkaJGCjzq4ocJAf4Zbh2wGvcLrvFkxsg"
-
-      }
-    });
+  async function buscarFilhos() {
+    const { data } = await api.get(`/student/parent`);
     setListaFilhos(data.students);
-
-    console.log(data.students)
   }
 
 
@@ -30,11 +24,16 @@ function AreaResponsavel() {
     buscarFilhos();
   }, []);
 
-
+  function handleSair(){
+    Auth.destroyToken();
+    history.push('/')
+  }
 
   return (
     <>
-    <Header/>
+    <Header linkLogo="/areaResponsavel">
+      <Button onClick={handleSair}>Sair</Button>
+    </Header>
       <Container>
       <Button style={{marginBottom: "20px"}}>Adicionar Filho</Button>
 
@@ -46,7 +45,7 @@ function AreaResponsavel() {
             <>
             {
               listaFilhos.map(filho => (
-                <Filho nome={filho.name} lista={filho.list} idade={idade(filho.birthDate)}/>
+                <Filho key={filho.id} nome={filho.name} lista={filho.list} idade={idade(filho.birthDate)}/>
               ))
             }
             
