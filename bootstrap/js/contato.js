@@ -1,11 +1,12 @@
 $('#form-contatos').submit(function(){
     var nome = $('#nome_aluno');
-    var idadeAluno = $('#idadeAluno');
+    var nasc_aluno = $('#data_nasc_aluno');
     var matricula_aluno = $('#matricula_aluno');
     var escola = $('#escola');
     var cepEscola = $('#cep-escola');
     var erro = $('.alert');
     var campo = $('#campo-erro');
+    var avatar = $('#avatar');
 
     erro.addClass('d-none');
     $('.is-invalid').removeClass('is-invalid');
@@ -19,11 +20,11 @@ $('#form-contatos').submit(function(){
         return false;
     }
     //validar idade
-    if (idadeAluno.val() ==''){
+    if (nasc_aluno.val() ==''){
         erro.removeClass('d-none');
-        campo.html('Idade do Aluno');
-        idadeAluno.focus();
-        idadeAluno.addClass('is-invalid');
+        campo.html('Data de Nascimento');
+        nasc_aluno.focus();
+        nasc_aluno.addClass('is-invalid');
         return false;
     }
     //validar Matricula
@@ -51,6 +52,13 @@ $('#form-contatos').submit(function(){
         return false;
     }
 
+    if (avatar.val() ==''){
+        erro.removeClass('d-none');
+        campo.html('avatar');
+        avatar.focus();
+        avatar.addClass('is-invalid');
+        return false;
+    }
 
 
 return false;
