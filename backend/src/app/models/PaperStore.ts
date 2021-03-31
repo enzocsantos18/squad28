@@ -6,6 +6,7 @@ import {
   BeforeUpdate,
   OneToMany,
 } from 'typeorm';
+import bcrypt from 'bcrypt';
 import Product from './Product';
 
 @Entity('PaperStore')
@@ -25,8 +26,8 @@ class PaperStore {
   @Column()
   password: string;
 
-  @Column()
-  balance: number;
+  @Column('decimal', { precision: 8, scale: 2, default: 0 })
+  balance = 0;
 
   @Column()
   street: string;
@@ -42,11 +43,12 @@ class PaperStore {
 
   @OneToMany(type => Product, product => product.paperStore)
   products: Product[];
-  // @BeforeInsert()
-  // @BeforeUpdate()
-  // hashPassword(): void {
-  //   this.password = bcrypt.hashSync(this.password, 8);
-  // }
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  hashPassword(): void {
+    this.password = bcrypt.hashSync(this.password, 8);
+  }
 }
 
 export default PaperStore;
