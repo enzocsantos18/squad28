@@ -61,7 +61,7 @@ class PaperStoreController {
     try {
       await schema.validate(req.body);
     } catch (e) {
-      return res.json(e);
+      return res.status(400).json(e);
     }
 
     const PaperStoreRepository = getRepository(PaperStore);
