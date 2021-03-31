@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function Filho({nome, idade, descricao, lista}) {
@@ -18,7 +17,7 @@ function Filho({nome, idade, descricao, lista}) {
               <Link className="btn btn-primary" variant="" style={{width: '100%'}} to={`/areaResponsavel/lista/${lista.id}`}>Ver Lista</Link>
             ) : (
               
-              <Link className="btn btn-danger" style={{width: '100%'}}>Nova Lista</Link>
+              <Link to="/areaResponsavel" className="btn btn-danger" style={{width: '100%'}}>Nova Lista</Link>
             )
           }
 

@@ -1,8 +1,8 @@
-import React, {useState, render} from "react";
+import React, {useState} from "react";
 import './style.css'
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Form, Col, InputGroup, Container, Row, Button, Accordion, Card } from "react-bootstrap";
+import { Form, Col,Container, Row, Button } from "react-bootstrap";
 import MaskedInput from "react-maskedinput";
 import imgResp from "../../assets/responsavel.png"
 import api from "../../services/api";
@@ -43,11 +43,9 @@ function CadastroResponsavel (props) {
             password: dados.senha
         })
 
-        // if(response.status === 200){
-        //     history.push("/login");
-        // }
-
-        console.log(response.status)
+        if (response.status === 200){
+             history.push("/login");
+        }
     }
     catch(e){   
         console.error(e)

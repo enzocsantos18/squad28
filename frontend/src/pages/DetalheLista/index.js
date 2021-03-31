@@ -41,7 +41,6 @@ function DetalheLista() {
         setValor(0);
         handleClose();
       } catch (e) {
-        console.log(e);
       }
     }
   }

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Col, Container, Form, Row } from "react-bootstrap";
+import { Col, Container, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -14,12 +14,10 @@ function Home() {
 
   async function buscarListas(bairro = "") {
     const { data } = await api.get(`/list?neighborhood=${bairro}`);
-    console.log(data)
     setListaAlunos(data);
   }
 
   function handleFiltro(event){
-      console.log(event.target.value)
       buscarListas(event.target.value)
   }
 
@@ -29,7 +27,9 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <Header>
+        <Link className="btn btn-primary" to="/login">Acessar</Link>
+      </Header>
  
       <Container>
       <h2 style={{ width: "334px" }}>

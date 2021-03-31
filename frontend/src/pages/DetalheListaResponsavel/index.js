@@ -1,10 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { Container, Row, Col, Modal, Button, Form} from "react-bootstrap";
+import { Container, Row, Col, Modal, Button} from "react-bootstrap";
 import api from "../../services/api";
 import idade from '../../helpers/tratamentoIdade';
-import real from '../../helpers/tratamentoDinheiro';
 
 import { useParams } from "react-router";
 import './index.css';
@@ -51,12 +51,9 @@ function DetalheListaResponsavel() {
       studentId: infoConfirmacao.estudante.id,
     }
 
-    const config = {
-      headers: {
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywidHlwZSI6InBhcmVudCIsImlhdCI6MTYxNjk0OTE2NSwiZXhwIjoxNjE3NTUzOTY1fQ.Q7F5sGVo4hQqkaJGCjzq4ocJAf4Zbh2wGvcLrvFkxsg"
-    }}
+    
     try{
-      await api.post(`/donationConfirmation`, data, config);
+      await api.post(`/donationConfirmation`, data);
 
       setInfoConfirmacao({})
     }
@@ -72,7 +69,7 @@ function DetalheListaResponsavel() {
 
   return (
     <>
-      <Header />
+      <Header linkLogo="/areaResponsavel"/>
       <Container>
         {lista ? (
           <>
