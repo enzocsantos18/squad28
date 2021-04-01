@@ -3,7 +3,7 @@ import './login.css';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Container, Form, Col, Button,Row} from "react-bootstrap";
-import imagemlogin from './fotologin.png'
+import imagemlogin from '../../assets/img_login_pag.png' 
 import api from '../../services/api';
 import { useHistory } from 'react-router';
 import Auth from '../../services/auth'
