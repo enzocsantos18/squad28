@@ -54,8 +54,8 @@ function Routes() {
         <Route path="/cadastroAluno" component={CadastroAluno} />
         <Route path="/" exact component={Home} />
         <Route path="/lista/:id" component={DetalheLista} />
-
-        <RotaLoja path="/areaLoja" component={AreaLoja} />
+        <Route path="/areaLoja" component={AreaLoja} />
+        {/*<RotaLoja path="/areaLoja" component={AreaLoja} />*/}
         <RotaResponsavel path="/areaResponsavel" exact component={AreaResponsavel} />
         <RotaResponsavel path="/areaResponsavel/criarLista" exact component={CriacaoLista} />
         <RotaResponsavel
