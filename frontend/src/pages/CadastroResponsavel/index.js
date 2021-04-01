@@ -77,8 +77,11 @@ function CadastroResponsavel (props) {
                         required
                         type="text"
                         placeholder="Nome Completo"           
-                    />           
-                </Form.Group>
+                    />  
+                    <Form.Control.Feedback type="invalid">
+                        Digite seu nome!
+                    </Form.Control.Feedback>         
+                </Form.Group>                
             </Form.Row>  
             <Form.Row> 
                 <Form.Group as={Col} md="4" controlId="validationCustom02">     
@@ -107,7 +110,7 @@ function CadastroResponsavel (props) {
                                  
                     />*/}    
                     <Form.Control.Feedback type="invalid">
-                        Gentileza informar um CPF válido.
+                        Gentileza informar um CPF válido!
                     </Form.Control.Feedback>        
                 </Form.Group>            
             </Form.Row>
@@ -135,9 +138,7 @@ function CadastroResponsavel (props) {
                     type="tel" 
                     placeholder="Telefone"  
                     />*/}
-                    <Form.Control.Feedback type="invalid">
-                        Gentileza informar um telefone válido.
-                    </Form.Control.Feedback>
+                    
                 </Form.Group>           
             </Form.Row>
             <Row>
@@ -156,7 +157,7 @@ function CadastroResponsavel (props) {
                         placeholder="E-mail"           
                     />    
                     <Form.Control.Feedback type="invalid">
-                        Gentileza informar um e-mail válido.
+                        Gentileza informar um e-mail válido!
                     </Form.Control.Feedback>        
                 </Form.Group>
             </Form.Row>     
@@ -171,7 +172,7 @@ function CadastroResponsavel (props) {
                         placeholder="Senha"                
                     />    
                     <Form.Control.Feedback type="invalid">
-                        Escolha uma senha com no mínimo 08 dígitos
+                        Escolha uma senha!
                     </Form.Control.Feedback>        
                 </Form.Group>            
             </Form.Row>

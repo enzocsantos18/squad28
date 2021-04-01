@@ -14,7 +14,8 @@
     font-weight: 900;
     font-size: 24px;
     text-align: center;
-    margin-top: 20px
+    margin-top: 20px;
+   
 }
 
 .subtitulo1 {
@@ -261,6 +262,16 @@
 
     #campoTel {    
         width: 241px;
+        height: 56px;
+        left: 20px;
+        top: 262px;
+        background: #FFFFFF;
+        border-radius: 10px;
+        border: 1px solid #DEDEDE;
+    }
+
+    #campoMail {    
+        width: 410px;
         height: 56px;
         left: 20px;
         top: 262px;
