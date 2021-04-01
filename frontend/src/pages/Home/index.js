@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import ListaAluno from "../../components/ListaAluno";
 import idade from "../../helpers/tratamentoIdade";
-import "./styles.css";
 import api from "../../services/api";
 
 

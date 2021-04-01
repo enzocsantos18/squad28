@@ -1,15 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
 .main {
     background-color: white;
 }
-
-
-/* MOBILE FIRST */
-
-/*#imgResponsavel {
-    display: none;
-}*/
 
 .titulo {
     color: #483972;
@@ -60,121 +52,7 @@
     align-items: center;
 }
 
-#campoNome {    
-    width: 320px;
-    height: 56px;
-    left: 20px;
-    top: 262px;
-    background: #FFFFFF;
-    border-radius: 10px;    
-    border: 1px solid #DEDEDE;
-}
 
-#campoNome:hover {
-    border: 1px solid #3C3C3C;
-    box-sizing: border-box;
-    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
-}
-
-#campoNascimento {    
-    width: 320px;
-    height: 56px;
-    left: 20px;
-    top: 262px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #DEDEDE;
-}
-
-#campoNascimento:hover {    
-    border: 1px solid #3C3C3C;
-    box-sizing: border-box;
-    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
-}
-
-#campoMatricula {    
-    width: 320px;
-    height: 56px;
-    left: 20px;
-    top: 262px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #DEDEDE;
-}
-
-#campoMatricula:hover {
-    border: 1px solid #3C3C3C;
-    box-sizing: border-box;
-    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
-}
-
-#campoUf {    
-    width: 320px !important;
-    height: 56px;
-    left: 20px;
-    top: 262px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #DEDEDE;
-}
-
-#campoUf:hover {
-    border: 1px solid #3C3C3C;
-    box-sizing: border-box;
-    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
-}
-
-#campoCidade {    
-    width: 320px !important;
-    height: 56px;
-    left: 20px;
-    top: 262px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #DEDEDE;
-}
-
-#campoCidade:hover {
-    border: 1px solid #3C3C3C;
-    box-sizing: border-box;
-    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
-}
-
-#campoBairro {    
-    width: 320px !important;
-    height: 56px;
-    left: 20px;
-    top: 262px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #DEDEDE;
-}
-
-#campoBairro:hover {
-    border: 1px solid #3C3C3C;
-    box-sizing: border-box;
-    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
-}
-
-#campoEscola {    
-    width: 320px !important;
-    height: 56px;
-    left: 20px;
-    top: 262px;
-    background: #FFFFFF;
-    border-radius: 10px;
-    border: 1px solid #DEDEDE;
-}
-
-#campoEscola:hover {
-    border: 1px solid #3C3C3C;
-    box-sizing: border-box;
-    box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
-}
-
-#caixaTexto {
-    margin-top: 5%;
-}
 
 #btnEnviar {    
     background-color: #483972;
@@ -277,18 +155,6 @@
         margin-top: 15px;
         margin-left: 0%; 
     }
-
-    #campoNome {    
-        width: 410px;
-        height: 56px;
-        left: 20px;
-        top: 262px;
-        background: #FFFFFF;
-        border-radius: 10px;    
-        border: 1px solid #DEDEDE;
-    }
-    
-    
   }
 
 
