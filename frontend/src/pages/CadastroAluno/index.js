@@ -79,7 +79,10 @@ function CadastroAluno (props) {
                         required
                         type="text"
                         placeholder="Digite o nome do Aluno"           
-                    />           
+                    />  
+                     <Form.Control.Feedback type="invalid">
+                        Informe o nome do aluno!
+                    </Form.Control.Feedback>           
                 </Form.Group>
             </Form.Row>  
             <Form.Row> 
@@ -109,7 +112,7 @@ function CadastroAluno (props) {
                                  
                     />*/}    
                     <Form.Control.Feedback type="invalid">
-                        Gentileza informar uma data válida.
+                        Informe uma data válida!
                     </Form.Control.Feedback>        
                 </Form.Group> 
             </Form.Row>     
@@ -122,17 +125,20 @@ function CadastroAluno (props) {
                         required
                         type="text"
                         placeholder="Matrícula"           
-                    />           
+                    />   
+                    <Form.Control.Feedback type="invalid">
+                        Informe a matrícula do aluno!
+                    </Form.Control.Feedback>        
                 </Form.Group>                        
             </Form.Row>
             <Form.Row>
-                <Form.Group as={Col} md="4" controlId="exampleForm.SelectCustom"> 
+                <Form.Group as={Col} md="4" controlId="validationCustom02" > 
                     <Form.Control required id="campoUf" name="uf" placeholder="UF" as="select" custom>
-                        <option>UF da Escola</option>
+                        <option value="" disabled selected>UF da Escola</option>                        
                         <option value="SP">SP</option>
                     </Form.Control>
                     <Form.Control.Feedback type="invalid">
-                        Informe seu Estado!
+                        Selecione o estado da escola!
                     </Form.Control.Feedback>
                 </Form.Group>
             </Form.Row>
@@ -140,29 +146,38 @@ function CadastroAluno (props) {
             <Form.Row>
                 <Form.Group as={Col} md="4" controlId="exampleForm.SelectCustom"> 
                     <Form.Control required id="campoCidade" name="cidade" placeholder="Cidade" as="select" custom>
-                        <option>Cidade da Escola</option>
+                        <option value="" disabled selected>Cidade da Escola</option>                          
                         <option value="São Paulo">São Paulo</option>
                     </Form.Control>
+                    <Form.Control.Feedback type="invalid">
+                        Selecione a cidade da escola!
+                    </Form.Control.Feedback>
                 </Form.Group>
             </Form.Row>
 
             <Form.Row>
                 <Form.Group as={Col} md="4" controlId="exampleForm.SelectCustom"> 
                     <Form.Control required id="campoBairro" name="bairro" placeholder="Bairro" as="select" custom>
-                        <option>Bairro da Escola</option>
+                        <option value="" disabled selected>Bairro da Escola</option>                         
                         <option value="Vila Carrão">Vila Carrão</option>
                         <option value="Vila Matilde">Vila Matilde</option>
                         <option value="Vila Nova Manchester">Vila Nova Manchester</option>
                         <option value="Chácara Califórnia">Chácara Califórnia</option>
                     </Form.Control>
+                    <Form.Control.Feedback type="invalid">
+                        Selecione o bairro da escola!
+                    </Form.Control.Feedback>
                 </Form.Group>
             </Form.Row>  
 
             <Form.Row>
                 <Form.Group as={Col} md="4" controlId="exampleForm.SelectCustom"> 
                     <Form.Control required id="campoEscola" name="escola" placeholder="Escola" as="select" custom>
-                        <option>Nome da Escola</option>                        
+                        <option value="" disabled selected>Nome da Escola</option>                                             
                     </Form.Control>
+                    <Form.Control.Feedback type="invalid">
+                        Selecione a escola!
+                    </Form.Control.Feedback>
                 </Form.Group>
             </Form.Row>       
         
