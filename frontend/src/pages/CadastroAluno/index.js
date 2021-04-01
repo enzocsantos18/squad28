@@ -59,7 +59,9 @@ function CadastroAluno(props) {
                     studentId
                 })
 
-                history.push('/areaReponsavel')
+                const listId = response.data.id
+
+                history.push(`/areaResponsavel/lista/${listId}`)
             }
             catch(e){
 
@@ -74,7 +76,9 @@ function CadastroAluno(props) {
 
   return (
       <div className="main">
-      <Header />
+
+    <Header linkLogo="/areaResponsavel" />
+
       <Container>
         <Formik initialValues={{ nome:"", data:"", matricula:"", escola:"", descricao: "" }}       validationSchema={validationSchema}
         onSubmit={(values, {setSubmitting, resetForm}) => handleFormik(values, {setSubmitting, resetForm})}
@@ -289,7 +293,6 @@ function CadastroAluno(props) {
 
                 <Form.Group
                   id="caixaTexto"
-            
                 >
                   <Form.Control
                     placeholder="Digite seu texto"

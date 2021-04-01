@@ -1,63 +1,112 @@
-import React, {useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button, Container, Form } from "react-bootstrap";
-import api from '../../services/api'
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
+import { useHistory } from "react-router";
+import api from "../../services/api";
+import "./style.css";
+function CriacaoLista({ bairro, listId }) {
+  const history = useHistory();
+  const [papelarias, setPapelarias] = useState([]);
+  const [papelariaSelecionada, setpapelariaSelecionada] = useState();
+  const [produtos, setProdutos] = useState([]);
+  const [produtosSelecionados, setProdutosSelecionados] = useState([]);
 
-function CriacaoLista() {
+  async function buscarPapelarias() {
+    const { data } = await api.get(`/paperStore?neighborhood=${bairro}`);
 
-  const [form, setForm] = useState({});
-  const [errors, setErrors] = useState({});
-  const setField = (field, value) => {
-    setForm({
-      ...form,
-      [field]: value
-    })
-    // Check and see if errors exist, and remove them from the error object:
-    if ( !!errors[field] ) setErrors({
-      ...errors,
-      [field]: null
-    })
+    setPapelarias(data);
   }
 
-  const acharErros = () => {
-    const { descricao } = form;
-    const novosErros = {};
-  
+  useEffect(() => {
+    buscarPapelarias();
+  }, []);
 
-    return novosErros;
-  };
+  async function buscarProdutos() {
+    setProdutosSelecionados([]);
+    if (papelariaSelecionada) {
+      const { data } = await api.get(
+        `/products/paperStore/${papelariaSelecionada}`
+      );
 
-  function handleClick(e){
-    e.preventDefault();
-
-    // try{
-
-    //   await api.post('/list', )
-    // }
-    
-
-
+      setProdutos(data);
+    } else {
+      setProdutos([]);
+    }
   }
+
+  async function handleConfirmacao() {
+    try {
+      await api.post("productsList", {
+        listId,
+        productsIds: produtosSelecionados,
+      });
+
+      history.push(`/areaResponsavel/${listId}`);
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  function selecionarProduto(id) {
+    if (!produtosSelecionados.includes(id)) {
+      setProdutosSelecionados([...produtosSelecionados, id]);
+    } else {
+      const removerItem = produtosSelecionados.filter((item) => item !== id);
+
+      setProdutosSelecionados(removerItem);
+    }
+  }
+
+  useEffect(() => {
+    buscarProdutos();
+  }, [papelariaSelecionada]);
+
   return (
     <>
-      <Header />
-      {JSON.stringify(form)}
-      <Container>
-        <h2 style={{ width: "334px" }}>Criação da lista</h2>
-        <h4>
-          Sinta-se à vontade para deixar um recado a quem visualizar sua lista!
-        </h4>
-        <Form onSubmit={handleClick}>
-          <Form.Group controlId="exampleForm.ControlTextarea1">
-            <Form.Label>Mensagem:</Form.Label>
-            <Form.Control onChange={(e) => setField("descricao", e.target.value)} style={{resize: 'none'}} as="textarea" rows={3} />
-          </Form.Group>
-          <Button>Continuar</Button>
-        </Form>
-      </Container>
-      <Footer />
+      <h2>Momento de montar sua lista</h2>
+      <p>Selecione uma papelaria da sua região</p>
+      <Form.Control
+        required
+        id="papelaria"
+        name="papelaria"
+        as="select"
+        custom
+        onChange={(e) => setpapelariaSelecionada(e.target.value)}
+      >
+        <option value="">Selecione a papelaria</option>
+        {papelarias.map((papelaria) => (
+          <option value={papelaria.id}>{papelaria.name}</option>
+        ))}
+      </Form.Control>
+      {papelariaSelecionada && (
+        <>
+          <h3 style={{ margin: "20px 0" }}>Selecione os produtos:</h3>
+          <div className="lista">
+            {produtos.map((produto) => (
+              <div class="produtoLista">
+                <img
+                  src={produto.img_url}
+                  onClick={() => selecionarProduto(produto.id)}
+                  class={
+                    produtosSelecionados.includes(produto.id) &&
+                    "produtoSelecionado"
+                  }
+                  alt="Imagem produto"
+                />
+                <p>{produto.name}</p>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {produtosSelecionados.length !== 0 ? (
+        <>
+          <Button onClick={handleConfirmacao}>Adicionar produtos</Button>
+        </>
+      ):
+      null
+      }
     </>
   );
 }
