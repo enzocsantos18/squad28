@@ -7,7 +7,7 @@ import Student from '../models/Student';
 
 class StudentController {
   async store(req: Request, res: Response) {
-    const { name, birthDate, studentRA, schoolId } = req.body;
+    const { name, birthDate, studentRA, schoolId, img_id } = req.body;
     const { parentId } = req;
 
     const schema = Yup.object().shape({
@@ -15,6 +15,11 @@ class StudentController {
       birthDate: Yup.date().required('Birthdate is required'),
       studentRA: Yup.string().required('studentRA is required').min(5).max(150),
       schoolId: Yup.number().integer().required('School Id is required'),
+      img_id: Yup.number()
+        .integer()
+        .required('img Id is required')
+        .min(1)
+        .max(4),
     });
 
     try {
@@ -44,6 +49,7 @@ class StudentController {
       studentRA,
       parent,
       school,
+      img_id,
     });
 
     try {

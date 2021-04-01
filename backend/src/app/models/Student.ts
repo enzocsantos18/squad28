@@ -23,6 +23,9 @@ class Student {
   @Column()
   studentRA: string;
 
+  @Column()
+  img_id: number;
+
   @ManyToOne(type => Parent, parent => parent.students)
   parent: Parent;
 
