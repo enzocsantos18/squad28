@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+#fundo_inicio{
+    background-image: url("Rectangle2_home.png") ;
+    /* background:  #FFFFFF url("Rectangle2_home.png") no-repeat center top fixed ; */
+    /* position: fixed; */
+    width: auto;
+    height: 550px;
+    
+}
+#posicao_h1_titulo{
+    margin: 45px 0 0 4%;
+}
+.h1_titulo{
+    width: 197px;
+    height: 74px;
+    left: 34px;
+    top: 135px; 
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 28px;
+    
+    color: #483972;
+} 
+
+.p_conteudo{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #483972;
+} 
+
+.button{
+    background: #483972;
+    border-radius: 8px;
+    width: 130px;
+    height: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.button:hover{
+    background-color: #7B61FF;
+}
+
+h2{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 21px;
+    color: #483972;
+}
+.img_card{
+    width: 42px;
+    height: 42px;
+}

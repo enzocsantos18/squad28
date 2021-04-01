@@ -8,6 +8,7 @@
 
 .grid{
     margin:0 0 0 -30px;
+    
 }
 .titulo_login{
     font-family: Roboto, sans-serif;
@@ -75,7 +76,6 @@
         line-height: 30px;
         margin-left: 60px;
     }
-
 }
 
 @media  (min-width: 721px){

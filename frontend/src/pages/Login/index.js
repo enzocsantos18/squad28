@@ -70,7 +70,7 @@ event.preventDefault();
   return (
     <>
     <Header/>
-    <Container >
+    <Container>
       <div className='grid' >
         <Row xs={2} md={8} lg={3}>
 
