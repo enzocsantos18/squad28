@@ -9,6 +9,7 @@ import DetalheListaResponsavel from "./pages/DetalheListaResponsavel";
 import AreaLoja from "./pages/AreaLoja";
 import CriacaoLista from './pages/CriacaoLista';
 import Auth from './services/auth';
+import CadastroAluno from "./pages/CadastroAluno";
 
 const RotaResponsavel = (props) => {
   if (!Auth.hasToken() || !Auth.isParent()) {
@@ -48,6 +49,7 @@ function Routes() {
   return (
     <Router>
       <Switch>
+        <Route path="/cadastroAluno" component={CadastroAluno} />
         <Route path="/cadastroResponsavel" component={CadastroResponsavel} />
         <Route path="/cadastroAluno" component={CadastroAluno} />
         <Route path="/" exact component={Home} />

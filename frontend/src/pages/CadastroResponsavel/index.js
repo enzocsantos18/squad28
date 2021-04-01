@@ -58,7 +58,7 @@ function CadastroResponsavel (props) {
     <div className="main">
     <Header />
     <Container>   
-    <img id="imgResponsavel"src={imgResp} alt=""/>
+    <img id="imgRespon"src={imgResp} alt="Avatar Responsavel"/>
         <Form className="formulario" noValidate validated={validated} onSubmit={handleSubmit}>
             
             <div className="formMenor">
