@@ -1,17 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body{
   background-color: #F1F1F1;
 }
-
-select{
-  width: 200px !important;
+select, input:not([type="checkbox"]){
+  height: 56px !important;
+  width: 320px !important;
+  padding: 16px 24px !important;
+  border: 1px solid #DEDEDE !important;
+  border-radius: 10px !important;
 }
+
+textarea{
+  padding: 16px 24px !important;
+  border: 1px solid #DEDEDE !important;
+  border-radius: 10px !important;
+}
+
+
+input:not([type="checkbox"]):hover, select:hover, textarea{
+  border: 1px solid #3C3C3C;
+  box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
+}
+
+.erro {
+  color: #FA4339;
+  padding: .5em .2em;
+  font-size: .8em;
+}
+.erro-campo {
+  border: 1px solid #FA4339;
+  box-shadow: 0px 0px 4px #F24822;
+}
+
 .container{
   min-height: 100vh;
   background-color: white;
@@ -76,7 +103,6 @@ select{
 }
 .produto input[type="checkbox"]{
   transform: scale(2);
-  
 }
 .produto p{
   margin: 0;
