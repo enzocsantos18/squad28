@@ -7,6 +7,7 @@ import DetalheLista from "./pages/DetalheLista";
 import AreaResponsavel from "./pages/AreaResponsavel";
 import DetalheListaResponsavel from "./pages/DetalheListaResponsavel";
 import AreaLoja from "./pages/AreaLoja";
+import CriacaoLista from './pages/CriacaoLista';
 import Auth from './services/auth';
 
 const RotaResponsavel = (props) => {
@@ -48,11 +49,13 @@ function Routes() {
     <Router>
       <Switch>
         <Route path="/cadastroResponsavel" component={CadastroResponsavel} />
+        <Route path="/cadastroAluno" component={CadastroAluno} />
         <Route path="/" exact component={Home} />
         <Route path="/lista/:id" component={DetalheLista} />
 
         <RotaLoja path="/areaLoja" component={AreaLoja} />
         <RotaResponsavel path="/areaResponsavel" exact component={AreaResponsavel} />
+        <RotaResponsavel path="/areaResponsavel/criarLista" exact component={CriacaoLista} />
         <RotaResponsavel
           path="/areaResponsavel/lista/:id"
           component={DetalheListaResponsavel}

@@ -150,7 +150,7 @@ function DetalheLista() {
         )}
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Tem certerza que quer doar?</Modal.Title>
+            <Modal.Title>Tem certeza que deseja doar?</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             Seu subtotal está em {real(Number(valor))}
