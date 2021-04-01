@@ -49,9 +49,8 @@ function Routes() {
   return (
     <Router>
       <Switch>
-        <Route path="/cadastroAluno" component={CadastroAluno} />
         <Route path="/cadastroResponsavel" component={CadastroResponsavel} />
-        <Route path="/cadastroAluno" component={CadastroAluno} />
+        <RotaResponsavel path="/cadastroAluno" component={CadastroAluno} />
         <Route path="/" exact component={Home} />
         <Route path="/lista/:id" component={DetalheLista} />
 

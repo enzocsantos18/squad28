@@ -1,211 +1,322 @@
-import React, {useState} from "react";
-import './style.css'
+import React, { useState } from "react";
+import "./style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Form, Col, Container, Row, Button } from "react-bootstrap";
 import MaskedInput from "react-maskedinput";
-import avatar1 from "../../assets/avatar1.png"
-import avatar2 from "../../assets/avatar2.png"
-import avatar3 from "../../assets/avatar3.png"
+import avatar1 from "../../assets/avatar1.png";
+import avatar2 from "../../assets/avatar2.png";
+import avatar3 from "../../assets/avatar3.png";
 import api from "../../services/api";
 import { useHistory } from "react-router-dom";
-
-function CadastroAluno (props) {
-    const [validated, setValidated] = useState(false);
-    const history = useHistory();
-
-    const [dados, setDados] = useState({
-        nome: '',
-        email: '',
-        cpf: '',
-        senha: '',
-    })
+import { Formik } from "formik";
+import * as Yup from 'yup';
+function CadastroAluno(props) {
+  const history = useHistory();
+  const [escolas, setEscolas] = useState([]);
+  const [escola, setEscola] = useState();
 
 
+  const validationSchema = Yup.object().shape({
+    nome: Yup.string().required('Preencha o campo nome').min(2, 'O campo nome deve ter mais de 2 caracteres').max(100),
+    data: Yup.date().required('Selecione a data de nascimento'),
+    matricula: Yup.string().required('Preencha o campo matrícula').min(5, 'O campo matrícula deve ter no mínimo 5 caracteres').max(150),
+    descricao: Yup.string()
+    .required('Preencha o campo descrição')
+    .min(2, 'O campo descrição deve ter no mínimo 2 caracteres')
+    .max(300),
+  });
 
-    const handleInputChange = (event) => {
-        setDados({
-            ...dados,
-            [event.target.name] : event.target.value
+  async function handleBairro(event){
+    const { data } = await api.get(`/school?neighborhood=${event.target.value}`);
+
+    setEscolas(data);
+    setEscola();
+  }
+  
+
+
+  async function handleFormik(values, metodos) {
+    metodos.setSubmitting(true);
+
+
+    if(escola){
+
+        const response = await api.post('/student', {
+            name: values.nome,
+            studentRA: values.matricula,
+            birthDate: values.data,
+            schoolId: escola
         })
-    }
 
-  async function handleSubmit (event){
-    event.preventDefault();
-    const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-    }
+        const studentId = response.data.id;
 
-    try{
-       const response = await api.post('/parent', {
-            name: dados.nome,
-            email: dados.email,
-            password: dados.senha
-        })
 
-        if (response.status === 200){
-             history.push("/login");
+        if(studentId){
+            try{
+                const response = await api.post('/list', {
+                    description: values.descricao,
+                    studentId
+                })
+
+                history.push('/areaReponsavel')
+            }
+            catch(e){
+
+            }
         }
-    }
-    catch(e){   
-        console.error(e)
+        
     }
 
-    setValidated(true);
-  };
+    metodos.resetForm();
+    metodos.setSubmitting(false);
+  }
 
   return (
-    <div className="main">
-    <Header />
-    <Container>   
-    
-        <Form className="formulario" noValidate validated={validated} onSubmit={handleSubmit}>
+      <div className="main">
+      <Header />
+      <Container>
+        <Formik initialValues={{ nome:"", data:"", matricula:"", escola:"", descricao: "" }}       validationSchema={validationSchema}
+        onSubmit={(values, {setSubmitting, resetForm}) => handleFormik(values, {setSubmitting, resetForm})}
+>
+          {({
+            values,
+            errors,
+            touched,
+            handleChange,
+            handleBlur,
+            handleSubmit,
+            isSubmitting,
             
-            <div className="formMenor">
-            <h1 className="titulo">Quem vai se beneficiar?</h1>
-            <Row>
-                <Col xs={9}>
-                    <h2 className="subtitulo1">Agora nos diga as informações do aluno: </h2>                      
-                </Col>
-            </Row>
-            <Form.Row className="linhaForm1">
-                <Form.Group className="campo" as={Col} md="4" controlId="validationCustom01">    
+          }) => (
+
+
+            <Form
+              className="formulario"
+              onSubmit={handleSubmit} 
+            >
+              <div className="formMenor">
+                <h1 className="titulo">Quem vai se beneficiar?</h1>
+                <Row>
+                  <Col xs={9}>
+                    <h2 className="subtitulo1">
+                      Agora nos diga as informações do aluno:{" "}
+                    </h2>
+                  </Col>
+                </Row>
+                <Form.Row className="linhaForm1">
+                  <Form.Group
+                    className="campo"
+                    as={Col}
+                    md="4"
+                  >
                     <Form.Control
-                        onChange={handleInputChange}
-                        id="campoNome"
-                        name="nome" 
-                        required
-                        type="text"
-                        placeholder="Digite o nome do Aluno"           
-                    />           
-                </Form.Group>
-            </Form.Row>  
-            <Form.Row> 
-                <Form.Group as={Col} md="4" controlId="validationCustom02">     
-                    <MaskedInput
-                        onChange={handleInputChange}
-                        required
-                        type="text"
-                        name="nascimento" 
-                        mask="11/11/1111"
-                        placeholder="  Data de Nascimento" 
-                        id="campoNascimento"
-                        {...props}
-                        formatCharacters={{
-                        'W': {
-                            validate(char) { return /\w/.test(char ) },
-                            transform(char) { return char.toUpperCase() }
-                        }
-                        }}
-                    />   
-                    
-                    {/*<Form.Control
-                        id="campoCPF"
-                        required
-                        type="text"
-                        placeholder="CPF"       
-                                 
-                    />*/}    
-                    <Form.Control.Feedback type="invalid">
-                        Gentileza informar uma data válida.
-                    </Form.Control.Feedback>        
-                </Form.Group> 
-            </Form.Row>     
-           <Form.Row>
-                <Form.Group as={Col} md="4" controlId="validationCustom01">    
+                      id="campoNome"
+                      name="nome"
+                      required
+                      type="text"
+                      placeholder="Digite o nome do Aluno"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.nome}
+                      className={touched.nome && errors.nome ? "erro-campo" : null}
+                    />
+                    {touched.nome && errors.nome ? (
+                    <div className="erro">{errors.nome}</div>
+                    ): null}
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group as={Col} md="4" >
                     <Form.Control
-                        onChange={handleInputChange}
-                        id="campoMatricula"
-                        name="matricula" 
-                        required
-                        type="text"
-                        placeholder="Matrícula"           
-                    />           
-                </Form.Group>                        
-            </Form.Row>
-            <Form.Row>
-                <Form.Group as={Col} md="4" controlId="exampleForm.SelectCustom"> 
-                    <Form.Control required id="campoUf" name="uf" placeholder="UF" as="select" custom>
-                        <option>UF da Escola</option>
-                        <option value="SP">SP</option>
+                      id="campoNascimento"
+                      name="data"
+                      type="date"
+                      required
+                      placeholder="data"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.data}
+                      className={touched.data && errors.data ? "erro-campo" : null}
+                    />
+                    {touched.data && errors.data ? (
+                    <div className="erro">{errors.data}</div>
+                    ): null}
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group as={Col} md="4" >
+                    <Form.Control
+                      id="campoMatricula"
+                      name="matricula"
+                      required
+                      type="text"
+                      placeholder="Matrícula"
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      value={values.matricula}
+                      className={touched.data && errors.data ? "erro-campo" : null}
+                    />
+                     {touched.matricula && errors.matricula ? (
+                    <div className="erro">{errors.matricula}</div>
+                    ): null}
+                  </Form.Group>
+                </Form.Row>
+                <Form.Row>
+                  <Form.Group
+                    as={Col}
+                    md="4"                  >
+                    <Form.Control
+                      required
+                      id="campoUf"
+                      name="uf"
+                      placeholder="UF"
+                      as="select"
+                      custom
+                      disabled
+                    >
+                      <option value="SP">SP</option>
                     </Form.Control>
                     <Form.Control.Feedback type="invalid">
-                        Informe seu Estado!
+                      Informe seu Estado!
                     </Form.Control.Feedback>
-                </Form.Group>
-            </Form.Row>
+                  </Form.Group>
+                </Form.Row>
+
+                <Form.Row>
+                  <Form.Group
+                    as={Col}
+                    md="4"
             
-            <Form.Row>
-                <Form.Group as={Col} md="4" controlId="exampleForm.SelectCustom"> 
-                    <Form.Control required id="campoCidade" name="cidade" placeholder="Cidade" as="select" custom>
-                        <option>Cidade da Escola</option>
-                        <option value="São Paulo">São Paulo</option>
+                  >
+                    <Form.Control
+                      required
+                      id="campoCidade"
+                      name="cidade"
+                      placeholder="Cidade"
+                      as="select"
+                      custom
+                      disabled
+                    >
+                      <option value="São Paulo">São Paulo</option>
                     </Form.Control>
-                </Form.Group>
-            </Form.Row>
+                  </Form.Group>
+                </Form.Row>
 
-            <Form.Row>
-                <Form.Group as={Col} md="4" controlId="exampleForm.SelectCustom"> 
-                    <Form.Control required id="campoBairro" name="bairro" placeholder="Bairro" as="select" custom>
-                        <option>Bairro da Escola</option>
-                        <option value="Vila Carrão">Vila Carrão</option>
-                        <option value="Vila Matilde">Vila Matilde</option>
-                        <option value="Vila Nova Manchester">Vila Nova Manchester</option>
-                        <option value="Chácara Califórnia">Chácara Califórnia</option>
-                    </Form.Control>
-                </Form.Group>
-            </Form.Row>  
-
-            <Form.Row>
-                <Form.Group as={Col} md="4" controlId="exampleForm.SelectCustom"> 
-                    <Form.Control required id="campoEscola" name="escola" placeholder="Escola" as="select" custom>
-                        <option>Nome da Escola</option>                        
-                    </Form.Control>
-                </Form.Group>
-            </Form.Row>       
-        
-            <Row>
-                <Col xs={10}>
-                    <h2 className="subtitulo2">Selecione um avatar:</h2>
-                </Col>
-            </Row>
-           
-            <button type="button" className="btnAvatar">
-                <img src={avatar1} id="avatarUm" alt="Avatar"></img>
-            </button>    
-            <button type="button" className="btnAvatar">
-                <img src={avatar2} alt="Avatar"></img>
-            </button>  
-            <button type="button" className="btnAvatar" id="avatarUm">
-                <img src={avatar3} alt="Avatar"></img>
-            </button>             
+                <Form.Row>
+                  <Form.Group
+                    as={Col}
+                    md="4"
               
-            <Row>
-                <Col xs={10}>
-                    <h2 className="subtitulo3">Sinta-se à vontade para deixar um recado a quem visualizar sua lista!</h2>
-                </Col>
-            </Row>
+                  >
+                    <Form.Control
+                      required
+                      id="campoBairro"
+                      name="bairro"
+                      placeholder="Bairro"
+                      
+                      as="select"
+                      onChange={handleBairro}
+                      custom
+                    >
+                      <option>Bairro da Escola</option>
+                      <option value="Vila Carrão">Vila Carrão</option>
+                      <option value="Vila Matilde">Vila Matilde</option>
+                      <option value="Vila Nova Manchester">
+                        Vila Nova Manchester
+                      </option>
+                      <option value="Chácara Califórnia">
+                        Chácara Califórnia
+                      </option>
+                    </Form.Control>
+                  </Form.Group>
+                </Form.Row>
 
-            <Form.Group id="caixaTexto" controlId="exampleForm.ControlTextarea1">                
-                <Form.Control placeholder="Digite seu texto" as="textarea" rows={6} />
-            </Form.Group>
+                <Form.Row>
+                  <Form.Group
+                    as={Col}
+                    md="4"
+                   
+                  >
+                    <Form.Control
+                      required
+                      id="campoEscola"
+                      name="escola"
+                      placeholder="Escola"
+                      as="select"
+                      onChange={(e) => e.target.value !== "Selecione uma escola" ? setEscola(e.target.value) : setEscola()}
+                      disabled ={escolas.length === 0}
+                      custom
+                    >
+                        <option value="Selecione uma escola" >Selecione uma escola</option>
+                        {
+                            escolas.map(escola => (
 
+                                <option value={escola.id}>{escola.name}</option>
+                            ))
+                        }
+                    </Form.Control>
+                    {!escola && escolas.length !== 0 ? (
+                    <div className="erro">Selecione uma escola</div>
+                    ): null}
+                  </Form.Group>
+                </Form.Row>
+
+                <Row>
+                  <Col xs={10}>
+                    <h2 className="subtitulo2">Selecione um avatar:</h2>
+                  </Col>
+                </Row>
+
+                <button type="button" className="btnAvatar">
+                  <img src={avatar1} id="avatarUm" alt="Avatar"></img>
+                </button>
+                <button type="button" className="btnAvatar">
+                  <img src={avatar2} alt="Avatar"></img>
+                </button>
+                <button type="button" className="btnAvatar" id="avatarUm">
+                  <img src={avatar3} alt="Avatar"></img>
+                </button>
+
+                <Row>
+                  <Col xs={10}>
+                    <h2 className="subtitulo3">
+                      Sinta-se à vontade para deixar um recado a quem visualizar
+                      sua lista!
+                    </h2>
+                  </Col>
+                </Row>
+
+                <Form.Group
+                  id="caixaTexto"
             
-                <Button id="btnEnviar" type="submit">Enviar</Button>  
-            
-            </div>
-        </Form>        
-                  
-    </Container>
-    <Footer /> 
+                >
+                  <Form.Control
+                    placeholder="Digite seu texto"
+                    as="textarea"
+                    rows={6}
+                    name="descricao"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.descricao}
+                    className={touched.descricao && errors.descricao ? "erro-campo" : null}
+                  />
+                   {touched.descricao && errors.descricao ? (
+                    <div className="erro">{errors.descricao}</div>
+                    ): null}
+                </Form.Group>
+
+                <Button id="btnEnviar" disabled={isSubmitting} type="submit">
+                  Enviar
+                </Button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </Container>
+      <Footer />
     </div>
   );
-
-  
 }
 
-
-    
-export default CadastroAluno;    
+export default CadastroAluno;

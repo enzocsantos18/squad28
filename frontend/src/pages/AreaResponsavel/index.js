@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import Filho from '../../components/Filho';
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
@@ -35,7 +36,7 @@ function AreaResponsavel() {
       <Button onClick={handleSair}>Sair</Button>
     </Header>
       <Container>
-      <Button style={{marginBottom: "20px"}}>Adicionar Filho</Button>
+      <Link className="btn btn-primary" to="/cadastroAluno" style={{marginBottom: "20px"}}>Adicionar Filho</Link>
 
         <h2>Meus Filhos</h2>
         <div className="listagem">
