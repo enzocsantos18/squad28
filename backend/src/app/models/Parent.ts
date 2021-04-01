@@ -23,6 +23,12 @@ class Parent {
   @Column()
   password: string;
 
+  @Column()
+  cpf: string;
+
+  @Column()
+  phone: string;
+
   @BeforeInsert()
   @BeforeUpdate()
   hashPassword(): void {
