@@ -9,6 +9,7 @@ import api from "../../services/api";
 import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
 import * as Yup from 'yup';
+import { toast } from "react-toastify";
 
 function CadastroResponsavel(props) {
   const history = useHistory();
@@ -45,8 +46,8 @@ function CadastroResponsavel(props) {
         history.push(`/login`)
 
     }catch(e){
-        
     }
+    toast.error('Usuário já existente com esse email');
 
     metodos.resetForm();
     metodos.setSubmitting(false);
