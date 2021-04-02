@@ -4,15 +4,11 @@ body {
 }
 #fundo_inicio{
     background-image: url("Rectangle2_home.png") ;
-    /* background:  #FFFFFF url("Rectangle2_home.png") no-repeat center top fixed ; */
-    /* position: absolute; */
     width: 100%;
     height: 550px;
     padding: 45px 0 0 37px;
 }
-/* #posicao_h1_titulo{
-    margin: 45px 0 0 4%;
-} */
+
 .h1_titulo{
     width: 197px;
     height: 74px;
@@ -32,8 +28,6 @@ body {
     font-size: 16px;
     line-height: 19px;
     color: #483972;
-    /* width: 222px;
-    height: 100%; */
 } 
 
 .button{
@@ -52,9 +46,6 @@ body {
     background-color: #7B61FF;
 }
 
-
-
-
 h2{
     font-family: Roboto;
     font-style: normal;
@@ -62,9 +53,9 @@ h2{
     font-size: 18px;
     line-height: 21px;
     color: #483972;
+    margin-top:50px;
     margin-left: 50%;
     transform: translate(-50%,-50%);
-    margin-top:30px;
 }
 
 p{
@@ -76,33 +67,42 @@ p{
     color: #483972;
 } 
 
-#gird_objetivo{
-    margin: 0 0 0 34px ;
+ #gird_objetivo{
+    margin: 0 0 0 10% ;
+    /* margin: 0 0 0 8px ; mobile    */
 }
 
 .texto_imagem{
-    width: 146px;
-    height: 79px;
+    /* width: 146px;
+    height: 79px; */
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 16px;
     color: #483972;
+    text-align: center
 }
 
 #img_nosso_objetivo{
     width: 130px;
     height: 90px;
 }
+/* .centralizarTitulo{
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
+} */
+
 #espacamento_h2{
     margin-top: 81px;
 }
 .centralizarTexto{
-    width: 146px;
+    width: auto;
     position: relative;
     margin-left: 50%;
     transform: translate(-50%,0);
+    text-align: center;
 }
 
 .button2{
@@ -113,48 +113,97 @@ p{
     position: relative;
     margin-top: 25px;
     margin-bottom: 25px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) 
     
 }
-.button1:hover{
+.button2:hover{
     background-color: #7B61FF;
 }
 
-
-
 .grid{
     margin: 0 10px 0 10px;
-    text-align: center;
     
 }
+
+
+/* #test{
+    margin: 0 8px;
+} */
 
 .fundo_card{
-
+    /* left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)  */
 }
-.col_card{
+/* .col_card{
     padding:0 10px;
-}
-#test{
-    margin: 0 8px;
-    
-
-}
+} */
 
 
 .img_card{
-    width: 42px;
-    height: 42px;
-    max-width: 43px;
-    margin: 15px 0 20px 25%;
+    /* width: 42px;
+    height: 42px; */
+    /* max-width: 43px; */
+    /* margin: 15px 0 20px 25%; */
 }
 
+
 .p_card{
-    width: 98px;
-    height: 67px;
-    font-family: Roboto;
+    /* width: 98px;
+    height: 67px; */
+
+    /* font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
     text-align: center;
     color: #000000;
+    margin: 0 0 0 0; */
+}
+
+
+
+
+
+
+
+
+@media (min-width: 540px){
+    #fundo_inicio{
+        background-image: url("Fundo_grade.png");
+        width: 100%;
+        height: 550px;
+        padding: 45px 0 0 37px;
+    }
+}
+
+
+
+@media (min-width: 721px){
+
+}
+@media (min-width: 992px){
+    #fundo_inicio{
+        background-image: url("Fundo_grade.png");
+        width: 100%;
+        height: 550px;
+        padding: 45px 0 0 37px;
+    }
+}
+
+@media (min-width: 1140px){
+    #fundo_inicio{
+        background-image: url("Fundo_grade.png");
+        width: 100%;
+        height: 540px;
+        padding: 45px 0 0 37px;
+    }
+    .button{
+        display: none;
+        
+    }
+    
 }
