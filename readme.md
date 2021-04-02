@@ -1,5 +1,4 @@
 # Projeto Lapiseira - Squad 28
---
 ## Como instalar
 Clone o projeto:
 ```bash
@@ -59,7 +58,6 @@ npm run start
 A aplicação abrirá automaticamente no seu navegador.
 
 ## Tecnologias utilizadas
---
 ### Backend
  - TypeORM
  - Express
