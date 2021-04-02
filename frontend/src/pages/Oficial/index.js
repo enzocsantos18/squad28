@@ -65,21 +65,21 @@ function Oficial() {
 
                 <h2>Depoimentos</h2>
 
-                <Row xs={3} md={3} lg={3} id="test">
+                <Row xs={3} md={3} lg={3} id="MedidaParaNaoRolarAPagina">
                         
-                    <Col className='col_card'>
+                    <Col>
                         <div className='fundo_card'>
                             <img src={elli} className='img_card'/>
                             <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </Col>
-                    <Col className='col_card'>
+                    <Col >
                         <div className='fundo_card'>
                             <img src={elli} className='img_card'/>
                             <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div> 
                     </Col>
-                    <Col className='col_card'>
+                    <Col >
                         <div className='fundo_card'>
                             <img src={elli} className='img_card'/>
                             <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
