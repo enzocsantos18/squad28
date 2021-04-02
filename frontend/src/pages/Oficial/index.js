@@ -6,7 +6,9 @@ import Login from "../Login"
 import CadastroResponsavel from "../CadastroResponsavel"
 import { Container,  Col, Button,Row,Card,CardGroup} from "react-bootstrap";
 import img_nosso from '../../assets/Rectangle2_home1.png' ;
-import elli from './Ellipse1.png';
+import Ellipse1 from '../../assets/Ellipse1.png';
+import Ellipse2 from '../../assets/Ellipse2.png';
+import Ellipse3 from '../../assets/Ellipse3.png'
 // import api from '../../services/api';
 // import { useHistory } from 'react-router';
 // import Auth from '../../services/auth'
@@ -15,11 +17,11 @@ function Oficial() {
     return (
         <>
         <Header/>
-        <Container fluid>   
-            <Row>    
+        <Container fluid >   
+            <Row >    
                 <div id='fundo_inicio'>
                 
-                    <div id='posicao_h1_titulo'>
+                    <div >
                         <h1 className='h1_titulo '>Olá, somos a Lapiseira!</h1>
                     </div>
 
@@ -36,7 +38,7 @@ function Oficial() {
                 <h2>Nosso Objetivo</h2>
 
                 <Row xs={2} md={2} >
-                    <Col className='gird_objetivo'>
+                    <Col >
                         <p  className='texto_imagem'>Acreditamos na educação acima de tudo e queremos que crianças não percam oportunidade de aprender mais por falta de material.</p>
                     </Col> 
                     <Col >
@@ -52,12 +54,12 @@ function Oficial() {
                 <Row xs={1} md={2} className='grid'>
                    
                     <Col>             
-                        <p className='centralizarTexto'>Se você for o responsável por um aluno da rede pública que precisa de material escolar, cadastre-se abaixo.</p>
+                        <p className='centralizarTexto p_res_920'>Se você for o responsável por um aluno da rede pública que precisa de material escolar, cadastre-se abaixo.</p>
                         <a href='/CadastroResponsavel' > <Button className='button2' type='submint'>Responsável</Button></a>
                     </Col>
 
                     <Col>
-                        <p className='centralizarTexto'>Se você for um(a) doador(a) e quiser acessar as listas, clique abaixo.</p>
+                        <p className='centralizarTexto p_res_920'>Se você for um(a) doador(a) e quiser acessar as listas, clique abaixo.</p>
                         <a href='#' > <Button className='button2' type='submint'>Doador</Button></a>
                     </Col>
                    
@@ -65,23 +67,23 @@ function Oficial() {
 
                 <h2>Depoimentos</h2>
 
-                <Row xs={3} md={3} lg={3} id="MedidaParaNaoRolarAPagina">
+                <Row xs={3} md={3}  id="MedidaParaNaoRolarAPagina">
                         
                     <Col>
                         <div className='fundo_card'>
-                            <img src={elli} className='img_card'/>
+                            <img src={Ellipse1} className='img_card'/>
                             <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </Col>
                     <Col >
                         <div className='fundo_card'>
-                            <img src={elli} className='img_card'/>
+                            <img src={Ellipse2} className='img_card'/>
                             <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div> 
                     </Col>
                     <Col >
                         <div className='fundo_card'>
-                            <img src={elli} className='img_card'/>
+                            <img src={Ellipse3} className='img_card'/>
                             <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </Col> 
