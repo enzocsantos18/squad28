@@ -35,16 +35,16 @@ function Oficial() {
 
                 <h2>Nosso Objetivo</h2>
 
-                {/* <Row xs={2} md={2} >
-                    <Col>
-                        <p id='gird_objetivo' className='texto_imagem'>Acreditamos na educação acima de tudo e queremos que crianças não percam oportunidade de aprender mais por falta de material.</p>
+                <Row xs={2} md={2} >
+                    <Col className='gird_objetivo'>
+                        <p  className='texto_imagem'>Acreditamos na educação acima de tudo e queremos que crianças não percam oportunidade de aprender mais por falta de material.</p>
                     </Col> 
                     <Col >
                         <div>
                             <img src={img_nosso} id="img_nosso_objetivo"/>
                         </div>
                     </Col>
-                </Row> */}
+                </Row>
 
                 <h2 id='espacamento_h2'>Faça Parte</h2>
                     
