@@ -40,7 +40,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5%;
 }
 
 .linhaForm1 {
@@ -227,9 +226,7 @@
         float: right;            
     }
 
-    .formMenor {        
-        margin-left: 10% !important;                     
-    }
+
 
     .titulo {
         color: #483972;

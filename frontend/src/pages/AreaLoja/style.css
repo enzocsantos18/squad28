@@ -58,6 +58,10 @@
     
 }
 
+#caixaSaldo:hover{
+    cursor: pointer;
+}
+
 #styleCard {
     width: 260px !important;
     margin-top: 5%;
@@ -66,6 +70,7 @@
     border-radius: 5%;
     margin-left: 2%;
     margin-right: 2%;
+    height: 300px;
    
     
 }

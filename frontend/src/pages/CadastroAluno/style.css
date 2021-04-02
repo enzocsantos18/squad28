@@ -3,7 +3,7 @@
 
 .main {
     background-color: white;
-    width: 100vw;
+    width: 100px;
 }
 
 
@@ -57,7 +57,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 5%;
+    /* margin-top: 5%; */
 }
 
 .linhaForm1 {
@@ -186,12 +186,10 @@
     }
     #imgAlunos {            
         margin-top: 5%;  
-        margin-right: 10%;
+        margin-right: 25%;
         float: right;            
     }
-    .formMenor {               
-        margin-left: 0% !important;                
-    }
+   
    .titulo {
         color: #483972;
         font-family: 'Roboto', sans-serif;
