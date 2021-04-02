@@ -1,18 +1,26 @@
 import React from "react";
 
-import { Card } from "react-bootstrap";
+import { Card, ListGroup, ListGroupItem } from "react-bootstrap";
 
 function Produto({img,nome,valor}) {
   return (
-    <Card style={{ width: "18rem", margin: "10px auto" }}>
-      <Card.Img variant="top" src={img} />
-      <Card.Body>
-        <Card.Title>{nome}</Card.Title>
-        <Card.Text>
-         Valor: {valor}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+
+
+    <Card id="styleCard">
+    <Card.Img variant="top" className="imgProduto" src={img} />
+    <Card.Body>
+      <Card.Title className="tituloProduto">{nome}</Card.Title>          
+    </Card.Body>
+    <ListGroup className="list-group-flush">
+      <ListGroupItem className="infoProdutos">Valor: {valor}</ListGroupItem>
+    </ListGroup>
+    <Card.Body>
+      <Card.Link className="linkProdutos" href="#">Editar</Card.Link>
+      <Card.Link className="linkProdutos" href="#">Remover</Card.Link>
+    </Card.Body>
+  </Card>
+
+
   );
 }
 
