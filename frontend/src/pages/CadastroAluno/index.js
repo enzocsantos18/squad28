@@ -5,6 +5,7 @@ import Footer from "../../components/Footer";
 import { Form, Col, Container, Row, Button } from "react-bootstrap";
 import api from "../../services/api";
 import { useHistory } from "react-router-dom";
+import alunos from '../../assets/alunos.png';
 import { Formik } from "formik";
 import * as Yup from 'yup';
 function CadastroAluno(props) {
@@ -77,6 +78,7 @@ function CadastroAluno(props) {
       <div className="main">
 
     <Header linkLogo="/areaResponsavel" />
+      <img id="imgAlunos"src={alunos} alt="Avatar Alunos"/>
 
       <Container>
         <Formik initialValues={{ nome:"", data:"", matricula:"", escola:"", descricao: "" }}       validationSchema={validationSchema}

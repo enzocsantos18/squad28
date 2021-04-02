@@ -1,6 +1,19 @@
 
+
+
 .main {
     background-color: white;
+    width: 100vw;
+}
+
+
+
+/* MOBILE FIRST */
+
+@media only screen and (max-width: 1000px) {
+    #imgAlunos {
+        display: none;
+    }
 }
 
 .titulo {
@@ -53,7 +66,6 @@
 }
 
 
-
 #btnEnviar {    
     background-color: #483972;
     border-radius: 8px;    
@@ -75,6 +87,65 @@
     margin-right: 10px;
     margin-bottom: 45px;
 }    
+
+@media only screen and (max-width: 320px) {
+
+    .titulo {
+        color: #483972;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        font-size: 24px;   
+        
+    }
+
+    .formulario {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 5%;
+    }
+
+    #campoNome {    
+        width: 260px !important;
+    }
+
+    #campoNascimento {
+        width: 260px !important;
+    }
+
+    #campoMatricula {
+        width: 260px !important;
+    }
+
+    #campoUf {
+        width: 260px !important;
+    }
+
+    #campoCidade {
+        width: 260px !important;
+    }
+
+    #campoBairro {
+        width: 260px !important;
+    }
+
+    #campoEscola {
+        width: 260px !important;
+    }
+
+    #caixaTexto {
+        width: 260px !important;
+    }
+
+    .btnAvatar {
+        background-color: transparent ;
+        margin-top: 5%;
+        margin-right: 2% !important;
+    }
+
+}
+
 
 /* AJUSTE BOTAO */
 
@@ -113,21 +184,15 @@
         background-color: white;
         
     }
-
-    #imgResponsavel {
-       display: block;     
-       position: absolute;     
-       margin-left: 35%;   
-       margin-top: 5%;
-       width: 512px;
-       height: 512px;
+    #imgAlunos {            
+        margin-top: 5%;  
+        margin-right: 10%;
+        float: right;            
     }
-
-    .formMenor {        
-        margin-left: -30%;            
+    .formMenor {               
+        margin-left: 0% !important;                
     }
-
-    .titulo {
+   .titulo {
         color: #483972;
         font-family: 'Roboto', sans-serif;
         font-weight: 900;
@@ -137,26 +202,7 @@
         margin-left: 0%; 
     }
     
-
-    .subtitulo1 {
-        color: #483972;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        font-size: 18px;
-        margin-top: 15px;
-        margin-left: 0%; 
-    }
-    
-    .subtitulo2 {
-        color: #483972;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        font-size: 18px;
-        margin-top: 15px;
-        margin-left: 0%; 
-    }
   }
-
 
 .btnAvatar {
     background-color: transparent ;
