@@ -153,11 +153,11 @@ function DetalheLista() {
           </Modal.Header>
           <Modal.Body>
             Seu subtotal está em {real(Number(valor))}
-            <Form>
+            <Form className="cartao-form">
               <Form.Row>
                 <Form.Group as={Col} controlId="nome">
                   <Form.Label>Nome:</Form.Label>
-                  <Form.Control
+                  <Form.Control 
                     type="text"
                     placeholder="Escreva seu nome"
                     onChange={(e) => setField("nome", e.target.value)}
@@ -169,8 +169,7 @@ function DetalheLista() {
 
                 <Form.Group as={Col} controlId="Cpf">
                   <Form.Label>CPF:</Form.Label>
-                  <Form.Control
-                    type="number"
+                  <Form.Control                     type="number"
                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value))
                         .toString()
@@ -186,8 +185,7 @@ function DetalheLista() {
               <Form.Row>
                 <Form.Group as={Col} controlId="numeroCartao">
                   <Form.Label>Número do cartão:</Form.Label>
-                  <Form.Control
-                    type="number"
+                  <Form.Control                     type="number"
                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value))
                         .toString()
@@ -203,8 +201,7 @@ function DetalheLista() {
               <Form.Row>
                 <Form.Group as={Col} controlId="Data">
                   <Form.Label>MMAAAA:</Form.Label>
-                  <Form.Control
-                    type="string"
+                  <Form.Control                     type="string"
                     placeholder="Ex: 102025"
                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value))
@@ -219,8 +216,7 @@ function DetalheLista() {
 
                 <Form.Group as={Col} controlId="CVV">
                   <Form.Label>CVV:</Form.Label>
-                  <Form.Control
-                    onInput={(e) => {
+                  <Form.Control                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value))
                         .toString()
                         .slice(0, 3);
@@ -238,8 +234,7 @@ function DetalheLista() {
             </Button>
             </Form>
           </Modal.Body>
-          <Modal.Footer>
-          </Modal.Footer>
+    
         </Modal>
       </Container>
       <Footer />

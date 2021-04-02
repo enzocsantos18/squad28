@@ -29,6 +29,14 @@ input:not([type="checkbox"]):hover, select:hover, textarea{
   box-shadow: inset -1px 0px 2px 3px rgba(0, 0, 0, 0.24);
 }
 
+.cartao-form{
+  width: 100%  !important;
+}
+
+.cartao-form button, .cartao-form  input{
+  width: 100% !important;
+}
+
 .erro {
   color: #FA4339;
   padding: .5em .2em;

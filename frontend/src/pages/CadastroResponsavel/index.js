@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -35,7 +35,7 @@ function CadastroResponsavel(props) {
 
     try{
 
-        const {data} = await api.post('/parent', {
+        await api.post('/parent', {
             name: values.nome,
             email: values.email,
             cpf: values.cpf,
