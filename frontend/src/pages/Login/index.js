@@ -7,6 +7,7 @@ import imagemlogin from "./fotologin.png";
 import api from "../../services/api";
 import { useHistory } from "react-router";
 import Auth from "../../services/auth";
+import { Link } from "react-router-dom";
 
 function Login() {
   const history = useHistory();
@@ -15,7 +16,6 @@ function Login() {
     password: "",
   });
 
-  const [isResponsavel, setIsResponsavel] = useState(true);
   const [erro, setErro] = useState(false);
 
   const handleInputChange = (event) => {
@@ -42,18 +42,21 @@ function Login() {
       }
     }
     catch(e){
-      const responseStore = await api.post("/auth/store", {
-        ...dados,
-      });
+      try{
 
-      if (responseStore.status === 200) {
-        Auth.setToken({
-          token: responseStore.data.token,
-          type: "Store",
+        const responseStore = await api.post("/auth/store", {
+          ...dados,
         });
+  
+        if (responseStore.status === 200) {
+          Auth.setToken({
+            token: responseStore.data.token,
+            type: "Store",
+          });
         history.push("/areaLoja");
-      } else{
-        setErro(true);
+        } 
+      }catch(e){
+        setErro(true)
       }
     }
         
@@ -82,12 +85,6 @@ function Login() {
           <Col sm={6}>
             <div className="grid">
               <Row>
-                <Button onClick={() => setIsResponsavel(true)}>
-                  Responsavel
-                </Button>
-                <Button onClick={() => setIsResponsavel(false)}>
-                  Papelaria
-                </Button>
                 <div>
                   <h2 className="titulo_login">
                     Faça o login <br />e vamos <br />
@@ -123,7 +120,9 @@ function Login() {
                     placeholder="Senha"
                   />
                 </Form.Group>
-                {erro && <span>Email e/ou senha inválidos.</span>}
+                {erro && <span className="erro">Email e/ou senha inválidos.</span>}
+                <Link to="/cadastroResponsavel">Cadastro responsável</Link>
+                <Link to="/cadastroLoja">Cadastro Loja</Link>
                 <Button id="buttonEntar" type="submit">
                   Login
                 </Button>
