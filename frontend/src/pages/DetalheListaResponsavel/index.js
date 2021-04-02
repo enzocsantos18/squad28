@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { Container, Row, Col, Modal, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import api from "../../services/api";
 import idade from "../../helpers/tratamentoIdade";
 
@@ -74,10 +74,9 @@ function DetalheListaResponsavel() {
                 <Row>
                   <Col sm="12" md="6" lg="4">
                     <div className="info-lista">
-                      <img
-                        src="https://img.icons8.com/bubbles/2x/user-male.png"
-                        alt="Foto ilustrativa de perfil"
-                      />
+                    <img
+  src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`}                    alt="Foto ilustrativa de perfil"
+                  />
                       <h3>
                         {lista.student.name}, {idade(lista.student.birthDate)}{" "}
                         anos.

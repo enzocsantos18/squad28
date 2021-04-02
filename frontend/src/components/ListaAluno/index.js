@@ -1,11 +1,11 @@
 import React from "react";
 
-function ListaAluno({nome, idade, descricao}) {
+function ListaAluno({nome, idade, descricao, imagem}) {
   return (
     <>
       <div className="listaAluno">
         <img
-          src="https://img.icons8.com/bubbles/2x/user-male.png"
+          src={`http://localhost:3000/avatar/avatar${imagem}.png`}
           alt="Foto ilustrativa da criança"
         />
         <div>

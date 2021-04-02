@@ -163,3 +163,9 @@
     margin-top: 5%;
     margin-right: 8%;
 }
+
+.btnAvatarSelecionado {
+    border: 3px solid #483972;
+    height: auto;
+    border-radius: 50% !important;
+}

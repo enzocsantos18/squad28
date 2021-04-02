@@ -46,7 +46,7 @@ function AreaResponsavel() {
             <>
             {
               listaFilhos.map(filho => (
-                <Filho key={filho.id} nome={filho.name} lista={filho.list} idade={idade(filho.birthDate)}/>
+                <Filho key={filho.id} nome={filho.name} lista={filho.list} idade={idade(filho.birthDate)} imagem={filho.img_id}/>
               ))
             }
             

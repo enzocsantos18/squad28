@@ -3,10 +3,6 @@ import "./style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Form, Col, Container, Row, Button } from "react-bootstrap";
-import MaskedInput from "react-maskedinput";
-import avatar1 from "../../assets/avatar1.png";
-import avatar2 from "../../assets/avatar2.png";
-import avatar3 from "../../assets/avatar3.png";
 import api from "../../services/api";
 import { useHistory } from "react-router-dom";
 import { Formik } from "formik";
@@ -15,6 +11,8 @@ function CadastroAluno(props) {
   const history = useHistory();
   const [escolas, setEscolas] = useState([]);
   const [escola, setEscola] = useState();
+  const [foto, setFoto] = useState(1);
+
 
 
   const validationSchema = Yup.object().shape({
@@ -46,7 +44,8 @@ function CadastroAluno(props) {
             name: values.nome,
             studentRA: values.matricula,
             birthDate: values.data,
-            schoolId: escola
+            schoolId: escola,
+            img_id: foto
         })
 
         const studentId = response.data.id;
@@ -272,14 +271,14 @@ function CadastroAluno(props) {
                   </Col>
                 </Row>
 
-                <button type="button" className="btnAvatar">
-                  <img src={avatar1} id="avatarUm" alt="Avatar"></img>
+                <button type="button"className={foto === 1 ? "btnAvatar btnAvatarSelecionado" : "btnAvatar"} onClick={() => setFoto(1)}>
+                  <img src="http://localhost:3000/avatar/avatar1.png" id="avatarUm" alt="Avatar"></img>
                 </button>
-                <button type="button" className="btnAvatar">
-                  <img src={avatar2} alt="Avatar"></img>
+                <button type="button"className={foto === 2 ? "btnAvatar btnAvatarSelecionado" : "btnAvatar"} onClick={() => setFoto(2)}>
+                  <img src="http://localhost:3000/avatar/avatar2.png" alt="Avatar"></img>
                 </button>
-                <button type="button" className="btnAvatar" id="avatarUm">
-                  <img src={avatar3} alt="Avatar"></img>
+                <button type="button"className={foto === 3 ? "btnAvatar btnAvatarSelecionado" : "btnAvatar"} onClick={() => setFoto(3)}>
+                  <img src="http://localhost:3000/avatar/avatar3.png" alt="Avatar"></img>
                 </button>
 
                 <Row>
