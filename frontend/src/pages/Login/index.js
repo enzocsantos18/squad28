@@ -27,39 +27,38 @@ function Login() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    if (isResponsavel) {
-      try {
-        const response = await api.post("/auth/parent", {
-          ...dados,
-        });
 
-        if (response.status === 200) {
-          Auth.setToken({
-            token: response.data.token,
-            type: "Parent",
-          });
-          history.push("/areaResponsavel");
-        }
-      } catch (e) {
-        setErro(true);
+    try{
+      const response = await api.post("/auth/parent", {
+        ...dados,
+      });
+
+      if (response.status === 200) {
+        Auth.setToken({
+          token: response.data.token,
+          type: "Parent",
+        });
+        history.push("/areaResponsavel");
       }
-    } else {
-      try {
-        const response = await api.post("/auth/store", {
-          ...dados,
-        });
+    }
+    catch(e){
+      const responseStore = await api.post("/auth/store", {
+        ...dados,
+      });
 
-        if (response.status === 200) {
-          Auth.setToken({
-            token: response.data.token,
-            type: "Store",
-          });
-          history.push("/areaLoja");
-        }
-      } catch (e) {
+      if (responseStore.status === 200) {
+        Auth.setToken({
+          token: responseStore.data.token,
+          type: "Store",
+        });
+        history.push("/areaLoja");
+      } else{
         setErro(true);
       }
     }
+        
+
+  
   }
 
   return (
