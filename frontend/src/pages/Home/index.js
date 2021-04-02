@@ -29,7 +29,6 @@ function Home() {
     <>
       <Header>
         <Link className="btn btn-primary" to="/login">Acessar</Link>
-        <Link className="btn btn-primary" to="/homeOficial">AcessarHom</Link>
       </Header>
  
       <Container>

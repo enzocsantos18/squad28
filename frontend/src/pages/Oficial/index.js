@@ -2,21 +2,21 @@ import React from 'react';
 import './style.css';
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import Login from "../Login"
 import CadastroResponsavel from "../CadastroResponsavel"
 import { Container,  Col, Button,Row,Card,CardGroup} from "react-bootstrap";
 import img_nosso from '../../assets/Rectangle2_home1.png' ;
 import Ellipse1 from '../../assets/Ellipse1.png';
 import Ellipse2 from '../../assets/Ellipse2.png';
 import Ellipse3 from '../../assets/Ellipse3.png'
-// import api from '../../services/api';
-// import { useHistory } from 'react-router';
-// import Auth from '../../services/auth'
+import { Link } from "react-router-dom";
 
 function Oficial() {
     return (
         <>
-        <Header/>
+        <Header >
+            <Link className="btn btn-primary" id="menu_button" to="/login">Login</Link>
+        </Header>
+       
         <Container fluid >   
             <Row >    
                 <div id='fundo_inicio'>

@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+#menu_button{
+    display: none;
+}
+
 body {
     background-color: #ffffff;
 }
@@ -158,6 +162,9 @@ p{
 }
 
 @media (min-width: 540px){
+    #menu_button{
+        display: none;
+    }
     #fundo_inicio{
         background-image: url("../../assets/Fundo_grade.png");
         width: 100%;
@@ -210,6 +217,10 @@ p{
 }
 
 @media (min-width: 721px){
+    #menu_button{
+        display: none;
+    }
+
     .button{
         margin-top: 20%;
     }
@@ -236,6 +247,10 @@ p{
 
 }
 @media (min-width: 992px){
+    #menu_button{
+        display: block;
+    }
+    
     #fundo_inicio{
         background-image: url("../../assets/Fundo_grade.png");
         width: 100%;
@@ -308,6 +323,10 @@ p{
 }
 
 @media (min-width: 1150px) {
+    #menu_button{
+        display: block;
+    }
+    
     .fundo_card{
         position: relative;
         right: 50%;
