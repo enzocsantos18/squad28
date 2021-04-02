@@ -62,6 +62,7 @@ function Home() {
                   nome={lista.student.name}
                   idade={idade(lista.student.birthDate)}
                   descricao={lista.description}
+                  imagem={lista.student.img_id}
                 />
               </Link>
             );

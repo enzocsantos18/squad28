@@ -41,7 +41,7 @@ function CriacaoLista({ bairro, listId }) {
         productsIds: produtosSelecionados,
       });
 
-      history.push(`/areaResponsavel/${listId}`);
+      history.push(`/areaResponsavel`);
     } catch (e) {
       console.log(e);
     }
