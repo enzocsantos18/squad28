@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
-
+body {
+    background-color: #ffffff;
+}
 #fundo_inicio{
     background-image: url("Rectangle2_home.png") ;
     /* background:  #FFFFFF url("Rectangle2_home.png") no-repeat center top fixed ; */
-    /* position: fixed; */
-    width: auto;
+    /* position: absolute; */
+    width: 100%;
     height: 550px;
-    
+    padding: 45px 0 0 37px;
 }
-#posicao_h1_titulo{
+/* #posicao_h1_titulo{
     margin: 45px 0 0 4%;
-}
+} */
 .h1_titulo{
     width: 197px;
     height: 74px;
-    left: 34px;
     top: 135px; 
     font-family: Roboto;
     font-style: normal;
@@ -24,14 +25,15 @@
     
     color: #483972;
 } 
-
-.p_conteudo{
+#p_subtitulo{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 19px;
     color: #483972;
+    /* width: 222px;
+    height: 100%; */
 } 
 
 .button{
@@ -43,10 +45,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    margin-top: 50px;
+    
 }
 .button:hover{
     background-color: #7B61FF;
 }
+
+
+
 
 h2{
     font-family: Roboto;
@@ -55,8 +62,99 @@ h2{
     font-size: 18px;
     line-height: 21px;
     color: #483972;
+    margin-left: 50%;
+    transform: translate(-50%,-50%);
+    margin-top:30px;
 }
+
+p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    color: #483972;
+} 
+
+#gird_objetivo{
+    margin: 0 0 0 34px ;
+}
+
+.texto_imagem{
+    width: 146px;
+    height: 79px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #483972;
+}
+
+#img_nosso_objetivo{
+    width: 130px;
+    height: 90px;
+}
+#espacamento_h2{
+    margin-top: 81px;
+}
+.centralizarTexto{
+    width: 146px;
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%,0);
+}
+
+.button2{
+    background: #483972;
+    border-radius: 8px;
+    width: 130px;
+    height: 35px;
+    position: relative;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    
+}
+.button1:hover{
+    background-color: #7B61FF;
+}
+
+
+
+.grid{
+    margin: 0 10px 0 10px;
+    text-align: center;
+    
+}
+
+.fundo_card{
+
+}
+.col_card{
+    padding:0 10px;
+}
+#test{
+    margin: 0 8px;
+    
+
+}
+
+
 .img_card{
     width: 42px;
     height: 42px;
+    max-width: 43px;
+    margin: 15px 0 20px 25%;
+}
+
+.p_card{
+    width: 98px;
+    height: 67px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    color: #000000;
 }
