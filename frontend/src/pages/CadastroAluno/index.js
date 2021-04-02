@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Form, Col, Container, Row, Button } from "react-bootstrap";
 import MaskedInput from "react-maskedinput";
+import alunos from "../../assets/alunos.png";
 import avatar1 from "../../assets/avatar1.png"
 import avatar2 from "../../assets/avatar2.png"
 import avatar3 from "../../assets/avatar3.png"
@@ -60,7 +61,7 @@ function CadastroAluno (props) {
     <div className="main">
     <Header />
     <Container>   
-    
+        <img id="imgAlunos"src={alunos} alt="Avatar Alunos"/>
         <Form className="formulario" noValidate validated={validated} onSubmit={handleSubmit}>
             
             <div className="formMenor">

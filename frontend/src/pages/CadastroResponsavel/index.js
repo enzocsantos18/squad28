@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Form, Col,Container, Row, Button } from "react-bootstrap";
 import MaskedInput from "react-maskedinput";
-import imgResp from "../../assets/responsavel.png"
+import imgResp from "../../assets/responsavel2.png"
 import api from "../../services/api";
 import { useHistory } from "react-router-dom";
 

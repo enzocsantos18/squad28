@@ -4,7 +4,6 @@
     background-color: white;
 }
 
-
 /* MOBILE FIRST */
 
 
@@ -162,6 +161,31 @@
     
 }
 
+@media only screen and (max-width: 320px) {
+   
+    #campoNome {    
+        width: 260px !important;
+    }
+    
+    #campoCPF {    
+        width: 260px !important;       
+    }      
+    
+    #campoTel {    
+        width: 260px !important;       
+    }   
+    
+    #campoMail {    
+        width: 260px !important;
+    }        
+    
+    #campoSenha {    
+        width: 260px !important;        
+    }   
+    
+
+}
+
 
 @media only screen and (min-width: 371px) {
     #btnEnviar {    
@@ -195,30 +219,16 @@
       background-color: #F1F1F1;      
     }
     .formulario {
-        background-color: white;
-        
+        background-color: white;        
     }
-
-    #imgRespon {
+    #imgRespon {        
         margin-top: 5%;  
-        margin-right: 20%;
+        margin-right: 0%;
         float: right;            
     }
 
-    /*#imgResponsavel {
-       display: block; 
-    
-       position: absolute;     
-       margin-left: 35%;   
-       margin-top: 5%;
-       width: 512px;
-       height: 512px;
-    }*/
-
     .formMenor {        
-        margin-left: 10% !important;
-        
-                  
+        margin-left: 10% !important;                     
     }
 
     .titulo {
@@ -229,8 +239,7 @@
         text-align: left;
         margin-top: 20px;
         margin-left: 0%; 
-    }
-    
+    }    
 
     .subtitulo1 {
         color: #483972;
@@ -248,37 +257,7 @@
         font-size: 18px;
         margin-top: 15px;
         margin-left: 0%; 
-    }
-
-    #campoNome {    
-        width: 410px;
-        height: 56px;
-        left: 20px;
-        top: 262px;
-        background: #FFFFFF;
-        border-radius: 10px;    
-        border: 1px solid #DEDEDE;
-    }
-
-    #campoTel {    
-        width: 241px;
-        height: 56px;
-        left: 20px;
-        top: 262px;
-        background: #FFFFFF;
-        border-radius: 10px;
-        border: 1px solid #DEDEDE;
-    }
-
-    #campoMail {    
-        width: 410px;
-        height: 56px;
-        left: 20px;
-        top: 262px;
-        background: #FFFFFF;
-        border-radius: 10px;
-        border: 1px solid #DEDEDE;
-    }
+    }   
 
     #btnEnviar {    
         background-color: #483972;
