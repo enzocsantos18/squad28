@@ -138,6 +138,12 @@ input:not([type="checkbox"]):hover, select:hover, textarea{
   width: 100%;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #483972;
+    border: 1px solid white;
+}
+
 button{
   width: auto !important;
 }
