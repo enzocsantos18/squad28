@@ -18,6 +18,8 @@ import { useHistory } from "react-router";
 import api from "../../services/api";
 import real from "../../helpers/tratamentoDinheiro";
 import { toast } from "react-toastify";
+import auth from "../../services/auth";
+import { Link } from "react-router-dom";
 
 function AreaLoja() {
   const history = useHistory();
@@ -26,8 +28,6 @@ function AreaLoja() {
   const [info, setInfo] = useState();
   const [show, setShow] = useState(false);
   const [valor, setValor] = useState();
-  const [erro, setErro] = useState();
-
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -39,7 +39,7 @@ function AreaLoja() {
 
   async function getProdutos() {
     try {
-      const { data } = await api.get("/products/paperStore/10");
+      const { data } = await api.get(`/products/paperStore/${auth.getId()}`);
 
       setProdutos(data);
     } catch (e) {
@@ -47,25 +47,24 @@ function AreaLoja() {
     }
   }
 
-  async function handleRetirarSaldo(){
-    if(valor > info.balance){
-      toast.error('Valor acima do saldo atual');
-      
+  async function handleRetirarSaldo() {
+    if (valor > info.balance) {
+      toast.error("Valor acima do saldo atual");
+
       setValor();
       handleClose();
-    }else{
-      try{
-        await api.post("/paperStore/money",{
-          value: valor
+    } else {
+      try {
+        await api.post("/paperStore/money", {
+          value: valor,
         });
 
-        toast.success('Dinheiro retirado com sucesso.');
+        toast.success("Dinheiro retirado com sucesso.");
 
         setValor();
         handleClose();
-      } 
-      catch(e){
-        toast.error('Erro ao retirar dinheiro')
+      } catch (e) {
+        toast.error("Erro ao retirar dinheiro");
       }
     }
   }
@@ -116,9 +115,7 @@ function AreaLoja() {
                   </Accordion>
                 </Col>
               </Row>
-              {
-                info.balance > 0 &&(
-
+              {info.balance > 0 && (
                 <Row>
                   <Col>
                     <button onClick={handleShow} id="opcaoPapelaria">
@@ -126,15 +123,18 @@ function AreaLoja() {
                     </button>
                   </Col>
                 </Row>
-                )
-              }
-              {/* <Row>
+              )}
+              <Row>
                 <Col>
-                  <button id="opcaoPapelaria">Adicionar Produto</button>
+                  <Link class="btn" to="/areaLoja/cadastroProduto" id="opcaoPapelaria">Adicionar Produto</Link>
                 </Col>
-              </Row> */}
+              </Row>
 
-              <h2 className="subtitulo1">Meus produtos:</h2>
+              {produtos === [] ? (
+                <h2 className="subtitulo1">Meus produtos:</h2>
+              ) : (
+                <h2 className="subtitulo1">Sem produtos cadastrados na loja</h2>
+              )}
             </div>
             <Row className="tresCards">
               {produtos.map((produto) => (
@@ -152,15 +152,16 @@ function AreaLoja() {
                 <Modal.Title>Retirar dinheiro</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <p>
-                Seu saldo atual é de: {real(info.balance)}
-
-                </p>
+                <p>Seu saldo atual é de: {real(info.balance)}</p>
                 <label htmlFor="valor">Quanto deseja retirar?</label>
-                <FormControl value={valor} onChange={(e) => setValor(e.target.value)} name="valor" type="number" />
+                <FormControl
+                  value={valor}
+                  onChange={(e) => setValor(e.target.value)}
+                  name="valor"
+                  type="number"
+                />
               </Modal.Body>
               <Modal.Footer>
-               
                 <Button variant="primary" onClick={handleRetirarSaldo}>
                   Retirar
                 </Button>

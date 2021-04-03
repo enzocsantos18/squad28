@@ -5,6 +5,15 @@ class Auth {
       return this.getToken() != null;
   }
 
+  getId(){
+    if(localStorage.getItem(this.key)){
+      const {id} = JSON.parse(localStorage.getItem(this.key));
+
+      return id;
+    }
+    return null;
+  }
+
   getToken() {
     if(localStorage.getItem(this.key)){
       const {token} = JSON.parse(localStorage.getItem(this.key));

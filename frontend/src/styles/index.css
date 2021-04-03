@@ -5,7 +5,9 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
-
+.main{
+  width: 100% !important;
+}
 body{
   background-color: #F1F1F1;
 }

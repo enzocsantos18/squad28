@@ -35,6 +35,7 @@ function Login() {
 
       if (response.status === 200) {
         Auth.setToken({
+          id: response.data.id,
           token: response.data.token,
           type: "Parent",
         });
@@ -50,6 +51,7 @@ function Login() {
   
         if (responseStore.status === 200) {
           Auth.setToken({
+            id: responseStore.data.id,
             token: responseStore.data.token,
             type: "Store",
           });
