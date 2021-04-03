@@ -104,6 +104,7 @@ body{
     .div_texto{
         display: block;
     }
+
 }
 
 @media (min-width: 992px){
@@ -123,19 +124,91 @@ body{
         font-size: 24px;
         line-height: 28px;
     }
-    /* .grid{
-        border-style: solid;
-        border: 2px solid black;
-        padding: 10px;
-        border-radius: 25px;
-    } */
+    .grid{
+        /* border-style: solid; */
+        /*  border: 2px solid black; */
+        padding: 20px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        margin-bottom: 5%;;
+      
+    }
     #espacamento_texto_img{
         margin-bottom: 15%;
     }
+    #form{
+        margin-top: 8%;
+    }
 
 
+    /* <Col sm={6}>Do outro lado
+      <Row>
+        
+        <Col sm={6}> Texto
+
+        </Col>
+        <Col sm={6}> Imagem
+
+        </Col>
+        
+        <Col sm={12}> input
+        </Col>      
+      </Row> */
 
 
+          /* Pagina funcioando
+          
+          
+          <Col sm={6}>
+            <div className="grid">
+              <Row>
+                <div id='espacamento_texto_img'>
+                  <h2 className="h2_titulo_login">
+                    Faça o login <br />e vamos <br />
+                    mudar o<br /> mundo!
+                  </h2>
+                </div>
+                <div>
+                  <img
+                    className="img_login"
+                    alt="imagem ilustrativa login"
+                    src={imagemlogin}
+                  />
+                </div>
+              </Row>
 
+              <Form id="form" onSubmit={handleSubmit}>
+                <Form.Group>
+                  <Form.Control
+                   
+                    id="input_login"
+                    type="email"
+                    placeholder="Email"
+                    onChange={handleInputChange}
+                    name="email"
+                  />
+                </Form.Group>
 
+                <Form.Group>
+                  <Form.Control
+                    id="input_login"
+                    onChange={handleInputChange}
+                    name="password"
+                    type="password"
+                    placeholder="Senha"
+                  />
+                </Form.Group>
+                {erro && <span className="erro">Email e/ou senha inválidos.</span>}
+
+                  <div id="buttom_div">
+                    <Button id="buttonEntar" type="submit">
+                      Login
+                    </Button>
+                  </div> */
+                                 /* <Link to="/cadastroResponsavel">Cadastro responsável</Link>
+                <Link to="/cadastroLoja">Cadastro Loja</Link> */
+              /* </Form>
+            </div>
+            
+          </Col> */
 }

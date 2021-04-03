@@ -87,55 +87,63 @@ function Login() {
           <Col sm={6}>
             <div className="grid">
               <Row>
-                <div id='espacamento_texto_img'>
-                  <h2 className="h2_titulo_login">
-                    Faça o login <br />e vamos <br />
-                    mudar o<br /> mundo!
-                  </h2>
-                </div>
-                <div>
-                  <img
-                    className="img_login"
-                    alt="imagem ilustrativa login"
-                    src={imagemlogin}
-                  />
-                </div>
-              </Row>
-
-              <Form id="form" onSubmit={handleSubmit}>
-                <Form.Group>
-                  <Form.Control
-                   
-                    id="input_login"
-                    type="email"
-                    placeholder="Email"
-                    onChange={handleInputChange}
-                    name="email"
-                  />
-                </Form.Group>
-
-                <Form.Group>
-                  <Form.Control
-                    id="input_login"
-                    onChange={handleInputChange}
-                    name="password"
-                    type="password"
-                    placeholder="Senha"
-                  />
-                </Form.Group>
-                {erro && <span className="erro">Email e/ou senha inválidos.</span>}
-
-                  <div id="buttom_div">
-                    <Button id="buttonEntar" type="submit">
-                      Login
-                    </Button>
+                <Col xs={6} sm={6}>
+                  <div id='espacamento_texto_img'>
+                    <h2 className="h2_titulo_login">
+                      Faça o login <br />e vamos <br />
+                      mudar o<br /> mundo!
+                    </h2>
                   </div>
-                                 {/* <Link to="/cadastroResponsavel">Cadastro responsável</Link>
-                <Link to="/cadastroLoja">Cadastro Loja</Link> */}
-              </Form>
+                </Col>
+                <Col xs={6} sm={6}>
+                  <div>
+                    <img
+                      className="img_login"
+                      alt="imagem ilustrativa login"
+                      src={imagemlogin}
+                    />
+                  </div>
+                </Col>
+              
+                <Col xs={12} sm={12}>
+                  <Form id="form" onSubmit={handleSubmit}>
+                    <Form.Group>
+                      <Form.Control
+                      
+                        id="input_login"
+                        type="email"
+                        placeholder="Email"
+                        onChange={handleInputChange}
+                        name="email"
+                      />
+                    </Form.Group>
+
+                    <Form.Group>
+                      <Form.Control
+                        id="input_login"
+                        onChange={handleInputChange}
+                        name="password"
+                        type="password"
+                        placeholder="Senha"
+                      />
+                    </Form.Group>
+                    {erro && <span className="erro">Email e/ou senha inválidos.</span>}
+
+                      <div id="buttom_div">
+                        <Button id="buttonEntar" type="submit">
+                          Login
+                        </Button>
+                      </div>
+                                    {/* <Link to="/cadastroResponsavel">Cadastro responsável</Link>
+                    <Link to="/cadastroLoja">Cadastro Loja</Link> */}
+                  </Form>
+                </Col> 
+              </Row>
             </div>
+
           </Col>
         </Row>
+
       </Container>
       <Footer />
     </>
