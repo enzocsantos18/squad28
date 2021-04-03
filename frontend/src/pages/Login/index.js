@@ -69,15 +69,15 @@ function Login() {
   return (
     <>
       <Header />
-      <Container>
+      <Container fluid>
         <Row>
           <Col sm={6}>
             <div className="grid_texto">
-              <h1>
+              <h1 id="h1_login">
                 Olá, somos a<br /> Lapiseira
               </h1>
 
-              <p>
+              <p id='p_login'>
                 Conectamos alunos com necessidades de materiais escolares com
                 pessoas com vontade de mudar essa realidade.
               </p>
@@ -87,8 +87,8 @@ function Login() {
           <Col sm={6}>
             <div className="grid">
               <Row>
-                <div>
-                  <h2 className="titulo_login">
+                <div id='espacamento_texto_img'>
+                  <h2 className="h2_titulo_login">
                     Faça o login <br />e vamos <br />
                     mudar o<br /> mundo!
                   </h2>
@@ -105,6 +105,7 @@ function Login() {
               <Form id="form" onSubmit={handleSubmit}>
                 <Form.Group>
                   <Form.Control
+                   
                     id="input"
                     type="email"
                     placeholder="Email"
@@ -115,7 +116,7 @@ function Login() {
 
                 <Form.Group>
                   <Form.Control
-                    id="inputsenha"
+                    id="input"
                     onChange={handleInputChange}
                     name="password"
                     type="password"
@@ -123,11 +124,14 @@ function Login() {
                   />
                 </Form.Group>
                 {erro && <span className="erro">Email e/ou senha inválidos.</span>}
-                <Link to="/cadastroResponsavel">Cadastro responsável</Link>
-                <Link to="/cadastroLoja">Cadastro Loja</Link>
-                <Button id="buttonEntar" type="submit">
-                  Login
-                </Button>
+
+                  <div id="tete23">
+                    <Button id="buttonEntar" type="submit">
+                      Login
+                    </Button>
+                  </div>
+                                 {/* <Link to="/cadastroResponsavel">Cadastro responsável</Link>
+                <Link to="/cadastroLoja">Cadastro Loja</Link> */}
               </Form>
             </div>
           </Col>

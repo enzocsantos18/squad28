@@ -4,74 +4,74 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-.grid{
-    margin:60px 0 0 0;
-    
+body{
+    background-color: #fff;
 }
 .grid_texto{
-    margin:20% 0 0 100px;
-    
-}
+    display: none;
+}  
 
-.titulo_login{
+/* #h1_login{
+font-family: Roboto;
+font-style: normal;
+font-size: 20px;
+line-height: 56px;
+color: #483972; 
+}*/
+
+/* #p_login{
+font-family: Roboto;
+font-style: normal;
+font-size: 17px;
+ line-height: 42px; 
+color: #483972;
+} */
+
+
+.grid{
+    margin:10% 2% 0 2%;
+}
+#espacamento_texto_img{
+    margin-bottom: 25%;
+}
+.h2_titulo_login{
     font-family: Roboto, sans-serif;
-    font-size: 24px;    
+    font-size: 24px; 
+    line-height: 28px;   
     font-style: normal;
     font-weight: 900;
-    line-height: 28px;
     text-align: left;
     color: #483972;
     margin: 0 0 0 28px;
 }
 
-h1{
-font-family: Roboto;
-font-style: normal;
-font-size: 20px;
-line-height: 56px;
-color: #483972;
-}
-
-p{
-font-family: Roboto;
-font-style: normal;
-font-size: 17px;
-/* line-height: 42px; */
-color: #483972;
-}
-
 .img_login{
     height: 150px;
     width: auto;
-}
+} 
 
 #form{
-    margin-top: 50px;
+    margin-bottom: 10%;
 }
 
-#input{
-    width: 320px;
+.input{
+    visibility: hidden;
+    width: 100%;
     height: 56px;
     background: #FFFFFF;
-   
     border: 1px solid #DEDEDE;
-    box-sizing: border-box;
+    box-sizing: border-box; 
     border-radius: 10px;
 }
-
-#inputsenha{
-    width: 320px;
+.input:hover{
+    width: 100%;
     height: 56px;
     background: #FFFFFF;
-
     border: 1px solid #3DE959;
     box-sizing: border-box; 
     box-shadow: 0px 0px 4px  #3DE959;
     border-radius: 10px;
-}
-/* .Centro{
-    text-align: center;
-} */
+} 
 
 
 #buttonEntar{
@@ -86,15 +86,16 @@ color: #483972;
     line-height: 23px;
     text-align: center;
     color: #FFF;
-    margin: 20px 0 0 80px;
-    
+
 }
-#buttonEntar:hover{
-    background-color: #7B61FF;
+#tete23{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media  (min-width: 371px){
-    #buttonEntar{
-    margin: 20px 0 0 80px;
-    }
+#buttonEntar:hover{
+    background-color: #7B61FF;
+    border-color:#7B61FF ;
 }
+
