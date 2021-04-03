@@ -7,7 +7,6 @@ import ListaAluno from "../../components/ListaAluno";
 import idade from "../../helpers/tratamentoIdade";
 import api from "../../services/api";
 
-
 function Home() {
   const [listaAlunos, setListaAlunos] = useState([]);
 
@@ -16,8 +15,8 @@ function Home() {
     setListaAlunos(data);
   }
 
-  function handleFiltro(event){
-      buscarListas(event.target.value)
+  function handleFiltro(event) {
+    buscarListas(event.target.value);
   }
 
   useEffect(() => {
@@ -27,53 +26,57 @@ function Home() {
   return (
     <>
       <Header>
-        <Link className="btn btn-primary" to="/login">Acessar</Link>
+        <Link className="btn btn-primary" to="/login">
+          Acessar
+        </Link>
       </Header>
- 
+
       <Container>
-      <h2 style={{ width: "334px" }}>
+        <h2 style={{ width: "334px" }}>
           Aqui você encontra várias crianças e pode escolher uma para ajudar
         </h2>
         <span>Bairro:</span>
-      <Form style={{ marginBottom: "30px" }}>
-        <Form.Row >
+        <Form style={{ marginBottom: "30px" }}>
+          <Form.Row>
+            <Col lg="2">
+              <Form.Control
+                onChange={handleFiltro}
+                as="select"
+                defaultValue="Selecione..."
+              >
+                <option value="">Selecione...</option>
+                <option value="Vila Carrão">Vila Carrão</option>
+                <option value="Vila Matilde">Vila Matilde</option>
+                <option value="Vila Nova Manchester">
+                  Vila Nova Manchester
+                </option>
+                <option value="Chácara Califórnia">Chácara Califórnia</option>
+              </Form.Control>
+            </Col>
+          </Form.Row>
+        </Form>
 
-          <Col lg="2">
-            <Form.Control onChange={handleFiltro} as="select" defaultValue="Selecione...">
-            <option value="">Selecione...</option>
-              <option value="Vila Carrão">Vila Carrão</option>
-              <option value="Vila Matilde">Vila Matilde</option>
-              <option value="Vila Nova Manchester">Vila Nova Manchester</option>
-              <option value="Chácara Califórnia">Chácara Califórnia</option>
-
-            </Form.Control>
-          </Col>
-        </Form.Row>
-      </Form>
-
-
-     {
-       listaAlunos.length ? (
-      <div className="listagem">
-          {listaAlunos.map((lista) => {
-            return (
-              <Link key={lista.id} to={`/lista/${lista.id}`}>
-                <ListaAluno
-                  nome={lista.student.name}
-                  idade={idade(lista.student.birthDate)}
-                  descricao={lista.description}
-                  imagem={lista.student.img_id}
-                />
-              </Link>
-            );
-          })}
-        </div>
-       ) :
-       (
-         <h5>Não temos nenhuma lista cadastrada para esse bairro, procure em outro 😃</h5>
-       )
-      }
-      
+        {listaAlunos.length ? (
+          <div className="listagem">
+            {listaAlunos.map((lista) => {
+              return (
+                <Link key={lista.id} to={`/lista/${lista.id}`}>
+                  <ListaAluno
+                    nome={lista.student.name}
+                    idade={idade(lista.student.birthDate)}
+                    descricao={lista.description}
+                    imagem={lista.student.img_id}
+                  />
+                </Link>
+              );
+            })}
+          </div>
+        ) : (
+          <h5>
+            Não temos nenhuma lista cadastrada para esse bairro, procure em
+            outro 😃
+          </h5>
+        )}
       </Container>
       <Footer />
     </>

@@ -1,5 +1,10 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import CadastroResponsavel from "./pages/CadastroResponsavel";
@@ -7,8 +12,8 @@ import DetalheLista from "./pages/DetalheLista";
 import AreaResponsavel from "./pages/AreaResponsavel";
 import DetalheListaResponsavel from "./pages/DetalheListaResponsavel";
 import AreaLoja from "./pages/AreaLoja";
-import CriacaoLista from './pages/CriacaoLista';
-import Auth from './services/auth';
+import CriacaoLista from "./pages/CriacaoLista";
+import Auth from "./services/auth";
 import CadastroAluno from "./pages/CadastroAluno";
 import CadastroLoja from "./pages/CadastroLoja";
 import CadastroProduto from "./pages/CadastroProduto";
@@ -16,38 +21,29 @@ import CadastroProduto from "./pages/CadastroProduto";
 const RotaResponsavel = (props) => {
   if (!Auth.hasToken() || !Auth.isParent()) {
     const component = () => (
-      <Redirect
-        to={{ pathname: "/login", state: { from: props.location } }}
-      />
+      <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
     );
     return <Route {...props} component={component} />;
   }
 
-  return (
-        <Route {...props} />
-  );
+  return <Route {...props} />;
 };
 
 const RotaLoja = (props) => {
   if (!Auth.hasToken() || Auth.isParent()) {
     const component = () => (
-      <Redirect
-        to={{ pathname: "/login", state: { from: props.location } }}
-      />
+      <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
     );
     return <Route {...props} component={component} />;
   }
 
-  return (
-      <Route {...props} />
-  );
+  return <Route {...props} />;
 };
-
 
 function Routes() {
   useEffect(() => {
     Auth.destroyToken();
-  }, [])
+  }, []);
   return (
     <Router>
       <Switch>
@@ -56,11 +52,22 @@ function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/lista/:id" component={DetalheLista} />
         <RotaLoja path="/areaLoja" exact component={AreaLoja} />
-        <RotaLoja path="/areaLoja/cadastroProduto" component={CadastroProduto} />
+        <RotaLoja
+          path="/areaLoja/cadastroProduto"
+          component={CadastroProduto}
+        />
 
         <Route path="/cadastroLoja" component={CadastroLoja} />
-        <RotaResponsavel path="/areaResponsavel" exact component={AreaResponsavel} />
-        <RotaResponsavel path="/areaResponsavel/criarLista" exact component={CriacaoLista} />
+        <RotaResponsavel
+          path="/areaResponsavel"
+          exact
+          component={AreaResponsavel}
+        />
+        <RotaResponsavel
+          path="/areaResponsavel/criarLista"
+          exact
+          component={CriacaoLista}
+        />
         <RotaResponsavel
           path="/areaResponsavel/lista/:id"
           component={DetalheListaResponsavel}
