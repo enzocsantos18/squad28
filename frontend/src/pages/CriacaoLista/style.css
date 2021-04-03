@@ -1,3 +1,23 @@
+#tituloCriacaoLista {
+  font-size: 24px !important;
+  margin-top: 5%;
+  text-align: center;
+}
+
+#subCriacaoLista {
+  font-size: 18px !important;
+  margin-top: 5%;
+  text-align: center;
+}
+
+#papelaria {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+}
+
+
 .lista{
   display: flex;
   flex-wrap: wrap;
@@ -23,5 +43,37 @@
 }
 
 .produtoSelecionado{
-  border: 5px solid #7af198;
+  border: 5px solid #7B61FF;
 }
+
+.btnAdicionarProduto:hover{
+  background-color: #7B61FF;
+}
+
+
+@media only screen and (max-width: 320px) {
+  #papelaria {
+    width: 260px !important;   
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  #tituloCriacaoLista {
+    font-size: 24px !important;
+    margin-top: 2%;
+    text-align: center;
+  }
+
+  #subCriacaoLista {
+    font-size: 18px !important;
+    margin-top: 3%;
+    text-align: center;
+  }
+
+  #papelaria {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+  }
+} 

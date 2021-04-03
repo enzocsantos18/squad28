@@ -7,7 +7,7 @@ import api from "../../services/api";
 import idade from "../../helpers/tratamentoIdade";
 
 import { useParams } from "react-router";
-import "./index.css";
+import "./style.css";
 import CriacaoLista from "../CriacaoLista";
 
 function DetalheListaResponsavel() {
@@ -70,25 +70,27 @@ function DetalheListaResponsavel() {
           <>
             {lista ? (
               <>
-                <h2>Lista</h2>
-                <Row>
-                  <Col sm="12" md="6" lg="4">
-                    <div className="info-lista">
-                      <img
-                        src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`}
-                        alt="Foto ilustrativa de perfil"
-                      />
-                      <h3>
-                        {lista.student.name}, {idade(lista.student.birthDate)}{" "}
-                        anos.
+
+                <h2 className="tituloListaResp">Meu material escolar</h2>
+                <div className="info-lista">
+                <Row className="infoAlunoLista">
+                  <Col>                    
+                      <h3 className="nomeAluno">
+                          {lista.student.name}, {idade(lista.student.birthDate)}{" "}
+                          anos.
+
                       </h3>
                       <span>Escola: {lista.student.school.name}</span>
-                      <p>{lista.description}</p>
-                    </div>
+                      <p className="pPadrao">{lista.description}</p>
+                      <p className="pPadrao">Papelaria escolhida: {loja}</p>    
                   </Col>
-                  <Col>
-                    <h4>Papelaria: {loja}</h4>
-                    <p>Itens da lista: </p>
+                  <Col>    
+                    <img className="avatarAluno" src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`} alt="Foto ilustrativa de perfil" />                   
+                  
+                  </Col>
+                  </Row>
+                                    
+                    <p className="subListaResp">Itens da lista: </p>
 
                     {!loja && <Button>Adicionar Itens na lista</Button>}
 
@@ -96,8 +98,8 @@ function DetalheListaResponsavel() {
                       item.purchased === 0 ? (
                         <div key={item.product.id} className="produto">
                           <div className="info-produto">
-                            <p>{item.product.name}</p>
-                            <p>Em aberto</p>
+                            <p className="pItem">{item.product.name}</p>
+                            <p className="pAberto">Aberto</p>
                           </div>
                         </div>
                       ) : (
@@ -117,8 +119,8 @@ function DetalheListaResponsavel() {
                         </div>
                       )
                     )}
-                  </Col>
-                </Row>
+                
+                </div>
               </>
             ) : (
               <>

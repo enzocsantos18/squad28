@@ -61,7 +61,7 @@ function CadastroResponsavel(props) {
   }
 
   return (
-    <div className="main">
+    <div className="mainResponsavel">
       <Header />
       <Container>
         <img id="imgRespon" src={imgResp} alt="Avatar Responsavel" />
@@ -89,15 +89,14 @@ function CadastroResponsavel(props) {
           }) => (
             <Form className="formulario" onSubmit={handleSubmit}>
               <div className="formMenor">
-                <h1 className="titulo">Cadastro Responsável</h1>
-                <Row>
-                  <Col xs={9}>
-                    <h2 className="subtitulo1">
-                      Nesta etapa faremos um cadastro inicial para conhecermos
-                      melhor você{" "}
+                <h1 className="tituloResponsavel">Cadastro do Responsável</h1>
+               
+                  <Col >
+                    <h2 className="sub1">
+                      Insira os seus dados:{" "}
                     </h2>
                   </Col>
-                </Row>
+                
                 <Form.Row className="linhaForm1">
                   <Form.Group className="campo" as={Col} md="4">
                     <Form.Control
@@ -185,13 +184,13 @@ function CadastroResponsavel(props) {
                     ) : null}
                   </Form.Group>
                 </Form.Row>
-                <Row>
-                  <Col xs={10}>
-                    <h2 className="subtitulo2">
-                      Para finalizar o seu cadastro insira:
+                
+                  <Col >
+                    <h2 className="sub2">
+                      Informações para login:
                     </h2>
                   </Col>
-                </Row>
+              
                 <Form.Row className="linhaForm1">
                   <Form.Group as={Col} md="4">
                     <Form.Control
@@ -235,7 +234,7 @@ function CadastroResponsavel(props) {
                 </Form.Row>
 
                 <Button id="btnEnviar" type="submit">
-                  Continuar
+                  Cadastrar
                 </Button>
               </div>
             </Form>

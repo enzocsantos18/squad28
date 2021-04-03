@@ -8,7 +8,7 @@
 /* MOBILE FIRST */
 
 
-.tituloResponsavel {
+.tituloLoja {
     color: #483972;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
@@ -154,8 +154,8 @@
     margin-bottom: 45px;
 }    
 
-@media only screen and (max-width: 999px) {
-    #imgRespon {
+@media only screen and (max-width: 1214px) {
+    #imgPapelaria {
         display: none;
     }
     
@@ -214,17 +214,18 @@
 
 /* AJUSTES PARA DESKTOP */
 
-@media only screen and (min-width: 1001px) {
+@media only screen and (min-width: 1215px) {
     .main {
       background-color: #F1F1F1;      
     }
     .formulario {
         background-color: white;        
     }
-    #imgRespon {        
+    #imgPapelaria {        
         margin-top: 5%;  
-        margin-right: 0%;
-        float: right;            
+        margin-right: 25%;
+        float: right;   
+        padding: 0%;         
     }
 
 

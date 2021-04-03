@@ -19,6 +19,7 @@ import CadastroLoja from "./pages/CadastroLoja";
 import CadastroProduto from "./pages/CadastroProduto";
 import Oficial from "./pages/Oficial"
 
+
 const RotaResponsavel = (props) => {
   if (!Auth.hasToken() || !Auth.isParent()) {
     const component = () => (
@@ -54,11 +55,7 @@ function Routes() {
         <Route path="/lista" exact component={Home} />
         <Route path="/lista/:id" component={DetalheLista} />
         <RotaLoja path="/areaLoja" exact component={AreaLoja} />
-        <RotaLoja
-          path="/areaLoja/cadastroProduto"
-          component={CadastroProduto}
-        />
-
+        <RotaLoja path="/areaLoja/cadastroProduto" component={CadastroProduto} />
         <Route path="/cadastroLoja" component={CadastroLoja} />
         <RotaResponsavel
           path="/areaResponsavel"

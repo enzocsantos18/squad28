@@ -72,8 +72,10 @@ function Login() {
       <Container fluid>
         <Row>
           <Col sm={6}>
+
             <div className="div_texto">
               <h1 id="h1_login">
+
                 Olá, somos a<br /> Lapiseira
               </h1>
 

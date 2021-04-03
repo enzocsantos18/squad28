@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Button, Container } from "react-bootstrap";
-import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
-import Filho from "../../components/Filho";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import idade from "../../helpers/tratamentoIdade";
-import api from "../../services/api";
-import Auth from "../../services/auth";
+
+import React, { useEffect, useState } from 'react';
+import "./style.css";
+import { Button, Container } from 'react-bootstrap';
+import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
+import Filho from '../../components/Filho';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import idade from '../../helpers/tratamentoIdade'
+import api from '../../services/api';
+import Auth from '../../services/auth'
+
 // import { Container } from './styles';
 
 function AreaResponsavel() {
@@ -30,20 +33,16 @@ function AreaResponsavel() {
   }
 
   return (
-    <>
+
+    <div className="mainAreaResp">
       <Header linkLogo="/areaResponsavel">
-        <Button onClick={handleSair}>Sair</Button>
+        <Button className="btnSair" onClick={handleSair}>Sair</Button>
       </Header>
       <Container>
-        <Link
-          className="btn btn-primary"
-          to="/cadastroAluno"
-          style={{ marginBottom: "20px" }}
-        >
-          Adicionar Filho
-        </Link>
+        <h1 className="tituloAreaResp">Adicione as informações do(s) estudante(s).</h1>
+        <Link className="btn btn-primary btnAdicionaAluno" to="/cadastroAluno" style={{marginBottom: "20px"}}>Adicionar Estudante</Link>
 
-        <h2>Meus Filhos</h2>
+        
         <div className="listagem">
           {listaFilhos ? (
             <>
@@ -62,8 +61,9 @@ function AreaResponsavel() {
           )}
         </div>
       </Container>
-      <Footer />
-    </>
+    <Footer/>
+    </div>
+
   );
 }
 
