@@ -16,7 +16,7 @@ import CriacaoLista from "./pages/CriacaoLista";
 import Auth from "./services/auth";
 import CadastroAluno from "./pages/CadastroAluno";
 import CadastroLoja from "./pages/CadastroLoja";
-import CadastroProduto from "./pages/CadastroProduto";
+// import CadastroProduto from "./pages/CadastroProduto";
 
 const RotaResponsavel = (props) => {
   if (!Auth.hasToken() || !Auth.isParent()) {
@@ -52,10 +52,12 @@ function Routes() {
         <Route path="/" exact component={Home} />
         <Route path="/lista/:id" component={DetalheLista} />
         <RotaLoja path="/areaLoja" exact component={AreaLoja} />
+
         <RotaLoja
           path="/areaLoja/cadastroProduto"
           component={CadastroProduto}
         />
+
 
         <Route path="/cadastroLoja" component={CadastroLoja} />
         <RotaResponsavel
