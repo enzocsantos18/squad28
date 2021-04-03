@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
-.main {
+.mainResponsavel {
     background-color: white;
+    width: 100vw;
 }
 
 /* MOBILE FIRST */
 
 
-.titulo {
+.tituloResponsavel {
     color: #483972;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
@@ -17,7 +18,7 @@
    
 }
 
-.subtitulo1 {
+.sub1 {
     color: #483972;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
@@ -26,13 +27,13 @@
     margin-left: 0%; 
 }
 
-.subtitulo2 {
+.sub2 {
     color: #483972;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     font-size: 18px;
     margin-top: 15px;
-    margin-left: 0%; 
+    text-align: left;
 }
 
 .formulario {
@@ -228,32 +229,34 @@
 
 
 
-    .titulo {
+    .tituloResponsavel {
         color: #483972;
         font-family: 'Roboto', sans-serif;
         font-weight: 900;
         font-size: 24px;
-        text-align: left;
-        margin-top: 20px;
         margin-left: 0%; 
+        margin-top: 20px;
+        text-align: left;
+         
     }    
 
-    .subtitulo1 {
+    .sub1 {
         color: #483972;
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 18px;
-        margin-top: 15px;
-        margin-left: 0%; 
+        margin-top: 10%;       
+        text-align: left;
+        width: 320px;
     }
     
-    .subtitulo2 {
+    .sub2 {
         color: #483972;
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         font-size: 18px;
-        margin-top: 15px;
-        margin-left: 0%; 
+        margin-top: 15px;      
+        text-align: left;
     }   
 
     #btnEnviar {    
