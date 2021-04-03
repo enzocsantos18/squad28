@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./style.css";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import { Container, Row, Col, Modal, Button, Form } from "react-bootstrap";
@@ -7,7 +8,7 @@ import idade from "../../helpers/tratamentoIdade";
 import real from "../../helpers/tratamentoDinheiro";
 
 import { useParams } from "react-router";
-import "./index.css";
+
 
 function DetalheLista() {
   const [lista, setLista] = useState();
@@ -95,52 +96,53 @@ function DetalheLista() {
   }, [itens]);
 
   return (
-    <>
+    <div className="main">
       <Header />
       <Container>
         {lista ? (
           <>
-            <h2>Meu material escolar</h2>
-            <Row>
-              <Col sm="12" md="6" lg="4">
-                <div className="info-lista">
-                  <img
-  src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`}                    alt="Foto ilustrativa de perfil"
-                  />
-                  <h3>
-                    {lista.student.name}, {idade(lista.student.birthDate)} anos.
-                  </h3>
-                  <span>Escola: {lista.student.school.name}</span>
-                  <p>{lista.description}</p>
-                </div>
-              </Col>
+            <h2 className="tituloDetLista">Lista de Material</h2>
+            <div className="info-lista">
+            <Row className="infoDetLista">
               <Col>
-                <p>Selecione os items que deseja doar: </p>
+                <h3 className="nomeAluno">
+                  {lista.student.name}, {idade(lista.student.birthDate)} anos.
+                </h3>
+                <span>Escola: {lista.student.school.name}</span>
+                <p>{lista.description}</p>
+              </Col>
+              <Col>  
+                  <img className="avatarAluno" src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`} alt="Foto ilustrativa de perfil" />
+              </Col>    
+            </Row>    
+              
+            
+                <p className="subDetLista">Selecione os itens que deseja doar: </p>
                 {lista.productsList.map((item) =>
                   item.purchased === 0 ? (
-                    <div key={item.product.id} className="produto">
-                      <input
+                    <div key={item.product.id} className="produtoDet">
+                      <input 
                         type="checkbox"
                         onClick={() =>
                           handleSelct(item.product.id, item.product.price)
                         }
                       />
                       <div className="info-produto">
-                        <p>{item.product.name}</p>
-                        <p>{real(item.product.price)}</p>
+                        <p className="pItemDet">{item.product.name}</p>
+                        <p className="pPreco">{real(item.product.price)}</p>
                       </div>
                     </div>
                   ) : (
                     <div key={item.product.id} className="produto comprado">
-                      <p>{item.product.name}</p>
+                      <p >{item.product.name}</p>
                     </div>
                   )
                 )}
                 <p>Subtotal de sua doação: {real(Number(valor))}</p>
 
-                {valor > 0 && <Button onClick={handleShow}>Doar</Button>}
-              </Col>
-            </Row>
+                {valor > 0 && <Button className="btnDoar" onClick={handleShow}>Doar</Button>}
+              
+          </div>  
           </>
         ) : (
           <>
@@ -229,7 +231,7 @@ function DetalheLista() {
                   <Form.Control.Feedback type='invalid'>{ errors.cvv }</Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
-            <Button variant="success" onClick={handleDoacao}>
+            <Button className="btnDoar" variant="success" onClick={handleDoacao}>
               Doar
             </Button>
             </Form>
@@ -238,7 +240,7 @@ function DetalheLista() {
         </Modal>
       </Container>
       <Footer />
-    </>
+    </div>
   );
 }
 
