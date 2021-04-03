@@ -73,7 +73,7 @@ function Login() {
         <Row>
           <Col sm={6}>
             <div className="grid_texto">
-              <h1>
+              <h1 className="titulo"> 
                 Olá, somos a<br /> Lapiseira
               </h1>
 
