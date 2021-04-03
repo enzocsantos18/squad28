@@ -97,7 +97,7 @@ function CadastroLoja(props) {
                                   {console.log(values)}
 
               <div className="formMenor">
-                <h1 className="titulo">Cadastro de papelaria parceira</h1>
+                <h1 className="tituloLoja">Cadastro de papelaria parceira</h1>
                 <Row>
                   <Col xs={9}>
                     <h2 className="subtitulo1">

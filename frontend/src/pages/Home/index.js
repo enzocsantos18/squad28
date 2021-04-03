@@ -35,7 +35,7 @@ function Home() {
         <h1 className="tituloHome">
           Aqui você encontra várias crianças e pode escolher uma para ajudar, basta selecionar o bairro.
         </h1>
-        <span className="subtitulo">Bairro:</span>
+        <span className="subtituloHome">Bairro:</span>
 
       <Form className="caixaSelect">
         <Form.Row >
@@ -72,7 +72,7 @@ function Home() {
        ) :
        (
          <>
-         <h3 className="subtitulo2"> Sem listas nesse bairro </h3>
+         <h3 className="subtituloHome2"> Sem listas nesse bairro </h3>
          <h2 className="sad"> :( </h2> 
          </>
        )

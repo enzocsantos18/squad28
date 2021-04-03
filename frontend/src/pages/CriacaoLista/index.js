@@ -62,9 +62,10 @@ function CriacaoLista({ bairro, listId }) {
 
   return (
     <>
-      <h2>Momento de montar sua lista</h2>
-      <p>Selecione uma papelaria da sua região</p>
+      <h1 id="tituloCriacaoLista">Momento de montar sua lista</h1>
+      <h2 id="subCriacaoLista">Selecione uma papelaria da sua região</h2>
       <Form.Control
+        
         required
         id="papelaria"
         name="papelaria"
@@ -79,7 +80,7 @@ function CriacaoLista({ bairro, listId }) {
       </Form.Control>
       {papelariaSelecionada && (
         <>
-          <h3 style={{ margin: "20px 0" }}>Selecione os produtos:</h3>
+          <h3 id="tituloCriacaoLista">Selecione os produtos:</h3>
           <div className="lista">
             {produtos.map((produto) => (
               <div class="produtoLista">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import "./style.css";
 import { Button, Container } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -31,14 +32,15 @@ function AreaResponsavel() {
   }
 
   return (
-    <>
-    <Header linkLogo="/areaResponsavel">
-      <Button onClick={handleSair}>Sair</Button>
-    </Header>
+    <div className="mainAreaResp">
+      <Header linkLogo="/areaResponsavel">
+        <Button className="btnSair" onClick={handleSair}>Sair</Button>
+      </Header>
       <Container>
-      <Link className="btn btn-primary" to="/cadastroAluno" style={{marginBottom: "20px"}}>Adicionar Filho</Link>
+        <h1 className="tituloAreaResp">Adicione as informações do(s) estudante(s).</h1>
+        <Link className="btn btn-primary btnAdicionaAluno" to="/cadastroAluno" style={{marginBottom: "20px"}}>Adicionar Estudante</Link>
 
-        <h2>Meus Filhos</h2>
+        
         <div className="listagem">
 
         {
@@ -59,7 +61,7 @@ function AreaResponsavel() {
        
       </Container>
     <Footer/>
-    </>
+    </div>
   );
 }
 

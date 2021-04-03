@@ -72,7 +72,7 @@ function CadastroAluno(props) {
   }
 
   return (
-    <div className="main">
+    <div className="mainCadAluno">
       <Header linkLogo="/areaResponsavel" />
       <img id="imgAlunos" src={alunos} alt="Avatar Alunos" />
 
