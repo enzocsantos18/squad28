@@ -102,7 +102,7 @@ function CriacaoLista({ bairro, listId }) {
 
       {produtosSelecionados.length !== 0 ? (
         <>
-          <Button onClick={handleConfirmacao}>Adicionar produtos</Button>
+          <Button className="btnItemProduto" onClick={handleConfirmacao}>Adicionar produtos</Button>
         </>
       ):
       null

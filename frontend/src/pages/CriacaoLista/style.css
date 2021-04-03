@@ -43,8 +43,13 @@
 }
 
 .produtoSelecionado{
-  border: 5px solid #7af198;
+  border: 5px solid #7B61FF;
 }
+
+.btnAdicionarProduto:hover{
+  background-color: #7B61FF;
+}
+
 
 @media only screen and (max-width: 320px) {
   #papelaria {
@@ -55,7 +60,7 @@
 @media only screen and (min-width: 900px) {
   #tituloCriacaoLista {
     font-size: 24px !important;
-    margin-top: 1%;
+    margin-top: 2%;
     text-align: center;
   }
 

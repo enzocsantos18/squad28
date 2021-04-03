@@ -14,7 +14,7 @@ function Filho({nome, idade, descricao, lista, imagem}) {
           
           {
             lista ? (
-              <Link className="btn btn-primary" variant="" style={{width: '100%'}} to={`/areaResponsavel/lista/${lista.id}`}>Ver Lista</Link>
+              <Link className="btn btn-primary btnVerLista" variant="" style={{width: '100%'}} to={`/areaResponsavel/lista/${lista.id}`}>Ver Lista</Link>
             ):
             null
           }

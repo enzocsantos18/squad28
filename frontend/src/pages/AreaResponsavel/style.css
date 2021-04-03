@@ -1,5 +1,5 @@
 .mainAreaResp {
-    width: 100%;
+    width: 100vw    ;
     
 }
 
@@ -7,7 +7,7 @@
     color: #483972;
     font-family: 'Roboto', sans-serif;
     font-weight: 900;
-    font-size: 1px !important;
+    font-size: 18px !important;
     text-align: left;
     margin-top: 5%;
 }
