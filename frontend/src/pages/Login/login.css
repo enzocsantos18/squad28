@@ -7,26 +7,9 @@
 body{
     background-color: #fff;
 }
-.grid_texto{
+.div_texto{
     display: none;
 }  
-
-/* #h1_login{
-font-family: Roboto;
-font-style: normal;
-font-size: 20px;
-line-height: 56px;
-color: #483972; 
-}*/
-
-/* #p_login{
-font-family: Roboto;
-font-style: normal;
-font-size: 17px;
- line-height: 42px; 
-color: #483972;
-} */
-
 
 .grid{
     margin:10% 2% 0 2%;
@@ -54,8 +37,7 @@ color: #483972;
     margin-bottom: 10%;
 }
 
-.input{
-    visibility: hidden;
+#input_login{
     width: 100%;
     height: 56px;
     background: #FFFFFF;
@@ -63,7 +45,7 @@ color: #483972;
     box-sizing: border-box; 
     border-radius: 10px;
 }
-.input:hover{
+#input_login:hover{
     width: 100%;
     height: 56px;
     background: #FFFFFF;
@@ -88,7 +70,7 @@ color: #483972;
     color: #FFF;
 
 }
-#tete23{
+#buttom_div{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -99,3 +81,61 @@ color: #483972;
     border-color:#7B61FF ;
 }
 
+
+@media (min-width: 540px){
+    .div_texto{
+        display: block;
+        margin-top: 20%;
+        margin-left: 5%;
+    }  
+    
+    #h1_login{
+    font-size: 32px;
+    line-height: 38px;
+ 
+    }
+    
+    #p_login{
+    font-size: 24px;
+    line-height: 28px; 
+    }
+}
+@media (min-width: 721px){
+    .div_texto{
+        display: block;
+    }
+}
+
+@media (min-width: 992px){
+    .div_texto{
+        display: block;
+        margin-top: 20%;
+        margin-left: 10%;
+        margin-right: 8%;
+        
+    }
+    #h1_login{
+        font-size: 48px;
+        line-height: 56px;
+        margin-bottom: 40px;
+    }
+    #p_login{
+        font-size: 24px;
+        line-height: 28px;
+    }
+    /* .grid{
+        border-style: solid;
+        border: 2px solid black;
+        padding: 10px;
+        border-radius: 25px;
+    } */
+    #espacamento_texto_img{
+        margin-bottom: 15%;
+    }
+
+
+
+
+
+
+}

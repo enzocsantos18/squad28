@@ -72,7 +72,7 @@ function Login() {
       <Container fluid>
         <Row>
           <Col sm={6}>
-            <div className="grid_texto">
+            <div className="div_texto">
               <h1 id="h1_login">
                 Olá, somos a<br /> Lapiseira
               </h1>
@@ -106,7 +106,7 @@ function Login() {
                 <Form.Group>
                   <Form.Control
                    
-                    id="input"
+                    id="input_login"
                     type="email"
                     placeholder="Email"
                     onChange={handleInputChange}
@@ -116,7 +116,7 @@ function Login() {
 
                 <Form.Group>
                   <Form.Control
-                    id="input"
+                    id="input_login"
                     onChange={handleInputChange}
                     name="password"
                     type="password"
@@ -125,7 +125,7 @@ function Login() {
                 </Form.Group>
                 {erro && <span className="erro">Email e/ou senha inválidos.</span>}
 
-                  <div id="tete23">
+                  <div id="buttom_div">
                     <Button id="buttonEntar" type="submit">
                       Login
                     </Button>
