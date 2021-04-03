@@ -1,10 +1,10 @@
 {
-  "type": "",
-  "host": "",
-  "port": 1111,
-  "username": "",
-  "password": "",
-  "database": "squad28",
+  "type": "mssql",
+  "host": "localhost",
+  "port": 1433,
+  "username": "root",
+  "password": "root",
+  "database": "MateriaisDB",
   "logging": false,
   "entities": [
      "src/app/models/*.ts"
