@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
@@ -40,8 +41,7 @@ function DetalheLista() {
         setItens([]);
         setValor(0);
         handleClose();
-      } catch (e) {
-      }
+      } catch (e) {}
     }
   }
 
@@ -62,30 +62,36 @@ function DetalheLista() {
   const setField = (field, value) => {
     setForm({
       ...form,
-      [field]: value
-    })
+      [field]: value,
+    });
     // Check and see if errors exist, and remove them from the error object:
-    if ( !!errors[field] ) setErrors({
-      ...errors,
-      [field]: null
-    })
-  }
+    if (!!errors[field])
+      setErrors({
+        ...errors,
+        [field]: null,
+      });
+  };
 
   const acharErros = () => {
     const { nome, cvv, dataVencimento, cpf, numero } = form;
     const novosErros = {};
     // name errors
-    if (!nome || nome === "") novosErros.nome = "O campo nome não pode ficar vazio";
-    else if (nome.length < 3) novosErros.nome = "O campo nome deve ter mais de 3 caracteres";
+    if (!nome || nome === "")
+      novosErros.nome = "O campo nome não pode ficar vazio";
+    else if (nome.length < 3)
+      novosErros.nome = "O campo nome deve ter mais de 3 caracteres";
     // food errors
-    if (!cpf || cpf === "" || cpf.length !== 11) novosErros.cpf = "Digite um cpf válido";
+    if (!cpf || cpf === "" || cpf.length !== 11)
+      novosErros.cpf = "Digite um cpf válido";
     // rating errors
     if (!numero || numero.length !== 16)
       novosErros.numero = "Escreva um número de cartão valido";
     // comment errors
-    if (!cvv || cvv.length !== 3) novosErros.cvv = "Escreva um número de CVV válido";
-    
-    if (!dataVencimento || dataVencimento === "" || dataVencimento.length !== 6) novosErros.dataVencimento = "Escreva uma data válida";
+    if (!cvv || cvv.length !== 3)
+      novosErros.cvv = "Escreva um número de CVV válido";
+
+    if (!dataVencimento || dataVencimento === "" || dataVencimento.length !== 6)
+      novosErros.dataVencimento = "Escreva uma data válida";
 
     return novosErros;
   };
@@ -105,7 +111,8 @@ function DetalheLista() {
               <Col sm="12" md="6" lg="4">
                 <div className="info-lista">
                   <img
-  src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`}                    alt="Foto ilustrativa de perfil"
+                    src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`}
+                    alt="Foto ilustrativa de perfil"
                   />
                   <h3>
                     {lista.student.name}, {idade(lista.student.birthDate)} anos.
@@ -157,19 +164,21 @@ function DetalheLista() {
               <Form.Row>
                 <Form.Group as={Col} controlId="nome">
                   <Form.Label>Nome:</Form.Label>
-                  <Form.Control 
+                  <Form.Control
                     type="text"
                     placeholder="Escreva seu nome"
                     onChange={(e) => setField("nome", e.target.value)}
                     isInvalid={!!errors.nome}
                   />
-                  <Form.Control.Feedback type='invalid'>{ errors.nome }</Form.Control.Feedback>
-
+                  <Form.Control.Feedback type="invalid">
+                    {errors.nome}
+                  </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="Cpf">
                   <Form.Label>CPF:</Form.Label>
-                  <Form.Control                     type="number"
+                  <Form.Control
+                    type="number"
                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value))
                         .toString()
@@ -179,13 +188,16 @@ function DetalheLista() {
                     isInvalid={!!errors.cpf}
                     placeholder="Digite seu CPF"
                   />
-                   <Form.Control.Feedback type='invalid'>{ errors.cpf }</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.cpf}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="numeroCartao">
                   <Form.Label>Número do cartão:</Form.Label>
-                  <Form.Control                     type="number"
+                  <Form.Control
+                    type="number"
                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value))
                         .toString()
@@ -195,13 +207,16 @@ function DetalheLista() {
                     onChange={(e) => setField("numero", e.target.value)}
                     isInvalid={!!errors.numero}
                   />
-                   <Form.Control.Feedback type='invalid'>{ errors.numero }</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.numero}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
               <Form.Row>
                 <Form.Group as={Col} controlId="Data">
                   <Form.Label>MMAAAA:</Form.Label>
-                  <Form.Control                     type="string"
+                  <Form.Control
+                    type="string"
                     placeholder="Ex: 102025"
                     onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value))
@@ -211,12 +226,15 @@ function DetalheLista() {
                     onChange={(e) => setField("dataVencimento", e.target.value)}
                     isInvalid={!!errors.dataVencimento}
                   />
-                  <Form.Control.Feedback type='invalid'>{ errors.dataVencimento }</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.dataVencimento}
+                  </Form.Control.Feedback>
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="CVV">
                   <Form.Label>CVV:</Form.Label>
-                  <Form.Control                     onInput={(e) => {
+                  <Form.Control
+                    onInput={(e) => {
                       e.target.value = Math.max(0, parseInt(e.target.value))
                         .toString()
                         .slice(0, 3);
@@ -226,15 +244,16 @@ function DetalheLista() {
                     onChange={(e) => setField("cvv", e.target.value)}
                     isInvalid={!!errors.cvv}
                   />
-                  <Form.Control.Feedback type='invalid'>{ errors.cvv }</Form.Control.Feedback>
+                  <Form.Control.Feedback type="invalid">
+                    {errors.cvv}
+                  </Form.Control.Feedback>
                 </Form.Group>
               </Form.Row>
-            <Button variant="success" onClick={handleDoacao}>
-              Doar
-            </Button>
+              <Button variant="success" onClick={handleDoacao}>
+                Doar
+              </Button>
             </Form>
           </Modal.Body>
-    
         </Modal>
       </Container>
       <Footer />

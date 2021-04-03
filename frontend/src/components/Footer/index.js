@@ -1,5 +1,5 @@
-import React from 'react';
-import './style.css';
+import React from "react";
+import "./style.css";
 
 function Footer() {
   return (
@@ -12,8 +12,6 @@ function Footer() {
         <a href="https://www.instagram.com/?hl=pt-br">Facebook</a>
         <a href="https://www.instagram.com/?hl=pt-br">Twitter</a>
         <a href="https://www.instagram.com/?hl=pt-br">Instagram</a>
-
-
       </div>
     </footer>
   );

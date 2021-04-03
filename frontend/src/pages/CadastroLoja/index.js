@@ -4,14 +4,14 @@ import Footer from "../../components/Footer";
 import { Form, Col, Container, Row, Button } from "react-bootstrap";
 import api from "../../services/api";
 import { useHistory } from "react-router-dom";
-import alunos from "../../assets/alunos.png";
+import papelaria from "../../assets/papelaria.png";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
 function CadastroLoja(props) {
   const history = useHistory();
 
-  const [bairro, setBairro] = useState('');
+  const [bairro, setBairro] = useState("");
 
   const validationSchema = Yup.object().shape({
     nome: Yup.string()
@@ -33,29 +33,28 @@ function CadastroLoja(props) {
       .max(140, "O campo rua deve ter menos de 140 caracteres"),
   });
 
-  async function handleBairro(event){
-    setBairro(event.target.value)
+  async function handleBairro(event) {
+    setBairro(event.target.value);
   }
 
   async function handleFormik(values, metodos) {
     metodos.setSubmitting(true);
-    try{
-      if(bairro !== ""){
-
-        await api.post('/paperStore', {
+    try {
+      if (bairro !== "") {
+        await api.post("/paperStore", {
           name: values.nome,
-          description:values.descricao ,
-          email:values.email ,
+          description: values.descricao,
+          email: values.email,
           password: values.senha,
           street: values.rua,
           neighborhood: bairro,
-          city: 'São Paulo',
-          state: 'SP'
-        })
-        history.push('/');
+          city: "São Paulo",
+          state: "SP",
+        });
+        history.push("/");
       }
-    }catch(e){
-      toast.error('Erro ao criar papelaria')
+    } catch (e) {
+      toast.error("Erro ao criar papelaria");
     }
 
     metodos.resetForm();
@@ -65,7 +64,7 @@ function CadastroLoja(props) {
   return (
     <div className="main">
       <Header linkLogo="/" />
-      <img id="imgAlunos" src={alunos} alt="Avatar Alunos" />
+      <img id="imgAlunos" src={papelaria} alt="Imagem de papelaria" />
 
       <Container>
         <Formik
@@ -94,7 +93,7 @@ function CadastroLoja(props) {
             isSubmitting,
           }) => (
             <Form className="formulario" onSubmit={handleSubmit}>
-                                  {console.log(values)}
+              {console.log(values)}
 
               <div className="formMenor">
                 <h1 className="titulo">Cadastro de papelaria parceira</h1>

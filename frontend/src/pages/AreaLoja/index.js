@@ -126,7 +126,13 @@ function AreaLoja() {
               )}
               <Row>
                 <Col>
-                  <Link class="btn" to="/areaLoja/cadastroProduto" id="opcaoPapelaria">Adicionar Produto</Link>
+                  <Link
+                    class="btn"
+                    to="/areaLoja/cadastroProduto"
+                    id="opcaoPapelaria"
+                  >
+                    Adicionar Produto
+                  </Link>
                 </Col>
               </Row>
 

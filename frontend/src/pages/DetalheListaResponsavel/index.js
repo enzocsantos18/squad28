@@ -74,9 +74,10 @@ function DetalheListaResponsavel() {
                 <Row>
                   <Col sm="12" md="6" lg="4">
                     <div className="info-lista">
-                    <img
-  src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`}                    alt="Foto ilustrativa de perfil"
-                  />
+                      <img
+                        src={`http://localhost:3000/avatar/avatar${lista.student.img_id}.png`}
+                        alt="Foto ilustrativa de perfil"
+                      />
                       <h3>
                         {lista.student.name}, {idade(lista.student.birthDate)}{" "}
                         anos.
@@ -127,10 +128,12 @@ function DetalheListaResponsavel() {
           </>
         ) : (
           <>
-          {lista && (
-            <CriacaoLista listId={id} bairro={lista.student.school.neighborhood}/>
-
-          )}
+            {lista && (
+              <CriacaoLista
+                listId={id}
+                bairro={lista.student.school.neighborhood}
+              />
+            )}
           </>
         )}
       </Container>

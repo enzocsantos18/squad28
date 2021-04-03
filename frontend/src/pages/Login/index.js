@@ -28,7 +28,7 @@ function Login() {
   async function handleSubmit(event) {
     event.preventDefault();
 
-    try{
+    try {
       const response = await api.post("/auth/parent", {
         ...dados,
       });
@@ -41,29 +41,24 @@ function Login() {
         });
         history.push("/areaResponsavel");
       }
-    }
-    catch(e){
-      try{
-
+    } catch (e) {
+      try {
         const responseStore = await api.post("/auth/store", {
           ...dados,
         });
-  
+
         if (responseStore.status === 200) {
           Auth.setToken({
             id: responseStore.data.id,
             token: responseStore.data.token,
             type: "Store",
           });
-        history.push("/areaLoja");
-        } 
-      }catch(e){
-        setErro(true)
+          history.push("/areaLoja");
+        }
+      } catch (e) {
+        setErro(true);
       }
     }
-        
-
-  
   }
 
   return (
@@ -139,6 +134,7 @@ function Login() {
                   </Form>
                 </Col> 
               </Row>
+
             </div>
 
           </Col>
