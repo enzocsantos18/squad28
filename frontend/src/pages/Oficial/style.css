@@ -25,7 +25,7 @@ body {
     line-height: 28px;
     color: #483972;
 } 
-#p_subtitulo{
+.p_home{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -33,7 +33,9 @@ body {
     line-height: 19px;
     color: #483972;
 } 
-
+#teste_topo{
+    margin-left: 5%;
+}
 .button{
     background: #483972;
     border-radius: 8px;
@@ -45,14 +47,16 @@ body {
     transform: translate(-50%,-50%);
     margin-top: 50px;
     color: #fff;
-    
 }
 .button:hover{
     background-color: #7B61FF;
     color: #fff;
 }
+#button_precipal{
+    display: none;
+}
 
-h2{
+.h2_home{
     font-family: Roboto;
     font-style: normal;
     font-weight: 900;
@@ -61,10 +65,10 @@ h2{
     color: #483972;
     margin-top:50px;
     margin-left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); 
 }
 
-p{
+#p_subtitulo{
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
@@ -72,7 +76,6 @@ p{
     line-height: 19px;
     color: #483972;
 } 
-
 
 .texto_imagem{
     width: auto;
@@ -83,29 +86,28 @@ p{
     font-size: 14px;
     line-height: 16px;
     color: #483972;
-    text-align: left; 
-    padding: 0 0 0 34px;
-    /* margin: 0 34px 0 34px; */
+    /* text-align: left;  */
+    /* padding: 0 0 0 34px; */
+    margin: 0 0 0 25px;
 }
 
 #img_nosso_objetivo{
-    width: 100%;
-    height: 15%;
-    display: block;
+    width: 172.04px;
+    height: 115px;
+    /* display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15%;
+    margin-top: 15%; */
 }
 #espacamento_h2{
     margin-top: 81px;
 }
 .centralizarTexto{
     width: 220px;
-    position: relative;
-    margin-left: 50%;
-    transform: translate(-50%,0);
     text-align: center;
-
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .button2{
@@ -164,9 +166,7 @@ p{
     color: #000000;
     margin: 0 0 0 0;
 }
-#button_precipal{
-    display: none;
-}
+
 
 @media (min-width: 540px){
     #menu_button{
@@ -182,7 +182,7 @@ p{
         padding: 45px 0 0 37px;
         align-items: center;
     }
-    .h1_titulo{
+    /* .h1_titulo{
         width: 100%;
         height: auto;
         top: 1350px; 
@@ -190,14 +190,14 @@ p{
         line-height: 32px;
         margin-top: 10%;
         margin-left: 10%;
-    }
-    p{
+    } */
+    /* .p_home{
         font-size: 19px;
         line-height: 21px;
         margin-top: 10%;
         margin-left: 10%;
-    }
-    .button{
+    } */
+    /* .button{
         margin-top: 25%;
     }
     .centralizarTexto{
@@ -215,23 +215,23 @@ p{
         font-size: 16px;
         line-height: 20px;
         padding: 0 25% 0 20%;
-    }
-    #img_nosso_objetivo{
+    } */
+    /* #img_nosso_objetivo{
         width: 90%;
         height: 15%;
         margin-top: 5%;
-    }    
-    .fundo_card{
+    }     */
+    /* .fundo_card{
         padding: 6% 5% 15% 5%;
         box-shadow: 1px 1px 1px #DCDCDC;
         background-color: #FAFAFA;
     } 
     .p_res_920{
-        font-size: 24px;
-        line-height: 36px;
+        font-size: 20px;
+        line-height: 28px;
         width:80%;
         height: auto;
-    }
+    } */
 
 }
 
@@ -289,12 +289,12 @@ p{
         margin-top: 2%;
         margin-left: 10%;
     }
-    p{
+    /* .p_home{
         font-size: 24px;
         line-height: 28px;
         margin-left: 10%;
         margin-top: 48px;
-    }
+    } */
 
     .button{
         display: none;
@@ -314,7 +314,7 @@ p{
     } 
     
 
-    h2{
+    .h2_home{
         font-size: 48px;
         line-height: 53px;
     }

@@ -25,7 +25,7 @@ function Oficial() {
                         <h1 className='h1_titulo '>Olá, somos a<br/> Lapiseira!</h1>
                     </div>
 
-                    <p>Conectamos alunos com<br/> 
+                    <p className='p_home' id='teste_topo'>Conectamos alunos com<br/> 
                         necessidades de materiais<br/> 
                         escolares a pessoas com<br/>
                         vontade de mudar essa<br/>
@@ -37,32 +37,30 @@ function Oficial() {
                 </div>   
              
 
-                <h2>Nosso Objetivo</h2>
-
-                <Row xs={2} md={2} >
-                    <Col >
-                        <p  className='texto_imagem'>Acreditamos na educação acima de tudo e queremos que crianças não percam oportunidade de aprender mais por falta de material.</p>
+                <h2 className='h2_home'>Nosso Objetivo</h2>
+                <Row xs={2} md={2} lg={2}>
+             
+                    <Col>
+                        <p  className='p_home texto_imagem'>Acreditamos na educação acima de tudo e queremos que crianças não percam oportunidade de aprender mais por falta de material.</p>
                     </Col> 
-                    <Col >
-                        <div>
-                            <img src={img_nosso} id="img_nosso_objetivo"/>
-                        </div>
+                    <Col>
+                        <img src={img_nosso} id="img_nosso_objetivo"/>
                     </Col>
                 </Row>
 
-                <h2 id='espacamento_h2'>Faça Parte</h2>
+                <h2 id='espacamento_h2' className='h2_home'>Faça Parte</h2>
                     
            
                 <Row xs={1} md={2} className='grid_home'>
                    
                     <Col>             
-                        <p className='centralizarTexto p_res_920'>Se você for o responsável por um aluno da rede pública que precisa de material escolar, cadastre-se abaixo.</p>
+                        <p className='p_home centralizarTexto p_res_920'>Se você for o responsável por um aluno da rede pública que precisa de material escolar, cadastre-se abaixo.</p>
                         {/* <a href='' > <Button className='button2' type='submint'>Responsável</Button></a> */}
                         <Link className="btn button2" to="/CadastroResponsavel">Responsável</Link>
                     </Col>
 
                     <Col>
-                        <p className='centralizarTexto p_res_920'>Se você for uma papelaria e quiser fazer parte desse projeto, cadastre-se aqui. Seus produtos ficarão disponíveis para a compra dos doadores e os responsáveis retiram o material com você.</p>
+                        <p className='p_home centralizarTexto p_res_920'>Se você for uma papelaria e quiser fazer parte desse projeto, cadastre-se aqui. Seus produtos ficarão disponíveis para a compra dos doadores e os responsáveis retiram o material com você.</p>
                         <Link className="btn button2" to="/CadastroResponsavel">Doador</Link>
 
                    
@@ -70,27 +68,27 @@ function Oficial() {
                     </Col>
                    
                 </Row>
-
-                <h2>Depoimentos</h2>
+   
+                <h2 className='h2_home'>Depoimentos</h2>
 
                 <Row xs={3} md={3}  id="MedidaParaNaoRolarAPagina">
                         
                     <Col>
                         <div className='fundo_card'>
                             <img src={Ellipse1} className='img_card'/>
-                            <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p className='p_card p_home'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </Col>
                     <Col >
                         <div className='fundo_card'>
                             <img src={Ellipse2} className='img_card'/>
-                            <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p className='p_card p_home' >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div> 
                     </Col>
                     <Col >
                         <div className='fundo_card'>
                             <img src={Ellipse3} className='img_card'/>
-                            <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p className='p_card p_home'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </Col> 
            
