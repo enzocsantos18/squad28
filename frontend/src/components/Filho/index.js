@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Filho({nome, idade, descricao, lista, imagem}) {
+function Filho({ nome, idade, descricao, lista, imagem }) {
   return (
     <>
       <div className="listaAluno">
         <img
-            src={`http://localhost:3000/avatar/avatar${imagem}.png`}
+          src={`http://localhost:3000/avatar/avatar${imagem}.png`}
           alt="Foto ilustrativa da criança"
         />
+
         <div style={{width: "100%"}}>
           <h2 >{nome}, {idade} anos</h2>
           
@@ -18,7 +19,6 @@ function Filho({nome, idade, descricao, lista, imagem}) {
             ):
             null
           }
-
         </div>
       </div>
     </>

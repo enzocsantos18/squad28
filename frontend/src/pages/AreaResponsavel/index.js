@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import "./style.css";
 import { Button, Container } from 'react-bootstrap';
@@ -9,11 +10,12 @@ import Header from '../../components/Header';
 import idade from '../../helpers/tratamentoIdade'
 import api from '../../services/api';
 import Auth from '../../services/auth'
+
 // import { Container } from './styles';
 
 function AreaResponsavel() {
   const history = useHistory();
-  
+
   const [listaFilhos, setListaFilhos] = useState([]);
 
   async function buscarFilhos() {
@@ -21,17 +23,17 @@ function AreaResponsavel() {
     setListaFilhos(data.students);
   }
 
-
   useEffect(() => {
     buscarFilhos();
   }, []);
 
-  function handleSair(){
+  function handleSair() {
     Auth.destroyToken();
-    history.push('/')
+    history.push("/");
   }
 
   return (
+
     <div className="mainAreaResp">
       <Header linkLogo="/areaResponsavel">
         <Button className="btnSair" onClick={handleSair}>Sair</Button>
@@ -42,26 +44,26 @@ function AreaResponsavel() {
 
         
         <div className="listagem">
-
-        {
-          listaFilhos ? (
+          {listaFilhos ? (
             <>
-            {
-              listaFilhos.map(filho => (
-                <Filho key={filho.id} nome={filho.name} lista={filho.list} idade={idade(filho.birthDate)} imagem={filho.img_id}/>
-              ))
-            }
-            
-          </>
+              {listaFilhos.map((filho) => (
+                <Filho
+                  key={filho.id}
+                  nome={filho.name}
+                  lista={filho.list}
+                  idade={idade(filho.birthDate)}
+                  imagem={filho.img_id}
+                />
+              ))}
+            </>
           ) : (
             <p>Carregando...</p>
-          )
-        }
+          )}
         </div>
-       
       </Container>
     <Footer/>
     </div>
+
   );
 }
 

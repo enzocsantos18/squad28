@@ -70,6 +70,7 @@ function DetalheListaResponsavel() {
           <>
             {lista ? (
               <>
+
                 <h2 className="tituloListaResp">Meu material escolar</h2>
                 <div className="info-lista">
                 <Row className="infoAlunoLista">
@@ -77,6 +78,7 @@ function DetalheListaResponsavel() {
                       <h3 className="nomeAluno">
                           {lista.student.name}, {idade(lista.student.birthDate)}{" "}
                           anos.
+
                       </h3>
                       <span>Escola: {lista.student.school.name}</span>
                       <p className="pPadrao">{lista.description}</p>
@@ -128,10 +130,12 @@ function DetalheListaResponsavel() {
           </>
         ) : (
           <>
-          {lista && (
-            <CriacaoLista listId={id} bairro={lista.student.school.neighborhood}/>
-
-          )}
+            {lista && (
+              <CriacaoLista
+                listId={id}
+                bairro={lista.student.school.neighborhood}
+              />
+            )}
           </>
         )}
       </Container>

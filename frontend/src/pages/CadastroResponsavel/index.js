@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React from "react";
 import "./style.css";
 import Header from "../../components/Header";
@@ -52,7 +53,6 @@ function CadastroResponsavel(props) {
 
       history.push(`/login`);
     } catch (e) {
-
       toast.error("Usuário já existente com esse email");
     }
 

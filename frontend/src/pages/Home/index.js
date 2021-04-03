@@ -8,7 +8,6 @@ import ListaAluno from "../../components/ListaAluno";
 import idade from "../../helpers/tratamentoIdade";
 import api from "../../services/api";
 
-
 function Home() {
   const [listaAlunos, setListaAlunos] = useState([]);
 
@@ -17,8 +16,8 @@ function Home() {
     setListaAlunos(data);
   }
 
-  function handleFiltro(event){
-      buscarListas(event.target.value)
+  function handleFiltro(event) {
+    buscarListas(event.target.value);
   }
 
   useEffect(() => {
@@ -28,10 +27,13 @@ function Home() {
   return (
     <div className="main">
       <Header>
-        <Link className="btn btn-primary" to="/login">Acessar</Link>
+        <Link className="btn btn-primary" to="/login">
+          Acessar
+        </Link>
       </Header>
- 
+
       <Container>
+
         <h1 className="tituloHome">
           Aqui você encontra várias crianças e pode escolher uma para ajudar, basta selecionar o bairro.
         </h1>

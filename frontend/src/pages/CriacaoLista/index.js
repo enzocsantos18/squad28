@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useHistory } from "react-router";
@@ -104,9 +105,7 @@ function CriacaoLista({ bairro, listId }) {
         <>
           <Button className="btnItemProduto" onClick={handleConfirmacao}>Adicionar produtos</Button>
         </>
-      ):
-      null
-      }
+      ) : null}
     </>
   );
 }
