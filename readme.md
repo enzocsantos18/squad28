@@ -49,6 +49,9 @@ npm run typeorm:run
 npm run dev
 ``
 
+### Documentação da api
+https://documenter.getpostman.com/view/9120629/TzCP8o68
+
 ## Para rodar o frontend
 Navegue para pasta frontend
 Instale as dependências:
