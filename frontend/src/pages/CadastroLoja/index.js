@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import "./style.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { Form, Col, Container, Row, Button } from "react-bootstrap";
 import api from "../../services/api";
 import { useHistory } from "react-router-dom";
-import alunos from "../../assets/alunos.png";
+import papelaria from "../../assets/papelaria.png";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { toast } from "react-toastify";
@@ -65,7 +66,7 @@ function CadastroLoja(props) {
   return (
     <div className="main">
       <Header linkLogo="/" />
-      <img id="imgAlunos" src={alunos} alt="Avatar Alunos" />
+      <img id="imgPapelaria" src={papelaria} alt="Imagem de materiais" />
 
       <Container>
         <Formik
