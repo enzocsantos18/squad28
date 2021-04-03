@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./login.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+
 import { Container, Form, Col, Button, Row } from "react-bootstrap";
 import imagemlogin from "./fotologin.png";
 import api from "../../services/api";
@@ -9,9 +10,11 @@ import { useHistory } from "react-router";
 import Auth from "../../services/auth";
 import { Link } from "react-router-dom";
 
+
 function Login() {
   const history = useHistory();
   const [dados, setDados] = useState({
+
     email: "",
     password: "",
   });
@@ -19,6 +22,7 @@ function Login() {
   const [erro, setErro] = useState(false);
 
   const handleInputChange = (event) => {
+
     setDados({
       ...dados,
       [event.target.name]: event.target.value,
@@ -63,6 +67,7 @@ function Login() {
 
   return (
     <>
+
       <Header />
       <Container fluid>
         <Row>
@@ -142,6 +147,7 @@ function Login() {
 
       </Container>
       <Footer />
+
     </>
   );
 }

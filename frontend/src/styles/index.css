@@ -10,6 +10,7 @@
 }
 body{
   background-color: #F1F1F1;
+  /* overflow-x: hidden;  */
 }
 select, input:not([type="checkbox"]){
   height: 56px !important;
@@ -167,8 +168,10 @@ h1,h2,h3,h4,h5,h6{
   text-decoration: none !important;
 }
 
+
 @media only screen and (max-width: 400px) {
   .container {
     padding: 8px;
   }
 }
+

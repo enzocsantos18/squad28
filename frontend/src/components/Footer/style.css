@@ -8,6 +8,7 @@
   flex-wrap: wrap;
   padding: 10px;
   color: white  !important;
+  /* position: absolute; */
 }
 
 .footer p{

@@ -12,11 +12,13 @@ import DetalheLista from "./pages/DetalheLista";
 import AreaResponsavel from "./pages/AreaResponsavel";
 import DetalheListaResponsavel from "./pages/DetalheListaResponsavel";
 import AreaLoja from "./pages/AreaLoja";
+
 import CriacaoLista from "./pages/CriacaoLista";
 import Auth from "./services/auth";
 import CadastroAluno from "./pages/CadastroAluno";
 import CadastroLoja from "./pages/CadastroLoja";
 // import CadastroProduto from "./pages/CadastroProduto";
+
 
 const RotaResponsavel = (props) => {
   if (!Auth.hasToken() || !Auth.isParent()) {
@@ -45,11 +47,13 @@ function Routes() {
     Auth.destroyToken();
   }, []);
   return (
-    <Router>
+    <Router> 
       <Switch>
         <Route path="/cadastroResponsavel" component={CadastroResponsavel} />
         <RotaResponsavel path="/cadastroAluno" component={CadastroAluno} />
         <Route path="/" exact component={Home} />
+        <Route path="/oficial" component={Oficial} />
+        
         <Route path="/lista/:id" component={DetalheLista} />
         <RotaLoja path="/areaLoja" exact component={AreaLoja} />
 
@@ -76,6 +80,9 @@ function Routes() {
         />
         <Route path="/login" component={Login} />
         <Route path="" component={Home} />
+
+        
+
       </Switch>
     </Router>
   );
