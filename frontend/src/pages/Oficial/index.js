@@ -33,7 +33,7 @@ function Oficial() {
                     
                     
                     <Link className="btn button" to="#">Confira as listas</Link>
-                    <Link className="btn btn-primary" id="button_precipal" to="#">Confira as listas</Link>
+                    <Link className="btn btn-primary" id="button_precipal" to="/lista">Confira as listas</Link>
                 </div>   
              
 

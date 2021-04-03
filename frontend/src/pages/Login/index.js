@@ -143,9 +143,7 @@ function Login() {
 
           </Col>
         </Row>
-
       </Container>
-      <Footer />
     </>
   );
 }

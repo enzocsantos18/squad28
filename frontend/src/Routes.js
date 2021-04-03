@@ -51,7 +51,7 @@ function Routes() {
         <Route path="/cadastroResponsavel" component={CadastroResponsavel} />
         <RotaResponsavel path="/cadastroAluno" component={CadastroAluno} />
         <Route path="/" exact component={Oficial} />
-        <Route path="/" exact component={Home} />
+        <Route path="/lista" exact component={Home} />
         <Route path="/lista/:id" component={DetalheLista} />
         <RotaLoja path="/areaLoja" exact component={AreaLoja} />
         <RotaLoja
