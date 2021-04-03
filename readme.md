@@ -5,7 +5,11 @@ Clone o projeto:
 git clone https://github.com/enzocsantos18/squad28.git
 ```
 - Baixe o [Node](https://nodejs.org/en/download/)
-- Baixe o [Sql Server]
+- Baixe o [Sql Server](https://go.microsoft.com/fwlink/?linkid=866662)
+- Baixe o [Sql Server Management Studio](https://aka.ms/ssmsfullsetup)
+
+## Configuração de ambiente
+Siga os passos desse documento : https://www.notion.so/Configura-o-de-ambiente-3a046d9949484aeca4271c81b2088aa0
 
 ## Para rodar o backend
 Navegue para a pasta /backend 
@@ -15,10 +19,10 @@ Navegue para a pasta /backend
 ```
 {
   "type": "mssql",
-  "host": "", //Host do servidor mssql
+  "host": "localhost", //Host do servidor mssql
   "port": 1433,
-  "username": "", // Usuário do banco de dados
-  "password": "", // Senha do banco de dados
+  "username": "root", // Usuário do banco de dados
+  "password": "root", // Senha do banco de dados
   "database": "MateriaisDB",
   "logging": false,
   "entities": [
@@ -34,13 +38,16 @@ Navegue para a pasta /backend
 ```
 - Crie um arquivo .env na raiz da pasta backend seguindo o padrão .env.example
  ``` 
-    JWT_SECRET=    #Chave de segredo JWT
+    JWT_SECRET=[INSIRA UMA PALAVRA QUALQUER]   #Chave de segredo JWT
  ```
 - Rode as migrations utilizando o comando:
 `` 
 npm run typeorm:run
 ``
-Obs: Caso ocorra um erro na conexão com o banco confira novamente o arquivo ormconfig.json, caso o problema ainda sim continue, siga os passos dessa issue: https://github.com/typeorm/typeorm/issues/2133#issuecomment-615175431
+- Rode o projeto utilizando o comando:
+`` 
+npm run dev
+``
 
 ## Para rodar o frontend
 Navegue para pasta frontend
