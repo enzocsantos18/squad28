@@ -23,7 +23,6 @@ body {
     font-weight: 900;
     font-size: 24px;
     line-height: 28px;
-    
     color: #483972;
 } 
 #p_subtitulo{
@@ -38,17 +37,19 @@ body {
 .button{
     background: #483972;
     border-radius: 8px;
-    width: 130px;
-    height: 35px;
+    width: 200px;
+    height: auto;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     margin-top: 50px;
+    color: #fff;
     
 }
 .button:hover{
     background-color: #7B61FF;
+    color: #fff;
 }
 
 h2{
@@ -99,11 +100,12 @@ p{
     margin-top: 81px;
 }
 .centralizarTexto{
-    width: auto;
+    width: 220px;
     position: relative;
     margin-left: 50%;
     transform: translate(-50%,0);
     text-align: center;
+
 }
 
 .button2{
@@ -116,11 +118,13 @@ p{
     margin-bottom: 25px;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) 
+    transform: translate(-50%, -50%);
+    color: #fff;
     
 }
 .button2:hover{
     background-color: #7B61FF;
+    color: #fff;
 }
 
 .grid{
@@ -134,7 +138,7 @@ p{
 } 
 
 .fundo_card{
-    margin-bottom: 15%;
+    margin-bottom: 20%;
 }
 
 .img_card{
@@ -160,9 +164,15 @@ p{
     color: #000000;
     margin: 0 0 0 0;
 }
+#button_precipal{
+    display: none;
+}
 
 @media (min-width: 540px){
     #menu_button{
+        display: none;
+    }
+    #button_precipal{
         display: none;
     }
     #fundo_inicio{
@@ -188,7 +198,10 @@ p{
         margin-left: 10%;
     }
     .button{
-        margin-top: 15%;
+        margin-top: 25%;
+    }
+    .centralizarTexto{
+        width: auto;
     }
 
     .img_card{
@@ -213,11 +226,20 @@ p{
         box-shadow: 1px 1px 1px #DCDCDC;
         background-color: #FAFAFA;
     } 
+    .p_res_920{
+        font-size: 24px;
+        line-height: 36px;
+        width:80%;
+        height: auto;
+    }
 
 }
 
 @media (min-width: 721px){
     #menu_button{
+        display: none;
+    }
+    #button_precipal{
         display: none;
     }
 
@@ -242,7 +264,7 @@ p{
         padding: 6% 5% 15% 5%;
         box-shadow: 1px 1px 1px #DCDCDC;
         background-color: #FAFAFA;
-    } 
+    }
 
 
 }
@@ -262,14 +284,14 @@ p{
         width: 100%;
         height: auto;
         font-size: 48px;
-        line-height: 53px;
+        line-height: 56px;
         top: 0; 
-        margin-top: 6%;
+        margin-top: 2%;
         margin-left: 10%;
     }
     p{
-        font-size: 36px;
-        line-height: 42px;
+        font-size: 24px;
+        line-height: 28px;
         margin-left: 10%;
         margin-top: 48px;
     }
@@ -277,14 +299,28 @@ p{
     .button{
         display: none;
     }
+    #button_precipal{
+        display: block;
+        margin-left: 10%;
+        background: #483972;
+        border-radius: 8px;
+        width: 212px;
+        height: 48px;
+        border-color: #483972;
+        font-size: 21px;
+    }
+    #button_precipal:hover{
+        background-color: #7B61FF;
+    } 
+    
 
     h2{
-        font-size: 45px;
+        font-size: 48px;
         line-height: 53px;
     }
     .texto_imagem{
-        font-size: 35px;
-        line-height: 40px;
+        font-size: 24px;
+        line-height: 28px;
         width: auto;
         height: auto;
         margin-left: 20%;
@@ -296,7 +332,8 @@ p{
     .p_res_920{
         font-size: 30px;
         line-height: 36px;
- 
+        width:100%;
+        height: auto;
     }
 
 

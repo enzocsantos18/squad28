@@ -18,20 +18,22 @@ function Oficial() {
         </Header>
        
         <Container fluid >   
-            <Row >    
+            <Row>    
                 <div id='fundo_inicio'>
                 
-                    <div >
-                        <h1 className='h1_titulo '>Olá, somos a Lapiseira!</h1>
+                    <div>
+                        <h1 className='h1_titulo '>Olá, somos a<br/> Lapiseira!</h1>
                     </div>
 
                     <p>Conectamos alunos com<br/> 
-                                    necessidades de materiais<br/> 
-                                        escolares a pessoas com<br/>
-                                        vontade de mudar essa<br/>
-                                        realidade.</p>
+                        necessidades de materiais<br/> 
+                        escolares a pessoas com<br/>
+                        vontade de mudar essa<br/>
+                        realidade.</p>
                     
-                    <a href='/Login'><Button className='button' type='submint' >Login</Button></a>
+                    
+                    <Link className="btn button" to="#">Confira as listas</Link>
+                    <Link className="btn btn-primary" id="button_precipal" to="#">Confira as listas</Link>
                 </div>   
              
 
@@ -55,12 +57,16 @@ function Oficial() {
                    
                     <Col>             
                         <p className='centralizarTexto p_res_920'>Se você for o responsável por um aluno da rede pública que precisa de material escolar, cadastre-se abaixo.</p>
-                        <a href='/CadastroResponsavel' > <Button className='button2' type='submint'>Responsável</Button></a>
+                        {/* <a href='' > <Button className='button2' type='submint'>Responsável</Button></a> */}
+                        <Link className="btn button2" to="/CadastroResponsavel">Responsável</Link>
                     </Col>
 
                     <Col>
-                        <p className='centralizarTexto p_res_920'>Se você for um(a) doador(a) e quiser acessar as listas, clique abaixo.</p>
-                        <a href='#' > <Button className='button2' type='submint'>Doador</Button></a>
+                        <p className='centralizarTexto p_res_920'>Se você for uma papelaria e quiser fazer parte desse projeto, cadastre-se aqui. Seus produtos ficarão disponíveis para a compra dos doadores e os responsáveis retiram o material com você.</p>
+                        <Link className="btn button2" to="/CadastroResponsavel">Doador</Link>
+
+                   
+                   
                     </Col>
                    
                 </Row>
