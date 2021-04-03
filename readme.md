@@ -15,7 +15,7 @@ Siga os passos desse documento : https://www.notion.so/Configura-o-de-ambiente-3
 Navegue para a pasta /backend 
 - Baixe as dependências do projeto utilizando o comando
 ``` npm install```
-- Preencha o arquivo ormconfig.json
+- Preencha o arquivo ormconfig.json, com as credências configuradas no sql
 ```
 {
   "type": "mssql",
@@ -44,6 +44,7 @@ Navegue para a pasta /backend
 `` 
 npm run typeorm:run
 ``
+Obs: caso algum erro aconteça nesse processo, certifique-se que o ormconfig.json está preenchido corretamente e que o ambiente esteja devidamente configurado.
 - Rode o projeto utilizando o comando:
 `` 
 npm run dev
