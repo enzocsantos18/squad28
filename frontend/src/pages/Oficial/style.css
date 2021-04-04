@@ -347,6 +347,8 @@ body {
     #fundo_inicio{
         background-image: url("../../assets/Fundo_grade.png");
         height: 680px;
+        width: 100%;
+        background-size: 100%;
     }
     
     .h1_titulo{
