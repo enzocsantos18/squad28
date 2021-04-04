@@ -136,7 +136,7 @@ function AreaLoja() {
                 </Col>
               </Row>
 
-              {produtos === [] ? (
+              {produtos !== [] ? (
                 <h2 className="subtitulo1">Meus produtos:</h2>
               ) : (
                 <h2 className="subtitulo1">Sem produtos cadastrados na loja</h2>

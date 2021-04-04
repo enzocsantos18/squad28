@@ -72,7 +72,7 @@ function Routes() {
           component={DetalheListaResponsavel}
         />
         <Route path="/login" component={Login} />
-        <Route path="" component={Home} />
+        <Route path="" component={Oficial} />
       </Switch>
     </Router>
   );

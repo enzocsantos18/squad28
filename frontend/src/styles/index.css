@@ -114,7 +114,7 @@ input:not([type="checkbox"]):hover, select:hover, textarea{
   margin: 10px 0;
 
 }
-.produto input[type="checkbox"]{
+.produtoDet input[type="checkbox"]{
   transform: scale(2);
 }
 .produto p{
