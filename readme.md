@@ -42,7 +42,7 @@ Navegue para a pasta /backend
  ```
 - Rode as migrations utilizando o comando:
 `` 
-npm run typeorm:run
+npm run typeorm migration:run
 ``
 Obs: caso algum erro aconteça nesse processo, certifique-se que o ormconfig.json está preenchido corretamente e que o ambiente esteja devidamente configurado.
 - Rode o projeto utilizando o comando:
