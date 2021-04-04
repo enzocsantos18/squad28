@@ -33,9 +33,9 @@ function Oficial() {
                         realidade.</p>
                     
                     
-                    <Link className="btn button1" to="#">Confira as listas</Link>
+                    <Link className="btn button1" to="/lista">Confira as listas</Link>
                     {/* <Link className="btn button1" id="button_precipal" to="/lista">Confira as listas1</Link> */}
-                    <span><img src={seta} id="seta"/></span>
+                    {/* <span><img src={seta} id="seta"/></span> */}
                 </div>   
              
 
@@ -64,7 +64,7 @@ function Oficial() {
 
                     <Col>
                         <p className='p_home p_centralizarTexto '>Se você for uma papelaria e quiser fazer parte desse projeto, cadastre-se aqui. Seus produtos ficarão disponíveis para a compra dos doadores e os responsáveis retiram o material com você.</p>
-                        <Link className="btn button2" to="/CadastroResponsavel">Cadastrar</Link>
+                        <Link className="btn button2" to="/CadastroLoja">Cadastrar</Link>
 
                     </Col>
                    
@@ -77,19 +77,19 @@ function Oficial() {
                     <Col>
                         <div className='fundo_card'>
                             <img src={Ellipse1} className='img_card'/>
-                            <p className='p_card '>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p className='p_card '>Muito bom, conseguir materia para o meu filho estudar.</p>
                         </div>
                     </Col>
                     <Col>
                         <div className='fundo_card'>
                             <img src={Ellipse2} className='img_card'/>
-                            <p className='p_card ' >Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p className='p_card '>Recomendo a plataforma me ajutou muito</p>
                         </div> 
                     </Col>
                     <Col>
                         <div className='fundo_card'>
                             <img src={Ellipse3} className='img_card'/>
-                            <p className='p_card'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p className='p_card'>#futurodascriança #empreendedorismo</p>
                         </div>
                     </Col> 
            
