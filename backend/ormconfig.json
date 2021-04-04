@@ -1,9 +1,9 @@
 {
   "type": "mssql",
-  "host": "CAROLINA-ANDRAD",
+  "host": "localhost",
   "port": 1433,
   "username": "root",
-  "password": "root123",
+  "password": "root",
   "database": "MateriaisDB",
   "logging": false,
   "entities": [
