@@ -9,6 +9,7 @@ import Ellipse1 from '../../assets/Ellipse1.png';
 import Ellipse2 from '../../assets/Ellipse2.png';
 import Ellipse3 from '../../assets/Ellipse3.png'
 import { Link } from "react-router-dom";
+import seta from '../../assets/seta_baixo.png'
 
 function Oficial() {
     return (
@@ -34,6 +35,7 @@ function Oficial() {
                     
                     <Link className="btn button1" to="#">Confira as listas</Link>
                     {/* <Link className="btn button1" id="button_precipal" to="/lista">Confira as listas1</Link> */}
+                    <span><img src={seta} id="seta"/></span>
                 </div>   
              
 

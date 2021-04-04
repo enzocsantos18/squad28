@@ -41,10 +41,10 @@ body {
     width: 200px;
     height: auto;
     position: absolute;
-    top: 50%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%,-50%);
-    margin-top: 50px;
+    /* margin-top: 50px; */
     
 }
 .button1:hover{
@@ -54,6 +54,15 @@ body {
 #button_precipal{
     display: none;
 }
+
+#seta{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+}
+
 
 .h2_home{
     font-family: Roboto;
@@ -182,7 +191,7 @@ body {
         line-height: 21px;
     }
     .button1{
-        top: 45%;
+        top: 55%;
         left: 28%;      
     }
     .h2_home{
@@ -242,8 +251,9 @@ body {
         line-height: 22px;
     }
     .button1{
-        top: 45%;
-        left: 24%;       
+        top: 55%;
+        left: 24%;      
+        margin-top: 50px; 
     }
     .img_card{
         width: 60%;
