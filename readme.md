@@ -15,7 +15,7 @@ Siga os passos desse documento : https://www.notion.so/Configura-o-de-ambiente-3
 Navegue para a pasta /backend 
 - Baixe as dependências do projeto utilizando o comando
 ``` npm install```
-- Preencha o arquivo ormconfig.json, com as credências configuradas no sql
+- Preencha o arquivo ormconfig.json, com as credênciais configuradas no sql
 ```
 {
   "type": "mssql",
@@ -74,3 +74,17 @@ A aplicação abrirá automaticamente no seu navegador.
  - Express
 ### Frontend
  - ReactJS
+
+## Login das papelarias cadastradas
+dipfrapel@gmail.com
+ministop@gmail.com
+novacarrao@gmail.com
+premium@gmail.com
+clig@gmail.com
+pimentel@gmail.com
+imperio@gmail.com
+momotaro@gmail.com
+alphagraphics@gmail.com
+papelariaaviamentos@gmail.com
+
+Todas utilizam a senha: 12345678
