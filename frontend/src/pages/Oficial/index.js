@@ -89,7 +89,7 @@ function Oficial() {
                     <Col>
                         <div className='fundo_card'>
                             <img src={Ellipse3} className='img_card'/>
-                            <p className='p_card'>#futurodascriança #empreendedorismo</p>
+                            <p className='p_card'>#futurodascriança, muito bom</p>
                         </div>
                     </Col> 
            
