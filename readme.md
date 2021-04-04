@@ -54,7 +54,7 @@ npm run dev
 https://documenter.getpostman.com/view/9120629/TzCP8o68
 
 ## Para rodar o frontend
-Navegue para pasta frontend
+Navegue para pasta frontend e 
 Instale as dependências:
 
 ```bash
