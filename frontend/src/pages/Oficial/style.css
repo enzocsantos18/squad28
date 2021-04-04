@@ -45,10 +45,6 @@ body {
     left: 50%;
     transform: translate(-50%,-50%);
     margin-top: 50px;
-     
-    /* display: flex;
-    align-items: center;
-    justify-content: center;  */
     
 }
 .button1:hover{
@@ -281,7 +277,9 @@ body {
     #p_home_largura{
         width: 480px;
         height: 190px;
-        
+    }
+    #espacamento_button2{
+        margin-top: 10%;
     }
     .button1{
         top: 450px;
@@ -291,14 +289,23 @@ body {
         font-size: 40px;
         line-height: 44px;
     }
+    #espacamento_h2{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
     .p_texto_imagem{
         font-size: 22px;
         line-height: 24px;
-        width: 472px;
-        height: 256px;
+        width: 80%;
+        height: auto;
         margin-top: 50px;
         padding-right: 20px;
     }
+    #img_nosso_objetivo{
+        width: 90%;
+        height: 80%;
+    }
+
     /* .p_centralizarTexto{
         width: 527px;
         height: 116px;
@@ -308,116 +315,96 @@ body {
         padding: 1% 1% 1% 1%;
         box-shadow: 1px 1px 1px #DCDCDC;
         background-color: #FAFAFA;
+        margin-bottom: 15%;
+    }
+
+    .img_card{
+        width: 170px;
+        height: 170px;
+        margin-bottom: 70px;
+    }
+    .p_card{
+        width: auto;
+        height: auto;
+        font-size: 20px;
+        line-height: 24px;
+        margin-bottom: 50px;
+    }
+
+}
+
+@media (min-width: 1200px){
+    #fundo_inicio{
+        background-image: url("../../assets/Fundo_grade.png");
+        height: 680px;
+    }
+    
+    .h1_titulo{
+        font-size: 48px;
+        line-height: 56px;
+        width: 100%;
+        margin-bottom: 80px;
+        margin-top: 90px;
+    }
+    .p_home{
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .button1{
+        top: 500px;
+        left: 265px;   
+        width: 212px;
+        height: 48px;
+        font-size: 20px;    
+    }
+    .h2_home{
+        font-size: 48px;
+        line-height: 53px;
+    }
+    .p_texto_imagem{
+        font-size: 24px;
+        line-height: 28px;
+    }
+    .button2{
+        width: 195px;
+        height: 53px;
+        font-size: 24px;
+        line-height: 28px;
+        padding-top: 10px;
+    }
+    #espacamento_button2{
+        margin-top: 8%;
+    }
+
+    .fundo_card{
+        margin-bottom: 15%;
     }
 
     .img_card{
         width: 185px;
         height: 185px;
+        margin-bottom: 70px;
     }
     .p_card{
-        width: auto;
+        width: 80%;
         height: auto;
-        font-size: 13px;
-        line-height: 15px;
-    }
-
-
-
-
-
-
-
-
-
-    /* .h1_titulo{
-        width: 100%;
-        height: auto;
-        font-size: 48px;
-        line-height: 56px;
-        top: 0; 
-        margin-top: 2%;
-        margin-left: 10%;
-    } */
-    /* .p_home{
+        text-align: center;
         font-size: 24px;
         line-height: 28px;
-        margin-left: 10%;
-        margin-top: 48px;
-    } */
-
-    /* .button{
-        display: none;
-    }
-    #button_precipal{
-        display: block;
-        margin-left: 10%;
-        background: #483972;
-        border-radius: 8px;
-        width: 212px;
-        height: 48px;
-        border-color: #483972;
-        font-size: 21px;
-    }
-    #button_precipal:hover{
-        background-color: #7B61FF;
-    } 
-    
-
-    .h2_home{
-        font-size: 48px;
-        line-height: 53px;
-    }
-    .texto_imagem{
-        font-size: 24px;
-        line-height: 28px;
-        width: auto;
-        height: auto;
-        margin-left: 20%;
-        padding: 0 0 0 0;
-        width: auto;
-        height: 240px;
-    }
-
-*/
-    /*p{ 
-
-    }
-    .texto_imagem{
-        font-size: 36px;
-        line-height: 42px;
-        width: 472px;
-        height: 256px;
-        margin-left: 20%;
-    }
-    #img_nosso_objetivo{
-        width: 60%;
-        height: 15%;
-        display: block;
+        margin-bottom: 50px;
         margin-left: auto;
         margin-right: auto;
-        margin-left: 35%;
-        margin-top: 0;
-    }*/
-
-}
-
-/* @media (min-width: 1150px) {
-
-    .fundo_card{
-        position: relative;
-        right: 50%;
-        left: 5%;
-        transform: translate(50%, 0);
-        background-color: #FAFAFA;
-        margin: 0 0 5% 0;
-        padding: 6% 5% 15% 5%;
-        box-shadow: 1px 1px 1px #DCDCDC;
     }
 
-    .img_card{
-        width: 45%;
-        height: auto;
-        
-    }     
 
-} */
+
+
+
+
+
+
+
+
+
+
+}

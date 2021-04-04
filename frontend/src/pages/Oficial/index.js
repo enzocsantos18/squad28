@@ -57,15 +57,13 @@ function Oficial() {
                    
                     <Col>             
                         <p className='p_home p_centralizarTexto '>Se você for o responsável por um aluno da rede pública que precisa de material escolar, cadastre-se abaixo.</p>
-                        <Link className="btn button2" to="/CadastroResponsavel">Responsável</Link>
+                        <Link className="btn button2" id="espacamento_button2" to="/CadastroResponsavel">Cadastrar</Link>
                     </Col>
 
                     <Col>
                         <p className='p_home p_centralizarTexto '>Se você for uma papelaria e quiser fazer parte desse projeto, cadastre-se aqui. Seus produtos ficarão disponíveis para a compra dos doadores e os responsáveis retiram o material com você.</p>
-                        <Link className="btn button2" to="/CadastroResponsavel">Doador</Link>
+                        <Link className="btn button2" to="/CadastroResponsavel">Cadastrar</Link>
 
-                   
-                   
                     </Col>
                    
                 </Row>
