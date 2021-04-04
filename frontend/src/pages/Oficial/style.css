@@ -105,9 +105,9 @@ body {
 }
 
 .p_centralizarTexto{
-    width: 220px;
+    width: auto;
+    height: auto;
     text-align: center;
-    display: block;
     margin-left: auto;
     margin-right: auto;
 }
@@ -136,9 +136,11 @@ body {
 } 
 
 .fundo_card{
-    margin-bottom: 20%;
+    margin-bottom: 10%;
 }
-
+/* .fundo_card{
+    margin-bottom: 50px;
+} */
 .img_card{
     margin-top: 30px;
     width: 42px;
@@ -160,9 +162,7 @@ body {
     width: auto;
     height: 67px;
 }
-.fundo_card{
-    margin-bottom: 50px;
-}
+
 
 @media (min-width: 540px){
     #button_precipal{
@@ -172,15 +172,61 @@ body {
         background-image: url("../../assets/Fundo_grade.png");
         width: 100%;
         height: 500px;
-        padding: 45px 0 0 37px;
+        padding: 45px 0 0 10%;
         align-items: center;
     }
 
     .h1_titulo{
-        font-size: ;
+        font-size: 26px;
+        line-height: 28px;
     }
 
+    .p_home{
+        font-size: 18px;
+        line-height: 21px;
+    }
+    .button1{
+        top: 45%;
+        left: 28%;      
+    }
+    .h2_home{
+        font-size: 20px;
+        line-height: 22px;
+    }
 
+    .p_texto_imagem{
+        width: 80%;
+        height: auto;
+        font-size: 19px;
+        line-height: 21px;
+        margin-top: 5%;
+    }
+    #img_nosso_objetivo{
+        width: 90%;
+        height: auto;
+        margin-top: -5px;
+    }
+    .p_centralizarTexto{
+        width: 80%;
+        height: auto;
+    }
+
+    .fundo_card{
+        padding: 1% 1% 1% 1%;
+        box-shadow: 1px 1px 1px #DCDCDC;
+        background-color: #FAFAFA;
+    }
+
+    .img_card{
+        width: 70%;
+        height: auto;
+    }
+    .p_card{
+        width: auto;
+        height: auto;
+        font-size: 13px;
+        line-height: 15px;
+    }
 
 }
 
@@ -189,28 +235,24 @@ body {
     #button_precipal{
         display: none;
     }
-
-    .button{
-        margin-top: 20%;
+    .h1_titulo{
+        font-size: 27px;
+        line-height: 29px;
+        left: 18%;
     }
-    .texto_imagem{
-        width: auto;
-        height: 15%;
-        font-size: 18px;
+
+    .p_home{
+        font-size: 19px;
         line-height: 22px;
-        padding: 0 25% 0 20%;
+    }
+    .p_home_AC721{
+        left: 18%;
     }
 
-    #img_nosso_objetivo{
-        width: 80%;
-        height: 20%;
-        margin-top: 5%;
-    }    
 
-    .fundo_card{
-        padding: 6% 5% 15% 5%;
-        box-shadow: 1px 1px 1px #DCDCDC;
-        background-color: #FAFAFA;
+    .button1{
+        top: 45%;
+        left: 24%;       
     }
 
 
