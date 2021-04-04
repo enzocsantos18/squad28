@@ -25,7 +25,7 @@ function Oficial() {
                         <h1 className='h1_titulo'>Olá, somos a<br/> Lapiseira!</h1>
                     </div>
 
-                    <p className='p_home'>Conectamos alunos com<br/> 
+                    <p className='p_home' id='p_home_largura'>Conectamos alunos com<br/> 
                         necessidades de materiais<br/> 
                         escolares a pessoas com<br/>
                         vontade de mudar essa<br/>
@@ -33,7 +33,7 @@ function Oficial() {
                     
                     
                     <Link className="btn button1" to="#">Confira as listas</Link>
-                    <Link className="btn button1" id="button_precipal" to="/lista">Confira as listas</Link>
+                    {/* <Link className="btn button1" id="button_precipal" to="/lista">Confira as listas1</Link> */}
                 </div>   
              
 
